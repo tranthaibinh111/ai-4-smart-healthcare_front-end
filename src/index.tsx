@@ -21,7 +21,7 @@ import './index.scss';
 // configures
 import config from './data/config';
 // components
-import App from './app/App';
+import App from './app/app.module';
 //#endregion
 
 

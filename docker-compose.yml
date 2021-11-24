@@ -1,0 +1,17 @@
+version: "3.9"
+
+volumes:
+  node-modules: {}
+
+services:
+  reactjs:
+    container_name: "ai_4_smart_healthcare_front_end"
+    build:
+      context: .
+      dockerfile: ./compose/reactjs/Dockerfile
+    command: /start.sh
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - node-modules:/app/node_modules

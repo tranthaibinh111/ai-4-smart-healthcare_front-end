@@ -1,0 +1,21 @@
+# VS code
+/.vscode
+
+# Git
+.gitignore
+
+# Editor
+.editorconfig
+
+# NodeJS
+/node_modules
+package-lock.json
+
+# Yarn
+yarn.lock
+
+# ANN Shop
+/compose/reactjs/Dockerfile
+docker-compose.yml
+LICENSE
+README.md
