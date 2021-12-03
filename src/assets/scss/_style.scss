@@ -1,6 +1,8 @@
 /* ----------------------------------------
 
 Table of Contents:
+- Common
+  - base
 - Components
   - .button
   - .loader
@@ -9,6 +11,11 @@ Table of Contents:
 
 ---------------------------------------- */
 
+
+/* ----------------------------------------
+// Common
+// ---------------------------------------- */
+@import './common/base';
 
 /* ----------------------------------------
 // Components
@@ -21,6 +28,7 @@ Table of Contents:
 // Pages
 // ---------------------------------------- */
 @import './pages/account';
+@import './pages/home';
 
 
 @import 'custom';

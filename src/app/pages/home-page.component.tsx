@@ -5,12 +5,13 @@ import SeoComponent from '../shared/components/seo.component';
 
 
 const HomePageComponent = (): ReactElement => {
-  const _title = 'Trang chủ - Chăm sóc sức khoẻ thông minh với AI';
+  const title = 'Trang chủ - Chăm sóc sức khoẻ thông minh với AI';
 
   return (
     <>
-      <SeoComponent title={_title} />
-      <h1>Trang chủ</h1>
+      <SeoComponent title={title} />
+      <div className="wrapper home-default-wrapper">
+      </div>
     </>
   );
 }

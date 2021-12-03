@@ -1,3 +1,6 @@
+@import './themes/theme-read/theme-variables';
+@import './custom-variables';
+
 // ----------------------------------------
 // Table of Contents
 // ----------------------------------------
@@ -12,15 +15,21 @@
 // ----------------------------------------
 // -- colors
 // ----------------------------------------
-$theme-color: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
-$theme-color2: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%);
-$primary-color: #04a9f5;
-$success-color: #1de9b6;
+  // white color
+  $white:                  #fff;
 
 
 // ----------------------------------------
 // -- helpers
 // ----------------------------------------
+  // Font Weight
+  $font-weight-light:           300;
+  $font-weight-normal:          400;
+  $font-weight-medium:          500;
+  $font-weight-semi-bold:       600;
+  $font-weight-bold:            700;
+  $font-weight-extra-bold:      800;
+  $font-weight-black:           900;
   // breakpoints
   $breakpoints: (
     xs-start: 0px,
@@ -32,13 +41,36 @@ $success-color: #1de9b6;
     lg-start: 992px,
     lg-end:   1199px,
     xl-start: 1200px
- );
+  )
+
+// Color - Account page
+// $theme-color: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+// $theme-color2: linear-gradient(-135deg, #899FD4 0%, #A389D4 100%);
+// $primary-color: #04a9f5;
+// $success-color: #1de9b6;
+
+
+// ----------------------------------------
+// -- helpers
+// ----------------------------------------
+  // breakpoints
+//   $breakpoints: (
+//     xs-start: 0px,
+//     xs-end:   575px,
+//     sm-start: 576px,
+//     sm-end:   767px,
+//     md-start: 768px,
+//     md-end:   991px,
+//     lg-start: 992px,
+//     lg-end:   1199px,
+//     xl-start: 1200px
+//  );
 
 
 // ----------------------------------------
 // -- components
 // ----------------------------------------
   // ----------------------------------------
-  // -- components
+  // -- loader
   // ----------------------------------------
-    $loader-color: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
+    // $loader-color: linear-gradient(-135deg, #1de9b6 0%, #1dc4e9 100%);
