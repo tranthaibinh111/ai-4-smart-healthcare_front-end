@@ -1,8 +1,0 @@
-/*
-// .scale
-*/
-@import "./transform";
-
-@mixin scale($scale) {
-  @include transform(scale($scale));
-}
