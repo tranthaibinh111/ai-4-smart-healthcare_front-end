@@ -1,38 +1,53 @@
-import { useContext } from 'react';
+// #region React
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+// #endregion
+
 import { AccordionContext } from './context';
 
 const AccordionTitle = ({ children, id }) => {
-    const { toggleActive, activeId, setIsInit } = useContext(AccordionContext);
+  // #region Parameters
+  const { toggleActive, activeId, setIsInit } = useContext(AccordionContext);
+  const isActive = id === activeId;
+  // #endregion
 
-    const clickHandler = () => {
-        if (!toggleActive || !id || !setIsInit) return;
-        setIsInit(false);
-        toggleActive(id);
-    };
-    const isActive = id === activeId ? true : false;
+  // #region Event
+  const clickHandler = () => {
+    if (!toggleActive || !id || !setIsInit)
+      return;
 
-    return (
-        <div
-            aria-hidden='true'
-            className={`accordion-header ${isActive ? 'active' : ''}`}
-            type='button'
-            onClick={clickHandler}
-        >
-            <span className='icon closed'>
-                <i className='icon-add icon-plus icofont-thin-down'></i>
-            </span>
-            <span className='icon opened'>
-                <i className='icon-remove icon-minus icofont-close-line'></i>
-            </span>
-            <span className='title'>{children}</span>
-        </div>
-    );
+    setIsInit(false);
+    toggleActive(id);
+  };
+  // #endregion
+
+  return (
+    <div
+      aria-hidden="true"
+      className={`accordion-header ${isActive ? 'active' : ''}`}
+      type="button"
+      onClick={clickHandler}
+    >
+      <span className="icon closed">
+        <i className="icon-add icon-plus icofont-thin-down" />
+      </span>
+      <span className="icon opened">
+        <i className="icon-remove icon-minus icofont-close-line" />
+      </span>
+      <span className="title">{children}</span>
+    </div>
+  );
 };
 
+// #region Khai báo Props
 AccordionTitle.propTypes = {
-    children: PropTypes.node.isRequired,
-    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  children: PropTypes.node.isRequired,
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
+
+AccordionTitle.defaultProps = {
+  id: 0,
+};
+// #endregion
 
 export default AccordionTitle;

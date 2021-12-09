@@ -1,27 +1,30 @@
+// #region React
+import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import React from 'react';
+// #endregion
 
-const Button = ({ classOption, text, path }) => {
-    return (
-        <React.Fragment>
-            <Link
-                to={process.env.PUBLIC_URL + path}
-                className={`${classOption}`}
-            >
-                {text}
-            </Link>
-        </React.Fragment>
-    );
-};
+const Button = ({ classOption, text, path }) => (
+  <Link
+    to={process.env.PUBLIC_URL + path}
+    className={`${classOption}`}
+  >
+    {text}
+  </Link>
+);
 
+// #region Khai báo Props
 Button.propTypes = {
-    classOption: PropTypes.string,
-    text: PropTypes.string,
-    path: PropTypes.string,
+  classOption: PropTypes.string,
+  text: PropTypes.string,
+  path: PropTypes.string,
 };
+
 Button.defaultProps = {
-    classOption: 'btn',
+  classOption: 'btn',
+  text: '',
+  path: '',
 };
+// #endregion
 
 export default Button;

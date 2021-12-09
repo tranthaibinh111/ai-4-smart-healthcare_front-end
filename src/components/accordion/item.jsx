@@ -1,41 +1,56 @@
-import {
-    useContext,
-    useEffect,
-    Children,
-    isValidElement,
-    cloneElement,
+// #region React
+import React, {
+  useContext,
+  useEffect,
+  Children,
+  isValidElement,
+  cloneElement,
 } from 'react';
 import PropTypes from 'prop-types';
+// #endregion
+
 import { AccordionContext } from './context';
 
 const AccordionItem = ({ children, id }) => {
-    const { setIdsOnInit, activeId } = useContext(AccordionContext);
+  // #region Parameters
+  const { setIdsOnInit, activeId } = useContext(AccordionContext);
+  // #endregion
 
-    useEffect(() => {
-        if (!setIdsOnInit) return;
-        setIdsOnInit(id);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [id]);
+  useEffect(() => {
+    if (!setIdsOnInit)
+      return;
 
-    const childrenWithProps = Children.map(children, (child) => {
-        // checking isValidElement is the safe way and avoids a typescript error too
-        const props = { id, activeId };
-        if (isValidElement(child)) {
-            return cloneElement(child, props);
-        }
-        return child;
-    });
+    setIdsOnInit(id);
+  }, [id]);
 
-    return (
-        <div className='accordion-item' id={id}>
-            {childrenWithProps}
-        </div>
-    );
+  // #region Components
+  const childrenWithProps = Children.map(children, (child) => {
+    // checking isValidElement is the safe way and avoids a typescript error too
+    const props = { id, activeId };
+
+    if (isValidElement(child))
+      return cloneElement(child, props);
+
+    return child;
+  });
+  // #endregion
+
+  return (
+    <div className="accordion-item" id={id}>
+      {childrenWithProps}
+    </div>
+  );
 };
 
+// #region Khai báo Props
 AccordionItem.propTypes = {
-    children: PropTypes.node.isRequired,
-    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  children: PropTypes.node.isRequired,
+  id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 };
+
+AccordionItem.defaultProps = {
+  id: 0,
+};
+// #endregion
 
 export default AccordionItem;
