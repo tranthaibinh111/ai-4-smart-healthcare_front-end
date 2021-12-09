@@ -6,22 +6,24 @@
 [ 01. Imported CSS ]
 
 */
-@import 'aos/dist/aos.css';
-@import './assets/css/bootstrap.min.css';
-@import './assets/css/icofont.css';
-@import '../../../node_modules/swiper/components/navigation/navigation.scss';
-@import '../../../node_modules/swiper/swiper.scss';
-@import './assets/css/animate.css';
-@import 'lightgallery.js/dist/css/lightgallery.css';
-@import '../../../node_modules/swiper/components/pagination/pagination.scss';
-
 @import 'common/imported';
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '../css/icofont.css';
+@import 'aos/dist/aos.css';
+@import 'swiper/swiper.scss';
+@import 'swiper/components/navigation/navigation.scss';
+@import 'swiper/components/pagination/pagination.scss';
+@import 'animate.css';
+@import 'lightgallery.js/dist/css/lightgallery.css';
+
+
 
 // Base
 @import 'common/variables';
 @import 'common/mixins';
 // https://github.com/twbs/rfs
-@import '../../../node_modules/rfs/scss';
+@import 'rfs/scss';
 /*
 
 [ 02. Typography CSS ]
