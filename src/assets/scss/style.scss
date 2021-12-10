@@ -6,15 +6,21 @@
 [ 01. Imported CSS ]
 
 */
+// Google fonts
 @import 'common/imported';
-
+// Bootstrap@5.1.3
 @import 'bootstrap/dist/css/bootstrap.min.css';
+// Icofont@1.0.1
 @import '../css/icofont.css';
+// Animate@4.1.1
 @import 'animate.css';
+// AOS@2.3.4
 @import 'aos/dist/aos.css';
+// Swiper@6.5.6
 @import 'swiper/swiper.scss';
 @import 'swiper/components/navigation/navigation.scss';
 @import 'swiper/components/pagination/pagination.scss';
+// Lightgalley@0.9.0
 @import 'lightgallery.js/dist/css/lightgallery.css';
 
 

@@ -17,7 +17,7 @@ import TeamContainer from '../containers/home/team';
 import TestimonialContainer from '../containers/home/testimonial';
 import BrandContainer from '../containers/global/brand';
 import PricingContainer from '../containers/global/pricing';
-// import BlogAccordion from '../containers/home/blog-accordion';
+import BlogAccordion from '../containers/home/blog-accordion';
 import GoogleMapContainer from '../containers/global/map';
 // #endregion
 
@@ -42,7 +42,7 @@ const HomePage = () => (
         <TestimonialContainer />
         <BrandContainer />
         <PricingContainer />
-        {/* <BlogAccordion /> */}
+        <BlogAccordion />
         <GoogleMapContainer />
       </div>
       <Footer />

@@ -40,10 +40,11 @@ const BlogAccordion = () => (
             data-aos="fade-up"
             data-aos-duration="1100"
           >
-            <AccordionWrap />
-            <Link className="btn-line" to="/">
-              View All Questions
-            </Link>
+            <AccordionWrap>
+              <Link className="btn-line" to="/">
+                View All Questions
+              </Link>
+            </AccordionWrap>
           </div>
         </div>
       </div>

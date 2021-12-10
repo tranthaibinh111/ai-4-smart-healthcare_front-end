@@ -31,9 +31,7 @@ const Breadcrumb = ({
 
               <span className="active">{contentThree}</span>
             </div>
-            <h4 className="title">
-              {title}
-            </h4>
+            <h4 className="title" dangerouslySetInnerHTML={{ __html: title }} />
           </div>
         </div>
       </div>

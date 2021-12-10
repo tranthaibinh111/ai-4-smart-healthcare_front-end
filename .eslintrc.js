@@ -62,5 +62,9 @@ module.exports = {
         exceptions: ['Swiper'],
       },
     ],
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md
+    'react/no-danger': [
+      0,
+    ],
   },
 };
