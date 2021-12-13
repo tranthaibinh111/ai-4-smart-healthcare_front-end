@@ -1,42 +1,43 @@
 // #region React
-import React from 'react';
+import React, { useEffect } from 'react';
+// #endregion
+
+// #region Package (third-party)
+import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Components
-import ScrollToTop from '../components/scroll-to-top';
-import SEO from '../components/seo';
+// #region Redux
+import { setLayoutTitle, setHomeFlag } from '../toolkit';
+// #endregion
 // #endregion
 
 // #region Containers
-import PageTitleContainer from '../containers/global/page-title';
-import AboutContainer from '../containers/about';
+const PageTitleContainer = React.lazy(() => import('../containers/global/page-title'));
+const AboutContainer = React.lazy(() => import('../containers/about'));
 // #endregion
 
-// #region Layout
-import Layout from '../layouts';
-import Header from '../layouts/header';
-import Footer from '../layouts/footer';
-// #endregion
-// #endregion
+const AboutPage = () => {
+  // #region Parameters
+  // Redux
+  const dispatch = useDispatch();
+  // #endregion
 
-const AboutPage = () => (
-  <Layout>
-    <SEO title="Hope – About" />
-    <div className="wrapper">
-      <Header />
-      <div className="main-content site-wrapper-reveal">
-        <PageTitleContainer
-          image="img/photos/about-bg1.jpg"
-          subTitle="Hope medical center"
-          title="About <span>Hope</span>"
-        />
-        <AboutContainer />
-      </div>
-      <Footer />
-      <ScrollToTop />
-    </div>
-  </Layout>
-);
+  useEffect(() => {
+    dispatch(setLayoutTitle('Hope – About'));
+    dispatch(setHomeFlag(false));
+  }, []);
+
+  return (
+    <>
+      <PageTitleContainer
+        image="img/photos/about-bg1.jpg"
+        subTitle="Hope medical center"
+        title="About <span>Hope</span>"
+      />
+      <AboutContainer />
+    </>
+  );
+};
 
 export default AboutPage;

@@ -1,54 +1,55 @@
 // #region React
-import React from 'react';
+import React, { useEffect } from 'react';
+// #endregion
+
+// #region Package (third-party)
+import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Components
-import ScrollToTop from '../components/scroll-to-top';
-import SEO from '../components/seo';
+// #region Redux
+import { setLayoutTitle, setHomeFlag } from '../toolkit';
+// #endregion
 // #endregion
 
 // #region Containers
-import IntroContainer from '../containers/home/intro';
-import HealthFeatureContainer from '../containers/home/health-feature';
-import MedicalFeatureContainer from '../containers/home/medical-feature';
-import AppointmentContainer from '../containers/home/appointment';
-import TeamContainer from '../containers/home/team';
-import TestimonialContainer from '../containers/home/testimonial';
-import BrandContainer from '../containers/global/brand';
-import PricingContainer from '../containers/global/pricing';
-import BlogAccordion from '../containers/home/blog-accordion';
-import GoogleMapContainer from '../containers/global/map';
+const IntroContainer = React.lazy(() => import('../containers/home/intro'));
+const HealthFeatureContainer = React.lazy(() => import('../containers/home/health-feature'));
+const MedicalFeatureContainer = React.lazy(() => import('../containers/home/medical-feature'));
+const AppointmentContainer = React.lazy(() => import('../containers/home/appointment'));
+const TeamContainer = React.lazy(() => import('../containers/home/team'));
+const TestimonialContainer = React.lazy(() => import('../containers/home/testimonial'));
+const BrandContainer = React.lazy(() => import('../containers/global/brand'));
+const PricingContainer = React.lazy(() => import('../containers/global/pricing'));
+const BlogAccordion = React.lazy(() => import('../containers/home/blog-accordion'));
+const GoogleMapContainer = React.lazy(() => import('../containers/global/map'));
 // #endregion
 
-// #region Layout
-import Layout from '../layouts';
-import Header from '../layouts/header';
-import Footer from '../layouts/footer';
-// #endregion
-// #endregion
+const HomePage = () => {
+  // #region Parameters
+  // Redux
+  const dispatch = useDispatch();
+  // #endregion
 
-const HomePage = () => (
-  <Layout>
-    <SEO title="Hope – Health &amp; Medical React JS Template" />
-    <div className="wrapper home-default-wrapper">
-      <Header />
-      <div className="main-content site-wrapper-reveal">
-        <IntroContainer />
-        <HealthFeatureContainer />
-        <MedicalFeatureContainer />
-        <AppointmentContainer />
-        <TeamContainer />
-        <TestimonialContainer />
-        <BrandContainer />
-        <PricingContainer />
-        <BlogAccordion />
-        <GoogleMapContainer />
-      </div>
-      <Footer />
-      <ScrollToTop />
-    </div>
-  </Layout>
-);
+  useEffect(() => {
+    dispatch(setLayoutTitle('Hope – Health &amp; Medical React JS Template'));
+    dispatch(setHomeFlag(true));
+  }, []);
+
+  return (
+    <>
+      <IntroContainer />
+      <HealthFeatureContainer />
+      <MedicalFeatureContainer />
+      <AppointmentContainer />
+      <TeamContainer />
+      <TestimonialContainer />
+      <BrandContainer />
+      <PricingContainer />
+      <BlogAccordion />
+      <GoogleMapContainer />
+    </>
+  );
+};
 
 export default HomePage;
