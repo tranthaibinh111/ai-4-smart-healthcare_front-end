@@ -10,30 +10,34 @@ const ScrollToTop = (props) => {
   };
   // #endregion
 
+  // #region Event
+  const scrollHandler = (position) => {
+    const scrollPos = window.pageYOffset;
+
+    if (scrollPos < 200)
+      setStick(false);
+    else if (scrollPos < position)
+      setStick(true);
+    else
+      setStick(false);
+
+    return scrollPos;
+  };
+  // #endregion
+
   useEffect(() => {
     let position = window.pageYOffset;
 
-    const scrollHandler = () => {
-      const scrollPos = window.pageYOffset;
-      if (scrollPos < 200)
-        setStick(false);
-      else if (scrollPos < position)
-        setStick(true);
-      else
-        setStick(false);
-
-      position = scrollPos;
-    };
-
     window.addEventListener('scroll', () => {
-      scrollHandler();
+      position = scrollHandler(position);
     });
+
     return () => {
       window.removeEventListener('scroll', () => {
-        scrollHandler();
+        position = scrollHandler(position);
       });
     };
-  }, [stick]);
+  }, []);
 
   return (
     <button
