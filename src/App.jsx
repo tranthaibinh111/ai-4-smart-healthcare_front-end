@@ -17,9 +17,8 @@ import { HelmetData } from 'react-helmet-async';
 import appRoutes from './app-routing';
 
 // #region Components
-import LoadingSpinnerComponent from './components/loading-spinner';
+import LoaderSpinnerComponent from './components/loader-spinner';
 import NavScrollTop from './components/nav-scroll-top';
-import Layout from './layouts';
 import SEO from './components/seo';
 import ScrollToTop from './components/scroll-to-top';
 // #endregion
@@ -47,13 +46,13 @@ const App = () => {
   }, []);
 
   return (
-    <Suspense fallback={<LoadingSpinnerComponent />}>
+    <Suspense fallback={<LoaderSpinnerComponent />}>
       <NavScrollTop>
-        <Layout>
-          <SEO helmetData={helmetData} title={title} />
-          <div className={`wrapper ${isHome ? 'home-default-wrapper' : ''}`}>
-            <Header />
-            <div className="main-content site-wrapper-reveal">
+        <SEO helmetData={helmetData} title={title} />
+        <div className={`wrapper ${isHome ? 'home-default-wrapper' : ''}`}>
+          <Header />
+          <div className="main-content site-wrapper-reveal">
+            <Suspense fallback={<LoaderSpinnerComponent />}>
               <Switch>
                 {appRoutes.filter((route) => route.component).map((route, idx) => (
                   <Route
@@ -65,11 +64,12 @@ const App = () => {
                   />
                 ))}
               </Switch>
-            </div>
-            <Footer />
+            </Suspense>
             <ScrollToTop />
           </div>
-        </Layout>
+          <Footer />
+          <ScrollToTop />
+        </div>
       </NavScrollTop>
     </Suspense>
   );

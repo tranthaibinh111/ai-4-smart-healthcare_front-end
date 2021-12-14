@@ -32,7 +32,7 @@ const HomePage = () => {
   // #endregion
 
   useEffect(() => {
-    dispatch(setLayoutTitle('Hope – Health &amp; Medical React JS Template'));
+    dispatch(setLayoutTitle('Hope – Health & Medical React JS Template'));
     dispatch(setHomeFlag(true));
   }, []);
 

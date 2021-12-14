@@ -9,7 +9,7 @@ const Team = ({ data }) => (
     <div className="thumb">
       <img
         src={process.env.PUBLIC_URL + data.image}
-        alt="hope-HasTech"
+        alt="hope-Binh Tran"
       />
     </div>
     <div className="content">

@@ -22,7 +22,8 @@
 @import 'swiper/components/pagination/pagination.scss';
 // Lightgalley@0.9.0
 @import 'lightgallery.js/dist/css/lightgallery.css';
-
+// Loader Spinner
+@import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 
 // Base
@@ -39,10 +40,17 @@
 
 /*
 
-[ 03. Common CSS ]
+[ 03. Common and Component CSS ]
 
 */
+/* ----------------------------------------
+// Common
+// ---------------------------------------- */
 @import 'hope/common';
+/* ----------------------------------------
+// Components
+// ---------------------------------------- */
+@import 'components/loader-spinner';
 
 
 
