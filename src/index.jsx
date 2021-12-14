@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // #endregion
 
 // #region Package (third-party)
-// #region Redux
+// Redux
 import { Provider } from 'react-redux';
 // #endregion
 

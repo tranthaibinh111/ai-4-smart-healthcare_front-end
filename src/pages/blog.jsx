@@ -1,44 +1,48 @@
 // #region React
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+// #endregion
+
+// #region Package (third-party)
+import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Components
-import ScrollToTop from '../components/scroll-to-top';
-import SEO from '../components/seo';
+// #region Redux
+import { setLayoutTitle, setHomeFlag } from '../toolkit';
 // #endregion
 
 // #region Containers
-import Breadcrumb from '../containers/global/breadcrumb';
-import BlogListContainer from '../containers/blog/blog-list';
-// #endregion
-
-// #region Layout
-import Layout from '../layouts';
-import Header from '../layouts/header';
-import Footer from '../layouts/footer';
+const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
+const BlogListContainer = React.lazy(() => import('../containers/blog/blog-list'));
 // #endregion
 // #endregion
 
-const BlogPage = () => (
-  <Layout>
-    <SEO title="Hope – Blog" />
-    <div className="wrapper">
-      <Header />
-      <div className="main-content site-wrapper-reveal">
-        <Breadcrumb
-          classOptionOne="content-style3"
-          classOptionTwo="bread-crumbs-style2"
-          prevs={[{ text: 'Home', path: '/' }]}
-          contentThree="Blog"
-          title="<span>Latest From</span> Our Blog"
-        />
-        <BlogListContainer />
-      </div>
-      <Footer />
-      <ScrollToTop />
-    </div>
-  </Layout>
-);
+const BlogPage = () => {
+  // #region Parameters
+  const [breadcrumbs, setBreadcrumbs] = useState([]);
+
+  // Redux
+  const dispatch = useDispatch();
+  // #endregion
+
+  useEffect(() => {
+    dispatch(setLayoutTitle('Hope – Blog'));
+    dispatch(setHomeFlag(false));
+    setBreadcrumbs([{ text: 'Home', path: '/' }]);
+  }, []);
+
+  return (
+    <>
+      <Breadcrumb
+        classOptionOne="content-style3"
+        classOptionTwo="bread-crumbs-style2"
+        prevs={breadcrumbs}
+        contentThree="Blog"
+        title="<span>Latest From</span> Our Blog"
+      />
+      <BlogListContainer />
+    </>
+  );
+};
 
 export default BlogPage;

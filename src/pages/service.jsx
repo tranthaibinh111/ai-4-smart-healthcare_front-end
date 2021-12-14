@@ -1,50 +1,51 @@
 // #region React
-import React from 'react';
+import React, { useEffect } from 'react';
+// #endregion
+
+// #region Package (third-party)
+import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Components
-import ScrollToTop from '../components/scroll-to-top';
-import SEO from '../components/seo';
+// #region Redux
+import { setLayoutTitle, setHomeFlag } from '../toolkit';
 // #endregion
 
 // #region Containers
-import PageTitleContainer from '../containers/global/page-title';
-import ServiceContainer from '../containers/service-box';
-import TestimonialContainer from '../containers/home/testimonial';
-import BrandContainer from '../containers/global/brand';
-import PricingContainer from '../containers/global/pricing';
-import CallToAction from '../containers/global/call-to-action';
-// #endregion
-
-// #region Layout
-import Layout from '../layouts';
-import Header from '../layouts/header';
-import Footer from '../layouts/footer';
+const PageTitleContainer = React.lazy(() => import('../containers/global/page-title'));
+const ServiceContainer = React.lazy(() => import('../containers/service-box'));
+const TestimonialContainer = React.lazy(() => import('../containers/home/testimonial'));
+const BrandContainer = React.lazy(() => import('../containers/global/brand'));
+const PricingContainer = React.lazy(() => import('../containers/global/pricing'));
+const CallToAction = React.lazy(() => import('../containers/global/call-to-action'));
 // #endregion
 // #endregion
 
-const ServicePage = () => (
-  <Layout>
-    <SEO title="Hope – Service" />
-    <div className="wrapper">
-      <Header />
-      <div className="main-content site-wrapper-reveal">
-        <PageTitleContainer
-          image="img/slider/main-slide-01.jpg"
-          subTitle="Best solution for your heatlh"
-          title="Services <span>That We Provide</span>"
-        />
-        <ServiceContainer />
-        <TestimonialContainer />
-        <BrandContainer />
-        <PricingContainer pricingClassOption="noborder-line" />
-        <CallToAction />
-      </div>
-      <Footer />
-      <ScrollToTop />
-    </div>
-  </Layout>
-);
+const ServicePage = () => {
+  // #region Parameters
+  // Redux
+  const dispatch = useDispatch();
+  // #endregion
+
+  useEffect(() => {
+    dispatch(setLayoutTitle('Hope – Service'));
+    dispatch(setHomeFlag(false));
+  }, []);
+
+  return (
+    <>
+      <PageTitleContainer
+        image="img/slider/main-slide-01.jpg"
+        subTitle="Best solution for your heatlh"
+        title="Services <span>That We Provide</span>"
+      />
+      <ServiceContainer />
+      <TestimonialContainer />
+      <BrandContainer />
+      <PricingContainer pricingClassOption="noborder-line" />
+      <CallToAction />
+    </>
+  );
+};
 
 export default ServicePage;

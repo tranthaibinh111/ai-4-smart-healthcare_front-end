@@ -1,6 +1,10 @@
 // #region React
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+// #endregion
+
+// #region Package (third-party)
+import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
@@ -8,23 +12,16 @@ import PropTypes from 'prop-types';
 import BlogData from '../data/blog.json';
 // #endregion
 
+// #region Redux
+import { setLayoutTitle, setHomeFlag } from '../toolkit';
+// #endregion
+
 // utils
 import { slugify } from '../utils';
 
-// #region Components
-import ScrollToTop from '../components/scroll-to-top';
-import SEO from '../components/seo';
-// #endregion
-
 // #region Containers
-import Breadcrumb from '../containers/global/breadcrumb';
-import BlogItemContainer from '../containers/blog/blog-item';
-// #endregion
-
-// #region Layout
-import Layout from '../layouts';
-import Header from '../layouts/header';
-import Footer from '../layouts/footer';
+const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
+const BlogItemContainer = React.lazy(() => import('../containers/blog/blog-item'));
 // #endregion
 // #endregion
 
@@ -34,32 +31,39 @@ const BlogTag = ({
   },
 }) => {
   // #region Parameters
-  const data = BlogData.map((blog) => ({
-    ...blog,
-    tags: blog.tags.filter((tag) => slugify(tag) === slug),
-  })).filter((blog) => blog.tags.length > 0);
-  const tagTitle = data[0].tags[0];
-  // #endregion
+  const [breadcrumbs, setBreadcrumbs] = useState([]);
+  const [data, setData] = useState([]);
+  const [title, setTitle] = useState(null);
+
+  // Redux
+  const dispatch = useDispatch();
+  // #enderegion
+
+  useEffect(() => {
+    dispatch(setLayoutTitle('Hope – Blog Tag'));
+    dispatch(setHomeFlag(false));
+    setBreadcrumbs([
+      { text: 'Home', path: '/' },
+      { text: 'Blog', path: '/blog' },
+    ]);
+
+    // Lấy dịch vụ theo ID
+    const blogs = BlogData.map((blog) => ({
+      ...blog,
+      tags: blog.tags.filter((tag) => slugify(tag) === slug),
+    })).filter((blog) => blog.tags.length > 0);
+
+    if (blogs.length > 0) {
+      setData(blogs);
+      setTitle(blogs[0].tags[0]);
+    }
+  }, []);
 
   return (
-    <Layout>
-      <SEO title="Hope – Blog Tag" />
-      <div className="wrapper">
-        <Header />
-        <div className="main-content site-wrapper-reveal">
-          <Breadcrumb
-            prevs={[
-              { text: 'Home', path: '/' },
-              { text: 'Blog', path: '/blog' },
-            ]}
-            contentThree={tagTitle}
-          />
-          <BlogItemContainer data={data} />
-        </div>
-        <Footer />
-        <ScrollToTop />
-      </div>
-    </Layout>
+    <>
+      <Breadcrumb prevs={breadcrumbs} contentThree={title} />
+      <BlogItemContainer data={data} />
+    </>
   );
 };
 

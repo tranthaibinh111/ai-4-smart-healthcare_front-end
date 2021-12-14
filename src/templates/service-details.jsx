@@ -1,6 +1,10 @@
 // #region React
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+// #endregion
+
+// #region Package (third-party)
+import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
@@ -8,20 +12,13 @@ import PropTypes from 'prop-types';
 import ServiceData from '../data/service.json';
 // #endregion
 
-// #region Components
-import ScrollToTop from '../components/scroll-to-top';
-import SEO from '../components/seo';
+// #region Redux
+import { setLayoutTitle, setHomeFlag } from '../toolkit';
 // #endregion
 
 // #region Containers
-import Breadcrumb from '../containers/global/breadcrumb';
-import ServiceDetailsContainer from '../containers/service-details';
-// #endregion
-
-// #region Layout
-import Layout from '../layouts';
-import Header from '../layouts/header';
-import Footer from '../layouts/footer';
+const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
+const ServiceDetailsContainer = React.lazy(() => import('../containers/service-details'));
 // #endregion
 // #endregion
 
@@ -31,29 +28,36 @@ const ServiceDetails = ({
   },
 }) => {
   // #region Parameters
-  const serviceId = parseInt(id, 10);
-  const data = ServiceData.filter((service) => service.id === serviceId);
+  const [breadcrumbs, setBreadcrumbs] = useState([]);
+  const [data, setData] = useState(null);
+  const [title, setTitle] = useState(null);
+
+  // Redux
+  const dispatch = useDispatch();
   // #endregion
 
+  useEffect(() => {
+    dispatch(setLayoutTitle('Hope – Service Details'));
+    dispatch(setHomeFlag(false));
+    setBreadcrumbs([
+      { text: 'Home', path: '/' },
+      { text: 'Service', path: '/service' },
+    ]);
+
+    // Lấy dịch vụ theo ID
+    const services = ServiceData.filter((service) => service.id === parseInt(id, 10));
+
+    if (services.length > 0) {
+      setData(services[0]);
+      setTitle(services[0].title);
+    }
+  }, []);
+
   return (
-    <Layout>
-      <SEO title="Hope – Service Details" />
-      <div className="wrapper">
-        <Header />
-        <div className="main-content site-wrapper-reveal">
-          <Breadcrumb
-            prevs={[
-              { text: 'Home', path: '/' },
-              { text: 'Service', path: '/service' },
-            ]}
-            contentThree={data[0]?.title}
-          />
-          <ServiceDetailsContainer data={data[0]} />
-        </div>
-        <Footer />
-        <ScrollToTop />
-      </div>
-    </Layout>
+    <>
+      <Breadcrumb prevs={breadcrumbs} contentThree={title} />
+      <ServiceDetailsContainer data={data} />
+    </>
   );
 };
 

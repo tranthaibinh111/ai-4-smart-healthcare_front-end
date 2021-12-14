@@ -1,6 +1,10 @@
 // #region React
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+// #endregion
+
+// #region Package (third-party)
+import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
@@ -8,21 +12,14 @@ import PropTypes from 'prop-types';
 import BlogData from '../data/blog.json';
 // #endregion
 
-// #region Components
-import ScrollToTop from '../components/scroll-to-top';
-import SEO from '../components/seo';
+// #region Redux
+import { setLayoutTitle, setHomeFlag } from '../toolkit';
 // #endregion
 
 // #region Containers
-import Breadcrumb from '../containers/global/breadcrumb';
-import BlogDetailsContainer from '../containers/blog/blog-details';
-import CommentContainer from '../containers/comment-container';
-// #endregion
-
-// #region Layout
-import Layout from '../layouts';
-import Header from '../layouts/header';
-import Footer from '../layouts/footer';
+const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
+const BlogDetailsContainer = React.lazy(() => import('../containers/blog/blog-details'));
+const CommentContainer = React.lazy(() => import('../containers/comment-container'));
 // #endregion
 // #endregion
 
@@ -32,30 +29,37 @@ const BlogDetailsPage = ({
   },
 }) => {
   // #region Parameters
-  const blogId = parseInt(id, 10);
-  const data = BlogData.filter((blogItem) => blogItem.id === blogId);
-  // #endregion
+  const [breadcrumbs, setBreadcrumbs] = useState([]);
+  const [data, setData] = useState(null);
+  const [title, setTitle] = useState(null);
+
+  // Redux
+  const dispatch = useDispatch();
+  // #enderegion
+
+  useEffect(() => {
+    dispatch(setLayoutTitle('Hope – Blog Author'));
+    dispatch(setHomeFlag(false));
+    setBreadcrumbs([
+      { text: 'Home', path: '/' },
+      { text: 'Blog', path: '/blog' },
+    ]);
+
+    // Lấy dịch vụ theo ID
+    const blogs = BlogData.filter((blogItem) => blogItem.id === parseInt(id, 10));
+
+    if (blogs.length > 0) {
+      setData(blogs[0]);
+      setTitle(blogs[0].title);
+    }
+  }, []);
 
   return (
-    <Layout>
-      <SEO title="Hope – Blog Details" />
-      <div className="wrapper">
-        <Header />
-        <div className="main-content site-wrapper-reveal">
-          <Breadcrumb
-            prevs={[
-              { text: 'Home', path: '/' },
-              { text: 'Blog', path: '/blog' },
-            ]}
-            contentThree={data[0]?.title}
-          />
-          <BlogDetailsContainer data={data[0]} />
-          <CommentContainer />
-        </div>
-        <Footer />
-        <ScrollToTop />
-      </div>
-    </Layout>
+    <>
+      <Breadcrumb prevs={breadcrumbs} contentThree={title} />
+      <BlogDetailsContainer data={data} />
+      <CommentContainer />
+    </>
   );
 };
 

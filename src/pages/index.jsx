@@ -10,7 +10,6 @@ import { useDispatch } from 'react-redux';
 // #region Redux
 import { setLayoutTitle, setHomeFlag } from '../toolkit';
 // #endregion
-// #endregion
 
 // #region Containers
 const IntroContainer = React.lazy(() => import('../containers/home/intro'));
@@ -23,6 +22,7 @@ const BrandContainer = React.lazy(() => import('../containers/global/brand'));
 const PricingContainer = React.lazy(() => import('../containers/global/pricing'));
 const BlogAccordion = React.lazy(() => import('../containers/home/blog-accordion'));
 const GoogleMapContainer = React.lazy(() => import('../containers/global/map'));
+// #endregion
 // #endregion
 
 const HomePage = () => {

@@ -4,8 +4,12 @@ import { Switch, Route } from 'react-router-dom';
 // #endregion
 
 // #region Package (third-party)
+// AOS
 import AOS from 'aos';
+// Redux
 import { useSelector } from 'react-redux';
+// Helmet
+import { HelmetData } from 'react-helmet-async';
 // #endregion
 
 // #region AI 4 Smart Healthcare
@@ -21,8 +25,9 @@ import ScrollToTop from './components/scroll-to-top';
 // #endregion
 // #endregion
 
-const Header = React.lazy(() => import('./layouts/header/index'));
-const Footer = React.lazy(() => import('./layouts/header/index'));
+const Header = React.lazy(() => import('./layouts/header'));
+const Footer = React.lazy(() => import('./layouts/footer'));
+const helmetData = new HelmetData({});
 
 const App = () => {
   // #region Parameters
@@ -45,7 +50,7 @@ const App = () => {
     <Suspense fallback={<LoadingSpinnerComponent />}>
       <NavScrollTop>
         <Layout>
-          <SEO title={title} />
+          <SEO helmetData={helmetData} title={title} />
           <div className={`wrapper ${isHome ? 'home-default-wrapper' : ''}`}>
             <Header />
             <div className="main-content site-wrapper-reveal">
@@ -59,47 +64,6 @@ const App = () => {
                     render={(props) => <route.component {...props} routes={route.routes} />}
                   />
                 ))}
-
-                {/* <Route
-                  path={`${`${process.env.PUBLIC_URL}/about`}`}
-                  component={AboutPage}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/service`}`}
-                  component={ServicePage}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/service-details/:id`}`}
-                  component={ServiceDetails}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/blog`}`}
-                  component={BlogPage}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/category/:slug`}`}
-                  component={BlogCategory}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/tag/:slug`}`}
-                  component={BlogTag}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/date/:date`}`}
-                  component={BlogDate}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/author/:author`}`}
-                  component={BlogAuthor}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/blog-details/:id`}`}
-                  component={BlogDetailsPage}
-                />
-                <Route
-                  path={`${`${process.env.PUBLIC_URL}/contact`}`}
-                  component={ContactPage}
-                /> */}
               </Switch>
             </div>
             <Footer />

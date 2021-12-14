@@ -10,11 +10,11 @@ import { useDispatch } from 'react-redux';
 // #region Redux
 import { setLayoutTitle, setHomeFlag } from '../toolkit';
 // #endregion
-// #endregion
 
 // #region Containers
 const PageTitleContainer = React.lazy(() => import('../containers/global/page-title'));
 const AboutContainer = React.lazy(() => import('../containers/about'));
+// #endregion
 // #endregion
 
 const AboutPage = () => {
