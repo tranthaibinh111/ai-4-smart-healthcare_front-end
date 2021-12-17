@@ -70,7 +70,7 @@ const Header = () => {
               <div className="col-12">
                 <div className="header-middle-content">
                   <div className="header-logo">
-                    <Logo image={`${process.env.PUBLIC_URL}/img/logo.png`} />
+                    <Logo image="/img/logo.png" />
                   </div>
                   <ul className="media-wrap d-none d-lg-flex">
                     <HeaderContactInfo

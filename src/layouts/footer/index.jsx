@@ -20,7 +20,7 @@ const Footer = () => (
             <div className="about-widget">
               <Logo
                 classOption="footer-logo"
-                image={`${process.env.PUBLIC_URL}/img/logo-dark.png`}
+                image="/img/logo-dark.png"
               />
               <p className="mb-0">
                 Sed elit quam, iaculis sed semper sit amet
