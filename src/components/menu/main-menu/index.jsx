@@ -8,7 +8,7 @@ const MainMenu = () => (
     <ul className="main-menu">
       <li className="active">
         <NavLink className="main-menu-link" exact to="/">
-          Home
+          Trang chủ
         </NavLink>
       </li>
       <li>
@@ -16,7 +16,7 @@ const MainMenu = () => (
           className="main-menu-link"
           to={`${process.env.PUBLIC_URL}/service`}
         >
-          Services
+          Dịch vụ
         </NavLink>
         <ul className="sub-menu">
           <li>
@@ -24,7 +24,7 @@ const MainMenu = () => (
               className="sub-menu-link"
               to={`${process.env.PUBLIC_URL}/service`}
             >
-              Services
+              Danh sách dịch vụ
             </NavLink>
           </li>
           <li>
@@ -35,7 +35,7 @@ const MainMenu = () => (
                 }/service-details/1`
               }
             >
-              Service Details
+              Chi tiết dịch vụ
             </NavLink>
           </li>
         </ul>
@@ -73,7 +73,7 @@ const MainMenu = () => (
           className="main-menu-link"
           to={`${process.env.PUBLIC_URL}/about`}
         >
-          About
+          Giới thiệu
         </NavLink>
       </li>
       <li>
@@ -81,7 +81,7 @@ const MainMenu = () => (
           className="main-menu-link"
           to={`${process.env.PUBLIC_URL}/contact`}
         >
-          Contact
+          Liên hệ
         </NavLink>
       </li>
     </ul>

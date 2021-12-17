@@ -13,8 +13,8 @@ import {
 } from '../../../utils';
 
 // #region AI 4 Smart Healthcare
-// #region Components
-import SocialIcon from '../../social-icon';
+// #region Data
+import AppSettings from '../../../data/appsettings.json';
 // #endregion
 // #endregion
 
@@ -60,9 +60,8 @@ const MobileMenu = ({ show, onClose }) => {
             <p>
               <i className="icofont-google-map" />
               {' '}
-              <span>ADDRESS:</span>
-              {' '}
-              568 Elizaberth Str, London, UK
+              <span>Địa chỉ:</span>
+              {` ${AppSettings.address}`}
             </p>
           </div>
         </div>
@@ -83,14 +82,14 @@ const MobileMenu = ({ show, onClose }) => {
                     exact
                     to={`${process.env.PUBLIC_URL}/`}
                   >
-                    Home 1
+                    Trang chủ
                   </NavLink>
                 </li>
               </ul>
             </li>
             <li>
               <NavLink to={`${process.env.PUBLIC_URL}/service`}>
-                <span className="menu-text">Services</span>
+                <span className="menu-text">Dịch vụ</span>
               </NavLink>
               <span
                 className="menu-expand"
@@ -102,7 +101,7 @@ const MobileMenu = ({ show, onClose }) => {
                   <NavLink
                     to={`${process.env.PUBLIC_URL}/service`}
                   >
-                    Service
+                    Danh sách dịch vụ
                   </NavLink>
                 </li>
                 <li>
@@ -112,7 +111,7 @@ const MobileMenu = ({ show, onClose }) => {
                       }/service-detalis`
                     }
                   >
-                    service details
+                    Chi tiết dịch vụ
                   </NavLink>
                 </li>
               </ul>
@@ -150,51 +149,17 @@ const MobileMenu = ({ show, onClose }) => {
 
             <li>
               <NavLink to={`${process.env.PUBLIC_URL}/about`}>
-                about
+                Giới thiệu
               </NavLink>
             </li>
 
             <li>
               <NavLink to={`${process.env.PUBLIC_URL}/contact`}>
-                Contact Us
+                Liên hệ
               </NavLink>
             </li>
           </ul>
         </nav>
-        <div className="offcanvas-social my-4">
-          <ul>
-            <li>
-              <SocialIcon
-                path="https://twitter.com/"
-                icon="icofont-twitter"
-              />
-            </li>
-            <li>
-              <SocialIcon
-                path="https://www.facebook.com/"
-                icon="icofont-facebook"
-              />
-            </li>
-            <li>
-              <SocialIcon
-                path="https://www.instagram.com/"
-                icon="icofont-instagram"
-              />
-            </li>
-            <li>
-              <SocialIcon
-                path="https://rss.com/"
-                icon="icofont-rss-feed"
-              />
-            </li>
-            <li>
-              <SocialIcon
-                path="https://www.youtube.com/"
-                icon="icofont-play-alt-1"
-              />
-            </li>
-          </ul>
-        </div>
 
         <ul className="media-wrap">
           <li className="media media-list">

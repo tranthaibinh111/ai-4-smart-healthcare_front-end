@@ -4,12 +4,10 @@ import React, { useEffect, useState } from 'react';
 
 // #region AI 4 Smart Healthcare
 // #region data
-import HomeData from '../../data/home.json';
+import AppSettings from '../../data/appsettings.json';
 // #endregion
 
 // #region components
-import SocialIcon from '../../components/social-icon';
-import Button from '../../components/button';
 import Logo from '../../components/logo';
 import MainMenu from '../../components/menu/main-menu';
 import HeaderContactInfo from '../../components/header-contact-info';
@@ -38,8 +36,10 @@ const Header = () => {
 
   useEffect(() => {
     const header = document.querySelector('.sticky-header');
+
     setHeaderTop(header.offsetTop);
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -50,49 +50,14 @@ const Header = () => {
       <header className="header">
         <div className="header-top d-none d-lg-block">
           <div className="container">
-            <div className="row row-cols-2">
+            <div className="row">
               <div className="col">
                 <p>
                   <i className="icofont-google-map" />
                   {' '}
-                  <span>ADDRESS:</span>
-                  {' '}
-                  568 Elizaberth Str, London, UK
+                  <span>Địa chỉ:</span>
+                  {` ${AppSettings.address}`}
                 </p>
-              </div>
-              <div className="col">
-                <ul className="social-links text-end">
-                  <li>
-                    <SocialIcon
-                      path="https://twitter.com/"
-                      icon="icofont-twitter"
-                    />
-                  </li>
-                  <li>
-                    <SocialIcon
-                      path="https://www.facebook.com/"
-                      icon="icofont-facebook"
-                    />
-                  </li>
-                  <li>
-                    <SocialIcon
-                      path="https://www.instagram.com/"
-                      icon="icofont-instagram"
-                    />
-                  </li>
-                  <li>
-                    <SocialIcon
-                      path="https://rss.com/"
-                      icon="icofont-rss-feed"
-                    />
-                  </li>
-                  <li>
-                    <SocialIcon
-                      path="https://www.youtube.com/"
-                      icon="icofont-play-alt-1"
-                    />
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
@@ -104,39 +69,34 @@ const Header = () => {
               <div className="col-12">
                 <div className="header-middle-content">
                   <div className="header-logo">
-                    <Logo
-                      image={`${process.env.PUBLIC_URL}/img/logo.png`}
-                    />
+                    <Logo image={`${process.env.PUBLIC_URL}/img/logo.png`} />
                   </div>
                   <ul className="media-wrap d-none d-lg-flex">
-                    {HomeData[0].headerInfo
-                      && HomeData[0].headerInfo.map((single, key) => (
-                        <HeaderContactInfo
-                          key={key}
-                          data={single}
-                        />
-                      ))}
+                    <HeaderContactInfo
+                      icon="icofont-clock-time"
+                      title="giờ làm việc"
+                      info={AppSettings.workingHours}
+                    />
+                    <HeaderContactInfo
+                      icon="icofont-ui-call"
+                      title="hotline 24/7"
+                      info={AppSettings.hotline}
+                    />
+                    <HeaderContactInfo
+                      icon="icofont-envelope"
+                      title="Email"
+                      info={AppSettings.email}
+                    />
                   </ul>
-                  <Button
-                    path={`${process.env.PUBLIC_URL}/`}
-                    classOption="book-now-btn d-none d-sm-inline-block d-lg-none"
-                    text="book an appointment"
-                  />
+
                   <div className="mobile-menu-toggle d-lg-none">
-                    <button
-                      type="button"
-                      onClick={onCanvasHandler}
-                      className="offcanvas-toggle"
-                    >
+                    <button type="button" onClick={onCanvasHandler} className="offcanvas-toggle">
                       <svg viewBox="0 0 800 600">
                         <path
                           d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200"
                           id="top"
                         />
-                        <path
-                          d="M300,320 L540,320"
-                          id="middle"
-                        />
+                        <path d="M300,320 L540,320" id="middle" />
                         <path
                           d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190"
                           id="bottom"
@@ -157,30 +117,18 @@ const Header = () => {
               <div className="col-lg-12">
                 <div className="d-flex flex-wrap align-items-center justify-content-between">
                   <MainMenu />
-                  <Button
-                    path={`${process.env.PUBLIC_URL}/`}
-                    classOption="book-now-btn"
-                    text="book an appointment"
-                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div
-          className={`header-bottom sticky-header d-none d-lg-block ${scroll > headerTop ? 'sticky' : ''}`}
-        >
+        <div className={`header-bottom sticky-header d-none d-lg-block ${scroll > headerTop ? 'sticky' : ''}`}>
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
                 <div className="d-flex flex-wrap align-items-center justify-content-between">
                   <MainMenu />
-                  <Button
-                    path={`${process.env.PUBLIC_URL}/`}
-                    classOption="book-now-btn"
-                    text="book an appointment"
-                  />
                 </div>
               </div>
             </div>

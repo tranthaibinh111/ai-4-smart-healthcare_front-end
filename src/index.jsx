@@ -13,7 +13,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 // Styles
-import './assets/scss/style.scss';
+import './scss/style.scss';
 // Components
 import App from './App';
 // #endregion

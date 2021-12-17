@@ -14,7 +14,7 @@ const LoaderSpinnerComponent = () => (
   <div className="loader-spinner">
     <Loader
       type="BallTriangle"
-      color="#00BFFF"
+      color="#9d3a3a"
       height={80}
       width={80}
     />
