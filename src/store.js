@@ -6,11 +6,14 @@ import logger from 'redux-logger';
 // #endregion
 
 // #region ANN Shop
-import { layoutReducer } from './toolkit';
+import { layoutReducer, menuReducer } from './toolkit';
 // #endregion
 
 export default configureStore({
-  reducer: { layout: layoutReducer },
+  reducer: {
+    layout: layoutReducer,
+    menu: menuReducer,
+  },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   devTools: process.env.NODE_ENV !== 'production',
 });

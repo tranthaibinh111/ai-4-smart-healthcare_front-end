@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 // #region AI 4 Smart Healthcare
 // #region data
 import AppSettings from '../../data/appsettings.json';
+import Menu from '../../data/menu.json';
 // #endregion
 
 // #region components
@@ -116,7 +117,7 @@ const Header = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="d-flex flex-wrap align-items-center justify-content-between">
-                  <MainMenu />
+                  <MainMenu data={Menu} />
                 </div>
               </div>
             </div>
@@ -128,7 +129,7 @@ const Header = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="d-flex flex-wrap align-items-center justify-content-between">
-                  <MainMenu />
+                  <MainMenu data={Menu} />
                 </div>
               </div>
             </div>
@@ -136,7 +137,12 @@ const Header = () => {
         </div>
       </header>
       <MenuOverlay show={ofcanvasShow} />
-      <MobileMenu show={ofcanvasShow} onClose={onCanvasHandler} />
+      <MobileMenu
+        appsettings={AppSettings}
+        data={Menu}
+        show={ofcanvasShow}
+        onClose={onCanvasHandler}
+      />
     </>
   );
 };

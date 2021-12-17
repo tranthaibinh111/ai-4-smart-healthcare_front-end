@@ -4,6 +4,11 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // #endregion
 
+// #region Package (third-party)
+// Redux
+import { useSelector, useDispatch } from 'react-redux';
+// #endregion
+
 // utils
 import {
   getClosest,
@@ -13,13 +18,29 @@ import {
 } from '../../../utils';
 
 // #region AI 4 Smart Healthcare
-// #region Data
-import AppSettings from '../../../data/appsettings.json';
-// #endregion
+// Redux
+import { setLabel } from '../../../toolkit/menu-slice';
 // #endregion
 
-const MobileMenu = ({ show, onClose }) => {
+const MobileMenu = ({
+  appsettings,
+  data,
+  show,
+  onClose,
+}) => {
+  // #region Parameters
+  // Redux
+  const actionLabel = useSelector((state) => state.menu.label);
+  const dispatch = useDispatch();
+  // #endregion
+
   // #region Envent
+  /**
+    * Cài đặt tab menu đã chọn
+    * @param {string} label Tab menu đã chọn
+    */
+  const handleMenu = (label) => dispatch(setLabel(label));
+
   const onClickHandler = (e) => {
     const target = e.currentTarget;
     const parentEl = target.parentElement;
@@ -48,6 +69,44 @@ const MobileMenu = ({ show, onClose }) => {
   };
   // #endregion
 
+  // #region Components
+  const submenuComponents = (parentLabel, children) => children.map((menu, idx) => (
+    <li key={`sub-menu-${idx}`}>
+      <NavLink
+        exact={menu.exact}
+        to={`${process.env.PUBLIC_URL}${menu.url}`}
+        onClick={() => handleMenu(parentLabel)}
+      >
+        {menu.label}
+      </NavLink>
+    </li>
+  ));
+
+  const menuComponents = (children) => children.map((menu, idx) => (
+    <li key={`main-menu-${idx}`} className={menu.label === actionLabel ? 'active' : ''}>
+      <NavLink
+        exact={menu.exact}
+        to={`${process.env.PUBLIC_URL}${menu.url}`}
+        onClick={() => handleMenu(menu.label)}
+      >
+        {menu.label}
+      </NavLink>
+      {menu.children && (
+        <>
+          <span
+            className="menu-expand"
+            onClick={onClickHandler}
+            aria-hidden="true"
+          />
+          <ul className="offcanvas-submenu">
+            {submenuComponents(menu.label, menu.children)}
+          </ul>
+        </>
+      )}
+    </li>
+  ));
+  // #endregion
+
   return (
     <div className={`offcanvas offcanvas-mobile-menu ${show ? 'offcanvas-open' : ''}`}>
       <div className="inner">
@@ -61,103 +120,13 @@ const MobileMenu = ({ show, onClose }) => {
               <i className="icofont-google-map" />
               {' '}
               <span>Địa chỉ:</span>
-              {` ${AppSettings.address}`}
+              {` ${appsettings.address}`}
             </p>
           </div>
         </div>
         <nav className="offcanvas-menu">
           <ul>
-            <li>
-              <NavLink exact to={`${process.env.PUBLIC_URL}/`}>
-                <span className="menu-text">Home</span>
-              </NavLink>
-              <span
-                className="menu-expand"
-                onClick={onClickHandler}
-                aria-hidden="true"
-              />
-              <ul className="offcanvas-submenu">
-                <li>
-                  <NavLink
-                    exact
-                    to={`${process.env.PUBLIC_URL}/`}
-                  >
-                    Trang chủ
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <NavLink to={`${process.env.PUBLIC_URL}/service`}>
-                <span className="menu-text">Dịch vụ</span>
-              </NavLink>
-              <span
-                className="menu-expand"
-                onClick={onClickHandler}
-                aria-hidden="true"
-              />
-              <ul className="offcanvas-submenu">
-                <li>
-                  <NavLink
-                    to={`${process.env.PUBLIC_URL}/service`}
-                  >
-                    Danh sách dịch vụ
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to={
-                      `${process.env.PUBLIC_URL
-                      }/service-detalis`
-                    }
-                  >
-                    Chi tiết dịch vụ
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <NavLink to={`${process.env.PUBLIC_URL}/blog`}>
-                <span className="menu-text">blog</span>
-              </NavLink>
-              <span
-                className="menu-expand"
-                onClick={onClickHandler}
-                aria-hidden="true"
-              />
-              <ul className="offcanvas-submenu">
-                <li>
-                  <NavLink
-                    to={`${process.env.PUBLIC_URL}/blog`}
-                  >
-                    Blog list
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
-                    to={
-                      `${process.env.PUBLIC_URL
-                      }/blog-details/1`
-                    }
-                  >
-                    Blog details
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <NavLink to={`${process.env.PUBLIC_URL}/about`}>
-                Giới thiệu
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink to={`${process.env.PUBLIC_URL}/contact`}>
-                Liên hệ
-              </NavLink>
-            </li>
+            {menuComponents(data)}
           </ul>
         </nav>
 
@@ -168,7 +137,7 @@ const MobileMenu = ({ show, onClose }) => {
             </span>
             <div className="media-content">
               <span className="media-sub-heading">
-                working hours
+                giờ làm việc
               </span>
               <span className="media-heading">
                 MON - FRI: 9.00 - 21.00
@@ -216,13 +185,10 @@ const MobileMenu = ({ show, onClose }) => {
 
 // #region Khai báo Props
 MobileMenu.propTypes = {
-  show: PropTypes.bool,
-  onClose: PropTypes.func,
-};
-
-MobileMenu.defaultProps = {
-  show: false,
-  onClose: () => { },
+  appsettings: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired,
+  show: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 // #endregion
 

@@ -187,19 +187,13 @@ const Footer = () => (
                 &copy; 2021
                 {' '}
                 <span className="text-uppercase">hope</span>
-                . Made with
+                . Bản quyền
                 {' '}
                 <i className="icofont-heart-alt" />
                 {' '}
-                b
+                của
                 {' '}
-                <a
-                  target="_blank"
-                  href="https://www.hasthemes.com"
-                  rel="noreferrer"
-                >
-                  HasThemes
-                </a>
+                <Link to="/">Binh Tran</Link>
               </p>
             </div>
           </div>
