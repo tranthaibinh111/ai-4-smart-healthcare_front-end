@@ -17,7 +17,7 @@ export const layoutSlice = createSlice({
   initialState,
   reducers: {
     setLayoutTitle: (state, action) => {
-      state.title = action.payload;
+      state.title = `${action.payload} – AI 4 Smart Healthcare`;
     },
     setHomeFlag: (state, action) => {
       state.isHome = action.payload;

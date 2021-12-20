@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 
 // #region AI 4 Smart Healthcare
 // #region Redux
-import { setLayoutTitle, setHomeFlag } from '../toolkit';
+import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
 // #endregion
 
 // #region Containers
@@ -32,8 +32,10 @@ const HomePage = () => {
   // #endregion
 
   useEffect(() => {
-    dispatch(setLayoutTitle('Hope – Health & Medical React JS Template'));
+    const title = 'Trang chủ';
+    dispatch(setLayoutTitle(title));
     dispatch(setHomeFlag(true));
+    dispatch(setMenu(title));
   }, []);
 
   return (

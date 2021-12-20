@@ -11,7 +11,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // #region AI 4 Smart Healthcare
 // Redux
-import { setLabel } from '../../../toolkit/menu-slice';
+import { setMenu } from '../../../toolkit/menu-slice';
 // #endregion
 
 const MainMenu = ({ data }) => {
@@ -26,7 +26,7 @@ const MainMenu = ({ data }) => {
    * Cài đặt tab menu đã chọn
    * @param {string} label Tab menu đã chọn
    */
-  const handleMenu = (label) => dispatch(setLabel(label));
+  const handleMenu = (label) => dispatch(setMenu(label));
   // #enregion
 
   // #region Components

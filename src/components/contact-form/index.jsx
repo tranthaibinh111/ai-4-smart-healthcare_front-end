@@ -1,3 +1,6 @@
+/**
+ * https://www.youtube.com/watch?v=YEH2GLFJhQY
+ */
 // #region React
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -13,7 +16,7 @@ const ContactForm = () => {
   return (
     <form
       className="contact-form-wrapper"
-      action="https://getform.io/f/a17a2715-d7ee-4ac4-8fcb-12f1eed43b2c"
+      action="https://getform.io/f/2741c444-d399-485d-9b73-5f34fae664bc"
       method="POST"
       data-aos="fade-up"
       data-aos-duration="1200"
@@ -25,8 +28,8 @@ const ContactForm = () => {
               className="form-control"
               type="text"
               name="name"
-              placeholder="Your Name"
-              ref={register({ required: 'Name is required' })}
+              placeholder="Tên"
+              ref={register({ required: 'Tên là bắt buộc' })}
             />
             {errors.name && <p>{errors.name.message}</p>}
           </div>
@@ -37,12 +40,12 @@ const ContactForm = () => {
               className="form-control"
               type="email"
               name="email"
-              placeholder="Email Address"
+              placeholder="Email"
               ref={register({
-                required: 'Email is required',
+                required: 'Email là bắt buộc',
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                  message: 'invalid email address',
+                  message: 'Email không hợp lệ',
                 },
               })}
             />
@@ -55,10 +58,8 @@ const ContactForm = () => {
               className="form-control"
               type="text"
               name="subject"
-              placeholder="Subject (optional)"
-              ref={register({
-                required: 'Subject is required',
-              })}
+              placeholder="Chủ đề"
+              ref={register({ required: 'Chủ đề là bắt buộc' })}
             />
             {errors.subject && <p>{errors.subject.message}</p>}
           </div>
@@ -68,9 +69,9 @@ const ContactForm = () => {
             <textarea
               name="message"
               rows="5"
-              placeholder="Write your message here"
+              placeholder="Lời nhắn của bạn"
               ref={register({
-                required: 'Message is required',
+                required: 'Lời nhắn là bắt buộc',
               })}
             />
             {errors.message && <p>{errors.message.message}</p>}
@@ -78,11 +79,8 @@ const ContactForm = () => {
         </div>
         <div className="col-md-12 text-center">
           <div className="form-group mb-0">
-            <button
-              className="btn btn-theme btn-block"
-              type="submit"
-            >
-              Send Message
+            <button className="btn btn-theme btn-block" type="submit">
+              Gửi
             </button>
           </div>
         </div>

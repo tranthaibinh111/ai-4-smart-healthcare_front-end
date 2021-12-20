@@ -27,8 +27,8 @@ const ContactPageContainer = () => (
           <div className="contact-form">
             <SectionTitle
               classOption="text-center"
-              subTitle="Contact"
-              title="<span> We Alway Ready</span> To Help Your"
+              subTitle="Liên hệ"
+              title="<span>Tôi luôn sẵn sàng</span> để giúp đỡ bạn"
             />
             <ContactForm />
           </div>

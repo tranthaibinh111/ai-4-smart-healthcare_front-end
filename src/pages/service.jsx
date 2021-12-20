@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 
 // #region AI 4 Smart Healthcare
 // #region Redux
-import { setLayoutTitle, setHomeFlag } from '../toolkit';
+import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
 // #endregion
 
 // #region Containers
@@ -28,8 +28,11 @@ const ServicePage = () => {
   // #endregion
 
   useEffect(() => {
-    dispatch(setLayoutTitle('Hope – Service'));
+    const title = 'Dịch vụ';
+
+    dispatch(setLayoutTitle(title));
     dispatch(setHomeFlag(false));
+    dispatch(setMenu(title));
   }, []);
 
   return (

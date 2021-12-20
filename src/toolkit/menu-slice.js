@@ -15,13 +15,13 @@ export const MenuSlice = createSlice({
   name: 'Menu',
   initialState,
   reducers: {
-    setLabel: (state, action) => {
+    setMenu: (state, action) => {
       state.label = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setLabel } = MenuSlice.actions;
+export const { setMenu } = MenuSlice.actions;
 
 export default MenuSlice.reducer;

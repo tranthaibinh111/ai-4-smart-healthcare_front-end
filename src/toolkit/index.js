@@ -1,6 +1,6 @@
 // #region ANN Shop
 import layoutReducer, { setLayoutTitle, setHomeFlag } from './layout-slice';
-import menuReducer, { setLabel } from './menu-slice';
+import menuReducer, { setMenu } from './menu-slice';
 // #endregion
 
 export {
@@ -10,5 +10,5 @@ export {
   setHomeFlag,
   // Menu
   menuReducer,
-  setLabel,
+  setMenu,
 };

@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 // #endregion
 
 // #region AI 4 Smart Healthcare
+// Data
+import AppSettings from '../../data/appsettings.json';
+
 // #region Components
 import SocialIcon from '../../components/social-icon';
 import Newsletter from '../../components/newsletter';
@@ -22,26 +25,21 @@ const Footer = () => (
                 classOption="footer-logo"
                 image="/img/logo-dark.png"
               />
-              <p className="mb-0">
-                Sed elit quam, iaculis sed semper sit amet
-                udin vitae nibh at magna akal semperFusce.
-              </p>
               <ul className="widget-contact-info">
                 <li className="info-address">
                   <i className="icofont-location-pin" />
-                  69 Halsey St, New York, Ny 10002, United
-                  States.
+                  {AppSettings.address}
                 </li>
                 <li className="info-mail">
                   <i className="icofont-email" />
-                  <a href="mailto://hello@yourdomain.com">
-                    hello@yourdomain.com
+                  <a href={`mailto://${AppSettings.email}`}>
+                    {AppSettings.email}
                   </a>
                 </li>
                 <li className="info-phone">
                   <i className="icofont-ui-call" />
-                  <a href="tel://(0091)8547632521">
-                    (0091) 8547 632521
+                  <a href={`tel://${AppSettings.hotline.replaceAll('.', '')}`}>
+                    {AppSettings.hotline}
                   </a>
                 </li>
               </ul>

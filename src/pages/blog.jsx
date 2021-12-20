@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux';
 
 // #region AI 4 Smart Healthcare
 // #region Redux
-import { setLayoutTitle, setHomeFlag } from '../toolkit';
+import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
 // #endregion
 
 // #region Containers
@@ -26,8 +26,11 @@ const BlogPage = () => {
   // #endregion
 
   useEffect(() => {
-    dispatch(setLayoutTitle('Hope – Blog'));
+    const title = 'Blog';
+
+    dispatch(setLayoutTitle(title));
     dispatch(setHomeFlag(false));
+    dispatch(setMenu(title));
     setBreadcrumbs([{ text: 'Home', path: '/' }]);
   }, []);
 
