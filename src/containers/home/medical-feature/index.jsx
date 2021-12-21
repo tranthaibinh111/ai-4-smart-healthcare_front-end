@@ -4,7 +4,7 @@ import React from 'react';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import HomeData from '../../../data/home.json';
+import homeData from '../../../data/home';
 // #endregion
 
 // #region Components
@@ -31,8 +31,8 @@ const MedicalFeatureContainer = () => (
             data-aos="fade-up"
             data-aos-duration="1100"
           >
-            {HomeData[3].medicalFeature
-              && HomeData[3].medicalFeature.map(
+            {homeData.medicalFeature
+              && homeData.medicalFeature.map(
                 (single, key) => (
                   <div key={key} className="col-md-6">
                     <MedicalFeature

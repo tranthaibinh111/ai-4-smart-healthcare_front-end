@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-import AppSettings from '../../data/appsettings.json';
+import appSettingsData from '../../data/appsettings';
 // #endregion
 
 const ContactAddress = () => {
@@ -13,8 +13,8 @@ const ContactAddress = () => {
   // #endregion
 
   useEffect(() => {
-    if (AppSettings.address) {
-      const address = AppSettings.address.split(',').map((item) => item.trim());
+    if (appSettingsData.address) {
+      const address = appSettingsData.address.split(',').map((item) => item.trim());
 
       if (address.length >= 2) {
         setCity(address[address.length - 2]);
@@ -32,25 +32,25 @@ const ContactAddress = () => {
           {country && (<span>{country}</span>)}
         </h2>
         <p>
-          {AppSettings.address}
+          {appSettingsData.address}
         </p>
-        <a href={`mailto://${AppSettings.email}`}>
+        <a href={`mailto://${appSettingsData.email}`}>
           <span>Email:</span>
-          {` ${AppSettings.email}`}
+          {` ${appSettingsData.email}`}
         </a>
       </div>
       <div className="brand-office">
         <div className="info-tem style-two">
           <h6>SĐT:</h6>
           <p>
-            <a href={`tel://${AppSettings.hotline.replaceAll('.', '')}`}>
-              {AppSettings.hotline}
+            <a href={`tel://${appSettingsData.hotline.replaceAll('.', '')}`}>
+              {appSettingsData.hotline}
             </a>
           </p>
         </div>
         <div className="info-tem mb-0">
           <h6>Giờ làm việc:</h6>
-          <p>{AppSettings.workingHours}</p>
+          <p>{appSettingsData.workingHours}</p>
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import HomeData from '../../data/home.json';
+import homeData from '../../data/home';
 import ServiceData from '../../data/service.json';
 // #endregion
 
@@ -155,8 +155,8 @@ const ServiceDetailsContainer = ({ data }) => {
                     className="case-slider-container"
                     {...swiperOption}
                   >
-                    {HomeData[8].cases
-                      && HomeData[8].cases.map(
+                    {homeData.cases
+                      && homeData.cases.map(
                         (single, key) => (
                           <SwiperSlide key={key}>
                             <CasesItem

@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import HomeData from '../../../data/home.json';
+import homeData from '../../../data/home';
 // #endregion
 
 // #region Components
@@ -77,8 +77,8 @@ const BrandContainer = () => {
               className="brand-logo-slider-container"
               {...swiperOption}
             >
-              {HomeData[6].brand
-                && HomeData[6].brand.map((single, key) => (
+              {homeData.brand
+                && homeData.brand.map((single, key) => (
                   <SwiperSlide key={key}>
                     <Brand key={key} data={single} />
                   </SwiperSlide>

@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 const SectionTitle = ({ subTitle, title, classOption }) => (
   <div className={`section-title ${classOption}`} data-aos="fade-up">
-    <p>{subTitle}</p>
-    <h2 className="title" dangerouslySetInnerHTML={{ __html: title }} />
+    {subTitle && <p>{subTitle}</p>}
+    {title && <h2 className="title" dangerouslySetInnerHTML={{ __html: title }} />}
   </div>
 );
 

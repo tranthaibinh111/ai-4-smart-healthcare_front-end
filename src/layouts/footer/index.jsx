@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 // #region AI 4 Smart Healthcare
 // Data
-import AppSettings from '../../data/appsettings.json';
+import appSettingsData from '../../data/appsettings';
 
 // #region Components
 import SocialIcon from '../../components/social-icon';
@@ -28,18 +28,18 @@ const Footer = () => (
               <ul className="widget-contact-info">
                 <li className="info-address">
                   <i className="icofont-location-pin" />
-                  {AppSettings.address}
+                  {appSettingsData.address}
                 </li>
                 <li className="info-mail">
                   <i className="icofont-email" />
-                  <a href={`mailto://${AppSettings.email}`}>
-                    {AppSettings.email}
+                  <a href={`mailto://${appSettingsData.email}`}>
+                    {appSettingsData.email}
                   </a>
                 </li>
                 <li className="info-phone">
                   <i className="icofont-ui-call" />
-                  <a href={`tel://${AppSettings.hotline.replaceAll('.', '')}`}>
-                    {AppSettings.hotline}
+                  <a href={`tel://${appSettingsData.hotline.replaceAll('.', '')}`}>
+                    {appSettingsData.hotline}
                   </a>
                 </li>
               </ul>

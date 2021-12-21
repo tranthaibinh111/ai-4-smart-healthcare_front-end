@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react';
 
 // #region AI 4 Smart Healthcare
 // #region data
-import AppSettings from '../../data/appsettings.json';
-import Menu from '../../data/menu.json';
+import appSettingsData from '../../data/appsettings';
+import menuData from '../../data/menu';
 // #endregion
 
 // #region components
@@ -57,7 +57,7 @@ const Header = () => {
                   <i className="icofont-google-map" />
                   {' '}
                   <span>Địa chỉ:</span>
-                  {` ${AppSettings.address}`}
+                  {` ${appSettingsData.address}`}
                 </p>
               </div>
             </div>
@@ -76,17 +76,17 @@ const Header = () => {
                     <HeaderContactInfo
                       icon="icofont-clock-time"
                       title="giờ làm việc"
-                      info={AppSettings.workingHours}
+                      info={appSettingsData.workingHours}
                     />
                     <HeaderContactInfo
                       icon="icofont-ui-call"
                       title="hotline 24/7"
-                      info={AppSettings.hotline}
+                      info={appSettingsData.hotline}
                     />
                     <HeaderContactInfo
                       icon="icofont-envelope"
                       title="Email"
-                      info={AppSettings.email}
+                      info={appSettingsData.email}
                     />
                   </ul>
 
@@ -117,7 +117,7 @@ const Header = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="d-flex flex-wrap align-items-center justify-content-between">
-                  <MainMenu data={Menu} />
+                  <MainMenu data={menuData} />
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@ const Header = () => {
             <div className="row">
               <div className="col-lg-12">
                 <div className="d-flex flex-wrap align-items-center justify-content-between">
-                  <MainMenu data={Menu} />
+                  <MainMenu data={menuData} />
                 </div>
               </div>
             </div>
@@ -138,8 +138,8 @@ const Header = () => {
       </header>
       <MenuOverlay show={ofcanvasShow} />
       <MobileMenu
-        appsettings={AppSettings}
-        data={Menu}
+        appsettings={appSettingsData}
+        data={menuData}
         show={ofcanvasShow}
         onClose={onCanvasHandler}
       />

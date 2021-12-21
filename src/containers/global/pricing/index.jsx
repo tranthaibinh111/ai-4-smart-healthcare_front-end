@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import HomeData from '../../../data/home.json';
+import homeData from '../../../data/home';
 // #endregion
 
 // #region Components
@@ -31,8 +31,8 @@ const PricingContainer = ({ pricingClassOption }) => (
         data-aos="fade-up"
         data-aos-duration="1100"
       >
-        {HomeData[7].pricing
-          && HomeData[7].pricing.map((single, key) => (
+        {homeData.pricing
+          && homeData.pricing.map((single, key) => (
             <div
               key={key}
               className="col-sm-6 col-md-6 col-lg-3"

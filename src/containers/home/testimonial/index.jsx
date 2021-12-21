@@ -11,7 +11,7 @@ import SwiperCore, { Navigation } from 'swiper';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import HomeData from '../../../data/home.json';
+import homeData from '../../../data/home';
 // #endregion
 
 // #region Components
@@ -68,8 +68,8 @@ const TestimonialContainer = () => {
               className="testimonial-slider-container"
               {...swiperOption}
             >
-              {HomeData[5].testimonial
-                && HomeData[5].testimonial.map((single, key) => (
+              {homeData.testimonial
+                && homeData.testimonial.map((single, key) => (
                   <SwiperSlide key={key}>
                     <Testimonial
                       key={key}

@@ -1,5 +1,6 @@
 // #region React
 import React from 'react';
+import PropTypes from 'prop-types';
 // #endregion
 
 // #region Package (third-party)
@@ -10,17 +11,13 @@ import SwiperCore, { Navigation } from 'swiper';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Data
-import HomeData from '../../../data/home.json';
-// #endregion
-
 // #region Components
 import Intro from '../../../components/intro';
 // #endregion
 // #endregion
 
 SwiperCore.use([Navigation]);
-const IntroContainer = () => {
+const IntroContainer = ({ data }) => {
   // #region Parameters
   const swiperOption = {
     loop: true,
@@ -41,12 +38,11 @@ const IntroContainer = () => {
   return (
     <div className="hero-slider-area">
       <Swiper effect="fade" className="hero-slider" {...swiperOption}>
-        {HomeData[1].slider
-          && HomeData[1].slider.map((single, key) => (
-            <SwiperSlide key={key}>
-              <Intro key={key} data={single} />
-            </SwiperSlide>
-          ))}
+        {data && data.map((single, key) => (
+          <SwiperSlide key={key}>
+            <Intro key={key} data={single} />
+          </SwiperSlide>
+        ))}
         <div className="swiper-button-prev">
           <i className="icofont-arrow-left" />
         </div>
@@ -57,5 +53,11 @@ const IntroContainer = () => {
     </div>
   );
 };
+
+// #region Khai báo Props
+IntroContainer.propTypes = {
+  data: PropTypes.array.isRequired,
+};
+// #endregion
 
 export default IntroContainer;

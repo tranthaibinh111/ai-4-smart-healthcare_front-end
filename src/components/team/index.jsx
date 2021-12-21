@@ -17,7 +17,7 @@ const Team = ({ data }) => (
         <h4 className="name">{data.name}</h4>
         <p>{data.excerpt}</p>
         <Link to="/" className="btn-link">
-          Read More
+          Đọc thêm
         </Link>
       </div>
     </div>
