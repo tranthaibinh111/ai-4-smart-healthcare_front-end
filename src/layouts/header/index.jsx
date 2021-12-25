@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 // #region AI 4 Smart Healthcare
 // #region data
-import appSettingsData from '../../data/appsettings';
-import menuData from '../../data/menu';
+import { appSettingsData, menuData } from '../../data';
 // #endregion
 
 // #region components

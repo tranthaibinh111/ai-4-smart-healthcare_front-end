@@ -50,7 +50,8 @@ const AboutContainer = () => {
         <div className="row">
           <div className="col-lg-12">
             <p className="text-pra" data-aos="fade-up">
-              {AboutData[0].pageTitle}
+              {/* eslint-disable-next-line max-len */}
+              Công trình nghiên cứu này, tôi đã ứng dụng CNN chẩn đoán các bệnh rối loại suy giảm thần kinh vận động thông qua việc phân loại tín hiệu EEG.
             </p>
             <div
               className="service-list-content"

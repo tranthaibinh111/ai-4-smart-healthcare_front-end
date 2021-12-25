@@ -35,8 +35,8 @@ const AboutPage = () => {
     <>
       <PageTitleContainer
         image="img/photos/about-bg1.jpg"
-        subTitle="Hope medical center"
-        title="About <span>Hope</span>"
+        subTitle="Giới thiệu"
+        title="AI 4 Smart Healthcare"
       />
       <AboutContainer />
     </>

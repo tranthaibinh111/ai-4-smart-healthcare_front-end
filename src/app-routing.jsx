@@ -29,23 +29,23 @@ const appRoutes = [
     component: HomePage,
   },
   {
-    path: '/about',
+    path: '/gioi-thieu',
     name: 'Giới thiệu',
     component: AboutPage,
   },
   {
-    path: '/service',
-    name: 'Dịch vụ',
+    path: '/chuc-nang',
+    name: 'Chức năng',
     component: ServicePage,
   },
   {
-    path: '/service-details/:id',
+    path: '/chuc-nang/:id',
     name: 'Thông tin dịch vụ',
     component: ServiceDetails,
   },
   {
-    path: '/blog',
-    name: 'Blog',
+    path: '/tai-lieu-tham-khao',
+    name: 'Tài liệu tham khảo',
     component: BlogPage,
   },
   {
@@ -74,7 +74,7 @@ const appRoutes = [
     component: BlogDetailsPage,
   },
   {
-    path: '/contact',
+    path: '/lien-he',
     name: 'Liên hệ',
     component: ContactPage,
   },

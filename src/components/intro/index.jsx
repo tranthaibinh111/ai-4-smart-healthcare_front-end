@@ -23,7 +23,7 @@ const Intro = ({ data }) => (
             <Button
               path={`${process.env.PUBLIC_URL}/`}
               classOption="btn btn-danger me-3 animated delay1"
-              text="Dịch vụ"
+              text="Chức năng"
             />
           </div>
         </div>

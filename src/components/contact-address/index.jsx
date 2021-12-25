@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-import appSettingsData from '../../data/appsettings';
+import { appSettingsData } from '../../data';
 // #endregion
 
 const ContactAddress = () => {

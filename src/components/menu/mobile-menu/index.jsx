@@ -48,12 +48,11 @@ const MobileMenu = ({
       parentEl?.classList.contains('menu-expand')
       || target.classList.contains('menu-expand')
     ) {
-      const element = target.classList.contains('icon')
-        ? parentEl
-        : target;
+      const element = target.classList.contains('icon') ? parentEl : target;
       const parent = getClosest(element, 'li');
       const { childNodes } = parent;
       const parentSiblings = getSiblings(parent);
+
       parentSiblings.forEach((sibling) => {
         const sibChildNodes = sibling.childNodes;
         sibChildNodes.forEach((child) => {

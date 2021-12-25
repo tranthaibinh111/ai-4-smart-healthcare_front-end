@@ -17,7 +17,7 @@ const BlogListContainer = React.lazy(() => import('../containers/blog/blog-list'
 // #endregion
 // #endregion
 
-const BlogPage = () => {
+const ReferencePage = () => {
   // #region Parameters
   const [breadcrumbs, setBreadcrumbs] = useState([]);
 
@@ -26,12 +26,12 @@ const BlogPage = () => {
   // #endregion
 
   useEffect(() => {
-    const title = 'Blog';
+    const title = 'Tài liệu tham khảo';
 
     dispatch(setLayoutTitle(title));
     dispatch(setHomeFlag(false));
     dispatch(setMenu(title));
-    setBreadcrumbs([{ text: 'Home', path: '/' }]);
+    setBreadcrumbs([{ text: 'Trang chủ', path: '/' }]);
   }, []);
 
   return (
@@ -48,4 +48,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default ReferencePage;

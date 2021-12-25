@@ -28,7 +28,7 @@ const ServicePage = () => {
   // #endregion
 
   useEffect(() => {
-    const title = 'Dịch vụ';
+    const title = 'Chức năng';
 
     dispatch(setLayoutTitle(title));
     dispatch(setHomeFlag(false));

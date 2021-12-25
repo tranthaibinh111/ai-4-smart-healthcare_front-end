@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import homeData from '../../data/home';
+import { homeData } from '../../data';
 import ServiceData from '../../data/service.json';
 // #endregion
 

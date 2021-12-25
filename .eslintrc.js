@@ -66,5 +66,9 @@ module.exports = {
     'react/no-danger': [
       0,
     ],
+    // https://github.com/import-js/eslint-plugin-import/blob/v2.25.3/docs/rules/prefer-default-export.md
+    'import/prefer-default-export': [
+      0,
+    ],
   },
 };
