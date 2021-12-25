@@ -5,20 +5,18 @@ import { Link } from 'react-router-dom';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import BlogData from '../../../data/blog.json';
+import { keywordData } from '../../data';
+import BlogData from '../../data/blog.json';
 // #endregion
 
 // #region Components
-import BlogListItem from '../../../components/blog-list';
-import SidebarSearch from '../../../components/sidebar/search';
-import SidebarCategories from '../../../components/sidebar/sidebar-categories';
-import SidebarPost from '../../../components/sidebar/sidebar-post';
-import SidebarTag from '../../../components/sidebar/sidebar-tag';
-import SidebarTitle from '../../../components/sidebar/sidebar-title';
+import BlogListItem from '../../components/blog-list';
+import { SidebarKeyword } from '../../components/sidebar';
+import SidebarTitle from '../../components/sidebar/sidebar-title';
 // #endregion
 // #endregion
 
-const BlogListContainer = () => (
+const ReferenceListContainer = () => (
   <div className="blog-area section-py blog-border-bottom">
     <div className="container">
       <div className="row">
@@ -67,20 +65,8 @@ const BlogListContainer = () => (
         <div className="col-lg-4">
           <div className="sidebar-wrapper blog-sidebar-wrapper">
             <div className="widget-item">
-              <SidebarTitle title="Search" />
-              <SidebarSearch />
-            </div>
-            <div className="widget-item">
-              <SidebarTitle title="Categories" />
-              <SidebarCategories data={BlogData} />
-            </div>
-            <div className="widget-item">
-              <SidebarTitle title="Recent posts" />
-              <SidebarPost data={BlogData} />
-            </div>
-            <div className="widget-item">
-              <SidebarTitle title="TAGS" />
-              <SidebarTag data={BlogData} />
+              <SidebarTitle title="Keywords" />
+              <SidebarKeyword data={keywordData} />
             </div>
           </div>
         </div>
@@ -89,4 +75,4 @@ const BlogListContainer = () => (
   </div>
 );
 
-export default BlogListContainer;
+export default ReferenceListContainer;

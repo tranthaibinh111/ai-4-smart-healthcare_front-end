@@ -13,7 +13,7 @@ import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
 
 // #region Containers
 const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const BlogListContainer = React.lazy(() => import('../containers/blog/blog-list'));
+const ReferenceListContainer = React.lazy(() => import('../containers/reference/reference-list'));
 // #endregion
 // #endregion
 
@@ -23,11 +23,11 @@ const ReferencePage = () => {
 
   // Redux
   const dispatch = useDispatch();
+
+  const title = 'Tài liệu tham khảo';
   // #endregion
 
   useEffect(() => {
-    const title = 'Tài liệu tham khảo';
-
     dispatch(setLayoutTitle(title));
     dispatch(setHomeFlag(false));
     dispatch(setMenu(title));
@@ -40,10 +40,10 @@ const ReferencePage = () => {
         classOptionOne="content-style3"
         classOptionTwo="bread-crumbs-style2"
         prevs={breadcrumbs}
-        contentThree="Blog"
-        title="<span>Latest From</span> Our Blog"
+        contentThree={title}
+        title={`${title} <span>(gần đây)</span>`}
       />
-      <BlogListContainer />
+      <ReferenceListContainer />
     </>
   );
 };

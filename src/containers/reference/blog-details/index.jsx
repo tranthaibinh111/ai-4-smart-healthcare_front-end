@@ -14,7 +14,7 @@ import BlogDetailsWrap from '../../../components/blog-details';
 import SidebarSearch from '../../../components/sidebar/search';
 import SidebarCategories from '../../../components/sidebar/sidebar-categories';
 import SidebarPost from '../../../components/sidebar/sidebar-post';
-import SidebarTag from '../../../components/sidebar/sidebar-tag';
+import SidebarKeyword from '../../../components/sidebar/sidebar-keyword';
 import SidebarTitle from '../../../components/sidebar/sidebar-title';
 // #endregion
 // #endregion
@@ -69,7 +69,7 @@ const BlogDetailsContainer = ({ data }) => (
             </div>
             <div className="widget-item">
               <SidebarTitle title="TAGS" />
-              <SidebarTag data={BlogData} />
+              <SidebarKeyword data={BlogData} />
             </div>
           </div>
         </div>

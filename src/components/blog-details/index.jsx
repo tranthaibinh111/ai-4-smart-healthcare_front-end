@@ -13,7 +13,7 @@ import BlogData from '../../data/blog.json';
 // #endregion
 
 // #region Components
-import SidebarTag from '../sidebar/sidebar-tag';
+import SidebarKeyword from '../sidebar/sidebar-keyword';
 // #endregion
 // #endregion
 
@@ -58,7 +58,7 @@ const BlogDetailsWrap = ({ data }) => {
             {single}
           </div>
         ))}
-        <SidebarTag data={BlogData} />
+        <SidebarKeyword data={BlogData} />
       </div>
     </div>
   );

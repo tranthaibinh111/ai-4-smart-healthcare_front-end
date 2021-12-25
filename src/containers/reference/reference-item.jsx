@@ -6,20 +6,20 @@ import PropTypes from 'prop-types';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import BlogData from '../../../data/blog.json';
+import BlogData from '../../data/blog.json';
 // #endregion
 
 // #region Components
-import BlogListItem from '../../../components/blog-list';
-import SidebarSearch from '../../../components/sidebar/search';
-import SidebarCategories from '../../../components/sidebar/sidebar-categories';
-import SidebarPost from '../../../components/sidebar/sidebar-post';
-import SidebarTag from '../../../components/sidebar/sidebar-tag';
-import SidebarTitle from '../../../components/sidebar/sidebar-title';
+import BlogListItem from '../../components/blog-list';
+import SidebarSearch from '../../components/sidebar/search';
+import SidebarCategories from '../../components/sidebar/sidebar-categories';
+import SidebarPost from '../../components/sidebar/sidebar-post';
+import SidebarKeyword from '../../components/sidebar/sidebar-keyword';
+import SidebarTitle from '../../components/sidebar/sidebar-title';
 // #endregion
 // #endregion
 
-const BlogItemContainer = ({ data }) => (
+const ReferenceItemContainer = ({ data }) => (
   <div className="blog-area section-py blog-border-bottom">
     <div className="container">
       <div className="row">
@@ -81,7 +81,7 @@ const BlogItemContainer = ({ data }) => (
             </div>
             <div className="widget-item">
               <SidebarTitle title="TAGS" />
-              <SidebarTag data={BlogData} />
+              <SidebarKeyword data={BlogData} />
             </div>
           </div>
         </div>
@@ -91,13 +91,13 @@ const BlogItemContainer = ({ data }) => (
 );
 
 // #region Khai báo Props
-BlogItemContainer.propTypes = {
+ReferenceItemContainer.propTypes = {
   data: PropTypes.array,
 };
 
-BlogItemContainer.defaultProps = {
+ReferenceItemContainer.defaultProps = {
   data: [],
 };
 // #endregion
 
-export default BlogItemContainer;
+export default ReferenceItemContainer;

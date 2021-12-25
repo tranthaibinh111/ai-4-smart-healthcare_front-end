@@ -21,7 +21,7 @@ import { slugify } from '../utils';
 
 // #region Containers
 const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const BlogItemContainer = React.lazy(() => import('../containers/blog/blog-item'));
+const BlogItemContainer = React.lazy(() => import('../containers/reference/reference-item'));
 // #endregion
 // #endregion
 

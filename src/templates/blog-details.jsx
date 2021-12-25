@@ -18,7 +18,7 @@ import { setLayoutTitle, setHomeFlag } from '../toolkit';
 
 // #region Containers
 const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const BlogDetailsContainer = React.lazy(() => import('../containers/blog/blog-details'));
+const BlogDetailsContainer = React.lazy(() => import('../containers/reference/blog-details'));
 const CommentContainer = React.lazy(() => import('../containers/comment-container'));
 // #endregion
 // #endregion

@@ -16,7 +16,7 @@ const BlogAuthor = React.lazy(() => import('./templates/blog-author'));
 const HomePage = React.lazy(() => import('./pages/index'));
 const AboutPage = React.lazy(() => import('./pages/about'));
 const ServicePage = React.lazy(() => import('./pages/service'));
-const BlogPage = React.lazy(() => import('./pages/blog'));
+const BlogPage = React.lazy(() => import('./pages/reference'));
 const ContactPage = React.lazy(() => import('./pages/contact'));
 // #endregion
 // #endregion
