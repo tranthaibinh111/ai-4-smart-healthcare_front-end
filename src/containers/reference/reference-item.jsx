@@ -10,7 +10,7 @@ import BlogData from '../../data/blog.json';
 // #endregion
 
 // #region Components
-import BlogListItem from '../../components/blog-list';
+import ReferenceCard from '../../components/reference/reference-card';
 import SidebarSearch from '../../components/sidebar/search';
 import SidebarCategories from '../../components/sidebar/sidebar-categories';
 import SidebarPost from '../../components/sidebar/sidebar-post';
@@ -27,7 +27,7 @@ const ReferenceItemContainer = ({ data }) => (
           <div className="post-items-style2">
             {data
               && data.map((single, i) => (
-                <BlogListItem key={i} data={single} />
+                <ReferenceCard key={i} data={single} />
               ))}
           </div>
           <div className="pagination-area mb-md-80">

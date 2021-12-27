@@ -10,7 +10,7 @@ import BlogData from '../../data/blog.json';
 // #endregion
 
 // #region Components
-import BlogListItem from '../../components/blog-list';
+import ReferenceCard from '../../components/reference/reference-card';
 import { SidebarKeyword } from '../../components/sidebar';
 import SidebarTitle from '../../components/sidebar/sidebar-title';
 // #endregion
@@ -22,10 +22,9 @@ const ReferenceListContainer = () => (
       <div className="row">
         <div className="col-lg-8">
           <div className="post-items-style2">
-            {BlogData
-              && BlogData.map((single, i) => (
-                <BlogListItem key={i} data={single} />
-              ))}
+            {BlogData && BlogData.map((single, i) => (
+              <ReferenceCard key={i} data={single} />
+            ))}
           </div>
           <div className="pagination-area mb-md-80">
             <nav>

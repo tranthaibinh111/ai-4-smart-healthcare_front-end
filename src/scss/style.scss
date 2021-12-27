@@ -24,8 +24,9 @@
 @import 'lightgallery.js/dist/css/lightgallery.css';
 // Loader Spinner
 @import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-
-
+// React PDF Viewer
+@import '@react-pdf-viewer/core/lib/styles/index.css';
+@import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 
 // Base
 @import 'common/variables';
@@ -52,6 +53,7 @@
 // Components
 // ---------------------------------------- */
 @import 'components/loader-spinner';
+@import 'components/pdf-viewer';
 
 
 

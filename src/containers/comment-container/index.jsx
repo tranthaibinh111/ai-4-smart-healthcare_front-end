@@ -4,11 +4,10 @@ import React from 'react';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import BlogData from '../../data/blog.json';
+// import BlogData from '../../data/blog.json';
 // #endregion
 
 // #region Components
-import Comment from '../../components/comment';
 import SectionTitle from '../../components/section-title';
 // #endregion
 // #endregion
@@ -23,13 +22,6 @@ const CommentContainer = () => (
             title="<span>Leave</span> A Reply"
             subTitle="Your email address will not be published"
           />
-          <div className="comment-form-wrap">
-            <Comment
-              url=""
-              id={BlogData.id}
-              title={BlogData.title}
-            />
-          </div>
         </div>
       </div>
     </div>

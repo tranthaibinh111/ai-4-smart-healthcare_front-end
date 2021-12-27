@@ -41,7 +41,7 @@ const ReferencePage = () => {
         classOptionTwo="bread-crumbs-style2"
         prevs={breadcrumbs}
         contentThree={title}
-        title={`${title} <span>(gần đây)</span>`}
+        title={`${title} <span>(mới nhất)</span>`}
       />
       <ReferenceListContainer />
     </>

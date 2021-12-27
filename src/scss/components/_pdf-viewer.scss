@@ -1,0 +1,21 @@
+/*
+// .pdf-viewer
+*/
+
+.pdf-viewer__container {
+  height: 900px;
+  overflow-y: auto;
+
+  @media #{$xs-device} {
+    height: 100%;
+    overflow-y: inherit;
+  }
+}
+
+.rpv-toolbar {
+  &>.rpv-toolbar__right {
+    &> div:nth-child(3) {
+      display: none;
+    }
+  }
+}

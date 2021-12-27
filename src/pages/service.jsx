@@ -16,7 +16,6 @@ const PageTitleContainer = React.lazy(() => import('../containers/global/page-ti
 const ServiceContainer = React.lazy(() => import('../containers/service-box'));
 const TestimonialContainer = React.lazy(() => import('../containers/home/testimonial'));
 const BrandContainer = React.lazy(() => import('../containers/global/brand'));
-const PricingContainer = React.lazy(() => import('../containers/global/pricing'));
 const CallToAction = React.lazy(() => import('../containers/global/call-to-action'));
 // #endregion
 // #endregion
@@ -45,7 +44,6 @@ const ServicePage = () => {
       <ServiceContainer />
       <TestimonialContainer />
       <BrandContainer />
-      <PricingContainer pricingClassOption="noborder-line" />
       <CallToAction />
     </>
   );

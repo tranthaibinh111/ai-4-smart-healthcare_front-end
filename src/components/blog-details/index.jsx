@@ -1,37 +1,31 @@
 // #region React
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // #endregion
 
-// utils
-import { slugify } from '../../utils';
-
 // #region AI 4 Smart Healthcare
 // #region Data
-import BlogData from '../../data/blog.json';
+import { keywordData } from '../../data';
 // #endregion
 
 // #region Components
+import PdfViewerComponent from '../pdf-viewer.component';
 import SidebarKeyword from '../sidebar/sidebar-keyword';
 // #endregion
 // #endregion
 
+// eslint-disable-next-line no-unused-vars
 const BlogDetailsWrap = ({ data }) => {
-  const cate = data.categories.map((value, i) => (
-    <Link
-      className="category"
-      to={`${process.env.PUBLIC_URL}/category/${slugify(value)}`}
-      key={i}
-    >
-      {value}
-      {i !== data.categories.length - 1 && ','}
-    </Link>
-  ));
+  // #region Parameters
+  const [fileUrl] = useState('http://localhost:3000/file-example_PDF_1MB.pdf');
+  // #endregion
+
   return (
     <div className="blog-details-wrpa">
       <div className="content">
-        <h2 className="title">{data.title}</h2>
+        <PdfViewerComponent fileUrl={fileUrl} />
+        {/*
         <img
           src={`${process.env.PUBLIC_URL}/${data.media.largeImage}`}
           alt="hope-Blog"
@@ -57,8 +51,8 @@ const BlogDetailsWrap = ({ data }) => {
           <div className="desc" key={key}>
             {single}
           </div>
-        ))}
-        <SidebarKeyword data={BlogData} />
+        ))} */}
+        <SidebarKeyword data={keywordData} />
       </div>
     </div>
   );
