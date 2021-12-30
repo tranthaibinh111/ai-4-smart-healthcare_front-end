@@ -1,31 +1,38 @@
 const keywordData = [
   {
     name: 'CNN',
-    url: 'https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Convolutional%20neural%20networks',
+    search: 'IEEE',
+    text: 'Convolutional neural networks',
   },
   {
     name: 'AlexNet',
-    url: 'https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=AlexNet',
+    search: 'IEEE',
+    text: 'AlexNet',
   },
   {
     name: 'Scalogram',
-    url: 'https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Scalogram',
+    search: 'IEEE',
+    text: 'Scalogram',
   },
   {
     name: 'EEG',
-    url: 'https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Electroencephalography',
+    search: 'IEEE',
+    text: 'Electroencephalography',
   },
   {
     name: 'Image classification',
-    url: 'https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Image%20classification',
+    search: 'IEEE',
+    text: 'Image classification',
   },
   {
     name: 'Machine learning',
-    url: 'https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Machine%20learning',
+    search: 'IEEE',
+    text: 'Machine learning',
   },
   {
     name: 'Biomedical signal processing',
-    url: 'https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Biomedical%20signal%20processing',
+    search: 'IEEE',
+    text: 'Biomedical signal processing',
   },
 ];
 
