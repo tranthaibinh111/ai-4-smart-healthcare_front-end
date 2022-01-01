@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // utils
 import { slugify } from '../../utils';
 
-const BlogList = ({ data }) => (
+const ReferenceList = ({ data }) => (
   <div className="post-item">
     <div className="thumb">
       <Link to={`${process.env.PUBLIC_URL}/blog-details/${data.id}`}>
@@ -34,13 +34,13 @@ const BlogList = ({ data }) => (
 );
 
 // #region Khai báo Props
-BlogList.propTypes = {
+ReferenceList.propTypes = {
   data: PropTypes.object,
 };
 
-BlogList.defaultProps = {
+ReferenceList.defaultProps = {
   data: null,
 };
 // #endregion
 
-export default BlogList;
+export default ReferenceList;

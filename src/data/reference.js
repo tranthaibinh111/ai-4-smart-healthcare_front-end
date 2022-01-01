@@ -9,6 +9,12 @@ const referenceData = [
     year: '2014',
     month: '04',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sBook.png',
+      smallImage: './img/reference/book.png',
+      gridImage: 'img/reference/rBook.png',
+      mediumImage: './img/reference/mBook.png',
+    },
   },
   {
     id: 2,
@@ -49,6 +55,12 @@ const referenceData = [
         text: 'Spectrogram',
       },
     ],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 3,
@@ -84,6 +96,12 @@ const referenceData = [
         text: 'Discrete Fourier Transform',
       },
     ],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 4,
@@ -98,6 +116,12 @@ const referenceData = [
     year: '2011',
     doi: '10.1109/ijcnn.2011.6033458',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 6,
@@ -112,6 +136,12 @@ const referenceData = [
     publisher: 'IEEE',
     address: 'Orlando, FL, USA',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sConference.png',
+      smallImage: './img/reference/conference.png',
+      gridImage: 'img/reference/rConference.png',
+      mediumImage: './img/reference/mConference.png',
+    },
   },
   {
     id: 7,
@@ -126,6 +156,12 @@ const referenceData = [
     year: '2015',
     doi: '',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 8,
@@ -166,6 +202,12 @@ const referenceData = [
         text: 'subspace',
       },
     ],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 9,
@@ -177,6 +219,12 @@ const referenceData = [
     year: '2016',
     month: '',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sBook.png',
+      smallImage: './img/reference/book.png',
+      gridImage: 'img/reference/rBook.png',
+      mediumImage: './img/reference/mBook.png',
+    },
   },
   {
     id: 10,
@@ -217,6 +265,12 @@ const referenceData = [
         text: 'neurofuzzy',
       },
     ],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 11,
@@ -247,6 +301,12 @@ const referenceData = [
         text: 'methods',
       },
     ],
+    media: {
+      rcImage: './img/reference/sConference.png',
+      smallImage: './img/reference/conference.png',
+      gridImage: 'img/reference/rConference.png',
+      mediumImage: './img/reference/mConference.png',
+    },
   },
   {
     id: 12,
@@ -261,6 +321,12 @@ const referenceData = [
     publisher: 'Curran Associates, Inc.',
     address: '57 Morehouse Lane Red Hook, NY, United States',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sConference.png',
+      smallImage: './img/reference/conference.png',
+      gridImage: 'img/reference/rConference.png',
+      mediumImage: './img/reference/mConference.png',
+    },
   },
   {
     id: 13,
@@ -316,6 +382,12 @@ const referenceData = [
         text: 'Finite State Transducers',
       },
     ],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 14,
@@ -330,6 +402,12 @@ const referenceData = [
     year: '1989',
     doi: '10.1109/35.41400',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 15,
@@ -344,6 +422,12 @@ const referenceData = [
     year: '2003',
     doi: '10.1016/S1388-2457(02)00387-5',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 16,
@@ -404,6 +488,12 @@ const referenceData = [
         text: 'Learning Rate',
       },
     ],
+    media: {
+      rcImage: './img/reference/sConference.png',
+      smallImage: './img/reference/conference.png',
+      gridImage: 'img/reference/rConference.png',
+      mediumImage: './img/reference/mConference.png',
+    },
   },
   {
     id: 17,
@@ -449,6 +539,12 @@ const referenceData = [
         text: 'signal analysis',
       },
     ],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 18,
@@ -514,6 +610,12 @@ const referenceData = [
         text: 'brain mapping',
       },
     ],
+    media: {
+      rcImage: './img/reference/sConference.png',
+      smallImage: './img/reference/conference.png',
+      gridImage: 'img/reference/rConference.png',
+      mediumImage: './img/reference/mConference.png',
+    },
   },
   {
     id: 19,
@@ -528,6 +630,12 @@ const referenceData = [
     year: '2017',
     doi: '10.1155/2017/5067651',
     keywords: [],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 20,
@@ -563,6 +671,12 @@ const referenceData = [
         text: 'Multitaper Spectral Analysis',
       },
     ],
+    media: {
+      rcImage: './img/reference/sConference.png',
+      smallImage: './img/reference/conference.png',
+      gridImage: 'img/reference/rConference.png',
+      mediumImage: './img/reference/mConference.png',
+    },
   },
   {
     id: 21,
@@ -603,6 +717,12 @@ const referenceData = [
         text: 'Machine learning',
       },
     ],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
   {
     id: 22,
@@ -643,6 +763,12 @@ const referenceData = [
         text: 'Recurrent neural network',
       },
     ],
+    media: {
+      rcImage: './img/reference/sArticle.png',
+      smallImage: './img/reference/article.png',
+      gridImage: 'img/reference/rArticle.png',
+      mediumImage: './img/reference/mArticle.png',
+    },
   },
 ];
 

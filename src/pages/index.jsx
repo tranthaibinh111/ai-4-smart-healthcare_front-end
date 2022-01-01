@@ -19,7 +19,7 @@ import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
 const IntroContainer = React.lazy(() => import('../containers/home/intro'));
 const HealthFeatureContainer = React.lazy(() => import('../containers/home/health-feature'));
 const TeamContainer = React.lazy(() => import('../containers/home/team'));
-const BlogAccordion = React.lazy(() => import('../containers/home/blog-accordion'));
+const ReferenceAccordion = React.lazy(() => import('../containers/home/reference-accordion'));
 const GoogleMapContainer = React.lazy(() => import('../containers/global/map'));
 // #endregion
 // #endregion
@@ -42,7 +42,7 @@ const HomePage = () => {
       <IntroContainer data={homeData.slider} />
       <HealthFeatureContainer data={homeData.healthFeature} />
       <TeamContainer data={homeData.team} />
-      <BlogAccordion />
+      <ReferenceAccordion data={homeData.refreences} />
       <GoogleMapContainer />
     </>
   );

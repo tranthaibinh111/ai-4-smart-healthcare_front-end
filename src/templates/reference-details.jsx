@@ -18,12 +18,11 @@ import { setLayoutTitle, setHomeFlag } from '../toolkit';
 
 // #region Containers
 const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const BlogDetailsContainer = React.lazy(() => import('../containers/reference/blog-details'));
-const CommentContainer = React.lazy(() => import('../containers/comment-container'));
+const BlogDetailsContainer = React.lazy(() => import('../containers/reference/reference-details'));
 // #endregion
 // #endregion
 
-const BlogDetailsPage = ({
+const ReferenceDetailsPage = ({
   match: {
     params: { id },
   },
@@ -58,13 +57,12 @@ const BlogDetailsPage = ({
     <>
       <Breadcrumb prevs={breadcrumbs} contentThree={title} />
       <BlogDetailsContainer data={data} />
-      <CommentContainer />
     </>
   );
 };
 
 // #region Khai báo Props
-BlogDetailsPage.propTypes = {
+ReferenceDetailsPage.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -72,7 +70,7 @@ BlogDetailsPage.propTypes = {
   }),
 };
 
-BlogDetailsPage.defaultProps = {
+ReferenceDetailsPage.defaultProps = {
   match: {
     params: {
       id: 0,
@@ -81,4 +79,4 @@ BlogDetailsPage.defaultProps = {
 };
 // #endregion
 
-export default BlogDetailsPage;
+export default ReferenceDetailsPage;

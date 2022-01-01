@@ -1,19 +1,16 @@
 // #region React
 import React from 'react';
+import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Data
-import BlogData from '../../../data/blog.json';
-// #endregion
-
 // #region Components
-import SectionTitle from '../../../components/section-title';
-import BlogList from '../../../components/blog';
+import SectionTitle from '../../components/section-title';
+import ReferenceList from '../../components/reference/reference-list';
 // #endregion
 // #endregion
 
-const BlogAccordion = () => (
+const ReferenceAccordion = ({ data }) => (
   <section className="blog-area blog-default-area">
     <div className="container">
       <div className="row">
@@ -24,8 +21,7 @@ const BlogAccordion = () => (
             data-aos="fade-up"
             data-aos-duration="1100"
           >
-            {BlogData
-              && BlogData.slice(0, 3).map((single, key) => <BlogList key={key} data={single} />)}
+            {data.map((reference, idx) => <ReferenceList key={idx} data={reference} />)}
           </div>
         </div>
       </div>
@@ -33,4 +29,10 @@ const BlogAccordion = () => (
   </section>
 );
 
-export default BlogAccordion;
+// #region Khai báo Props
+ReferenceAccordion.propTypes = {
+  data: PropTypes.array.isRequired,
+};
+// #endregion
+
+export default ReferenceAccordion;

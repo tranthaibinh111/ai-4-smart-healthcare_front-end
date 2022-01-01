@@ -1,3 +1,5 @@
+import referenceData from './reference';
+
 const slider = [
   {
     id: 1,
@@ -43,10 +45,14 @@ const team = [
   },
 ];
 
+const startSlice = Math.floor(Math.random() * (referenceData.length - 4));
+const refreences = referenceData.slice(startSlice, startSlice + 5);
+
 const homeData = {
   slider,
   healthFeature,
   team,
+  refreences,
 };
 
 export default homeData;

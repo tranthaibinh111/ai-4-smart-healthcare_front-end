@@ -5,17 +5,17 @@ import PropTypes from 'prop-types';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import BlogData from '../../../data/blog.json';
+import BlogData from '../../data/blog.json';
 // #endregion
 
 // #region Components
-import BlogGrid from '../../../components/blog-grid';
-import BlogDetailsWrap from '../../../components/blog-details';
-import SidebarSearch from '../../../components/sidebar/search';
-import SidebarCategories from '../../../components/sidebar/sidebar-categories';
-import SidebarPost from '../../../components/sidebar/sidebar-post';
-import SidebarKeyword from '../../../components/sidebar/sidebar-keyword';
-import SidebarTitle from '../../../components/sidebar/sidebar-title';
+import BlogGrid from '../../components/blog-grid';
+import BlogDetailsWrap from '../../components/blog-details';
+import SidebarSearch from '../../components/sidebar/search';
+import SidebarCategories from '../../components/sidebar/sidebar-categories';
+import SidebarPost from '../../components/sidebar/sidebar-post';
+import SidebarKeyword from '../../components/sidebar/sidebar-keyword';
+import SidebarTitle from '../../components/sidebar/sidebar-title';
 // #endregion
 // #endregion
 
@@ -29,9 +29,9 @@ const BlogDetailsContainer = ({ data }) => (
               <BlogDetailsWrap data={data} />
               <div className="related-post">
                 <h2 className="title">
-                  <span>Related</span>
+                  Tài liệu
                   {' '}
-                  Posts
+                  <span>liên quan</span>
                 </h2>
                 <div className="post-items-style3">
                   <div className="row">
@@ -68,7 +68,7 @@ const BlogDetailsContainer = ({ data }) => (
               <SidebarPost data={BlogData} />
             </div>
             <div className="widget-item">
-              <SidebarTitle title="TAGS" />
+              <SidebarTitle title="Keywords" />
               <SidebarKeyword data={BlogData} />
             </div>
           </div>

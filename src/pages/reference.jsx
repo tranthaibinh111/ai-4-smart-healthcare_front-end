@@ -7,6 +7,10 @@ import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
+// #region Data
+import { referenceData } from '../data';
+// #endregion
+
 // #region Redux
 import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
 // #endregion
@@ -43,7 +47,7 @@ const ReferencePage = () => {
         contentThree={title}
         title={`${title} <span>(mới nhất)</span>`}
       />
-      <ReferenceListContainer />
+      <ReferenceListContainer data={referenceData.slice(0, 4)} />
     </>
   );
 };

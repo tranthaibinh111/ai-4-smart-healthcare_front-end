@@ -8,7 +8,7 @@ const ReferenceCard = ({ data }) => (
   <div className="post-item">
     <div className="thumb">
       <Link to={`${process.env.PUBLIC_URL}/blog-details/${data.id}`}>
-        <img src={`${process.env.PUBLIC_URL}/${data.media.mediumImage}`} alt="hope-Blog" />
+        <img src={`${process.env.PUBLIC_URL}/${data.media.mediumImage}`} alt="Tài liệu tham khảo - AI 4 Smart Healthcare" />
       </Link>
     </div>
     <div className="content">

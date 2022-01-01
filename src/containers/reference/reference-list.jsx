@@ -1,12 +1,12 @@
 // #region React
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
 // #region Data
 import { keywordData } from '../../data';
-import BlogData from '../../data/blog.json';
 // #endregion
 
 // #region Components
@@ -16,14 +16,14 @@ import SidebarTitle from '../../components/sidebar/sidebar-title';
 // #endregion
 // #endregion
 
-const ReferenceListContainer = () => (
+const ReferenceListContainer = ({ data, pagination }) => (
   <div className="blog-area section-py blog-border-bottom">
     <div className="container">
       <div className="row">
         <div className="col-lg-8">
           <div className="post-items-style2">
-            {BlogData && BlogData.map((single, i) => (
-              <ReferenceCard key={i} data={single} />
+            {data.map((reference, idx) => (
+              <ReferenceCard key={`reference-card-${idx}`} data={reference} />
             ))}
           </div>
           <div className="pagination-area mb-md-80">
@@ -73,5 +73,19 @@ const ReferenceListContainer = () => (
     </div>
   </div>
 );
+
+// #region Khai báo Props
+ReferenceListContainer.propTypes = {
+  data: PropTypes.array.isRequired,
+  pagination: PropTypes.shape({
+    totalCount: PropTypes.number.isRequired,
+    pageSize: PropTypes.number.isRequired,
+    page: PropTypes.number.isRequired,
+    totalPages: PropTypes.number.isRequired,
+    previousPage: PropTypes.bool.isRequired,
+    nextPage: PropTypes.bool.isRequired,
+  }).isRequired,
+};
+// #endregion
 
 export default ReferenceListContainer;
