@@ -11,7 +11,7 @@ import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout';
 // #endregion
 // #endregion
 
-const PdfViewerComponent = ({ fileUrl }) => {
+const PdfViewer = ({ fileUrl }) => {
   // #region Parameters
   const workerUrl = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
   const className = 'pdf-viewer__container';
@@ -37,9 +37,9 @@ const PdfViewerComponent = ({ fileUrl }) => {
 };
 
 // #region Khai báo Props
-PdfViewerComponent.propTypes = {
+PdfViewer.propTypes = {
   fileUrl: PropTypes.string.isRequired,
 };
 // #endregion
 
-export default PdfViewerComponent;
+export default PdfViewer;

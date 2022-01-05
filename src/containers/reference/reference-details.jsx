@@ -4,29 +4,27 @@ import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Data
-import BlogData from '../../data/blog.json';
-// #endregion
-
 // #region Components
-import BlogGrid from '../../components/blog-grid';
-import BlogDetailsWrap from '../../components/blog-details';
-import SidebarSearch from '../../components/sidebar/search';
-import SidebarCategories from '../../components/sidebar/sidebar-categories';
-import SidebarPost from '../../components/sidebar/sidebar-post';
-import SidebarKeyword from '../../components/sidebar/sidebar-keyword';
-import SidebarTitle from '../../components/sidebar/sidebar-title';
+import {
+  // Reference
+  SidebarAuthors,
+  SidebarKeyword,
+  SidebarTitle,
+} from '../../components';
+import ReferenceGrid from '../../components/reference/reference-grid';
+import ReferenceDetailsWrap from '../../components/reference/reference-details';
+import SidebarReference from '../../components/sidebar/sidebar-reference';
 // #endregion
 // #endregion
 
-const BlogDetailsContainer = ({ data }) => (
+const ReferenceDetailsContainer = ({ data, related, recent }) => (
   <div className="blog-details-area">
     <div className="container">
       <div className="row">
         <div className="col-lg-8">
           <div className="post-details-content">
             <div className="post-details-body">
-              <BlogDetailsWrap data={data} />
+              <ReferenceDetailsWrap data={data} />
               <div className="related-post">
                 <h2 className="title">
                   Tài liệu
@@ -35,18 +33,11 @@ const BlogDetailsContainer = ({ data }) => (
                 </h2>
                 <div className="post-items-style3">
                   <div className="row">
-                    {BlogData.slice(1, 3).map(
-                      (single, key) => (
-                        <div
-                          className="col-md-6"
-                          key={key}
-                        >
-                          <BlogGrid
-                            data={single}
-                          />
-                        </div>
-                      ),
-                    )}
+                    {related?.length > 0 && related.map((item, idx) => (
+                      <div className="col-md-6" key={`reference-grid-div-${idx}`}>
+                        <ReferenceGrid data={item} />
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -56,20 +47,32 @@ const BlogDetailsContainer = ({ data }) => (
         <div className="col-lg-4">
           <div className="sidebar-wrapper blog-sidebar-wrapper mb-md-80 pt-md-10 pt-160">
             <div className="widget-item">
-              <SidebarTitle title="Search" />
-              <SidebarSearch />
+              <SidebarTitle title="Tác giả" />
+              <SidebarAuthors data={data?.authors} />
             </div>
+            {data?.keywords.length > 0 && (
+              <div className="widget-item">
+                <SidebarTitle title="Keywords" />
+                <SidebarKeyword data={data.keywords} />
+              </div>
+            )}
+            {data?.doi && (
+              <div className="widget-item">
+                <SidebarTitle title="DOI" />
+                <div className="widget-search-box">
+                  {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+                  <a
+                    href={`https://doi.org/${data.doi}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    dangerouslySetInnerHTML={{ __html: data.doi }}
+                  />
+                </div>
+              </div>
+            )}
             <div className="widget-item">
-              <SidebarTitle title="Categories" />
-              <SidebarCategories data={BlogData} />
-            </div>
-            <div className="widget-item">
-              <SidebarTitle title="Recent posts" />
-              <SidebarPost data={BlogData} />
-            </div>
-            <div className="widget-item">
-              <SidebarTitle title="Keywords" />
-              <SidebarKeyword data={BlogData} />
+              <SidebarTitle title="Tài liệu (mới nhất)" />
+              <SidebarReference data={recent} />
             </div>
           </div>
         </div>
@@ -79,13 +82,21 @@ const BlogDetailsContainer = ({ data }) => (
 );
 
 // #region Khai báo Props
-BlogDetailsContainer.propTypes = {
-  data: PropTypes.object,
+ReferenceDetailsContainer.propTypes = {
+  data: PropTypes.shape({
+    authors: PropTypes.array,
+    keywords: PropTypes.array,
+    doi: PropTypes.string,
+  }),
+  related: PropTypes.array,
+  recent: PropTypes.array,
 };
 
-BlogDetailsContainer.defaultProps = {
+ReferenceDetailsContainer.defaultProps = {
   data: null,
+  related: [],
+  recent: [],
 };
 // #endregion
 
-export default BlogDetailsContainer;
+export default ReferenceDetailsContainer;

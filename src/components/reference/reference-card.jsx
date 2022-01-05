@@ -4,33 +4,73 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // #endregion
 
-const ReferenceCard = ({ data }) => (
-  <div className="post-item">
-    <div className="thumb">
-      <Link to={`${process.env.PUBLIC_URL}/blog-details/${data.id}`}>
-        <img src={`${process.env.PUBLIC_URL}/${data.media.mediumImage}`} alt="Tài liệu tham khảo - AI 4 Smart Healthcare" />
-      </Link>
-    </div>
-    <div className="content">
-      <h4 className="title">
-        <Link to={`${process.env.PUBLIC_URL}/blog-details/${data.id}`}>
-          {data.title}
+// #region AI 4 Smart Healthcare
+// Services
+import RootService from '../../shared/services/root.service';
+// #endregion
+
+const ReferenceCard = ({ data }) => {
+  // #region Parameter
+  const rootService = RootService();
+  // #endregion
+
+  const formatDate = (month, year) => {
+    let strDate = '';
+
+    if (month)
+      strDate += month;
+
+    if (strDate)
+      strDate += `/${year}`;
+    else
+      strDate += year;
+
+    return strDate;
+  };
+
+  return (
+    <div className="post-item">
+      <div className="thumb">
+        <Link to={rootService.referenceDetails(data.slug)}>
+          <img src={rootService.image(data.media.mediumImage)} alt={data.title} />
         </Link>
-      </h4>
-      <div className="meta">
-        {`${data.author} – ${data.date}`}
+      </div>
+      <div className="content">
+        <h4 className="title">
+          <Link to={rootService.referenceDetails(data.slug)}>
+            {data.title}
+          </Link>
+        </h4>
+        <div className="meta">
+          {data.authors.slice(0, 3).map((author, idx) => {
+            if (idx === 0)
+              return author;
+
+            if (idx === 2)
+              return ', ...';
+
+            return `, ${author}`;
+          })}
+          {' – '}
+          {formatDate(data.month, data.year)}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 // #region Khai báo Props
 ReferenceCard.propTypes = {
-  data: PropTypes.object,
-};
-
-ReferenceCard.defaultProps = {
-  data: null,
+  data: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+    authors: PropTypes.array.isRequired,
+    title: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    month: PropTypes.string,
+    media: PropTypes.shape({
+      mediumImage: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 // #endregion
 

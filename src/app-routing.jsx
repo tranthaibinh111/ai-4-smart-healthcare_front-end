@@ -41,12 +41,14 @@ const appRoutes = [
   },
   {
     path: '/tai-lieu-tham-khao',
-    name: 'Tài liệu tham khảo',
+    exact: true,
+    name: 'Danh sách tài liệu tham khảo',
     component: ReferencePage,
   },
   {
     path: '/tai-lieu-tham-khao/:slug',
-    name: 'Chi tiết Blog',
+    name: 'Tài liệu tham khảo',
+    exact: true,
     component: ReferenceDetailsPage,
   },
   {
