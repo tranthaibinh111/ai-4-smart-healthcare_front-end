@@ -14,7 +14,7 @@ import PdfViewer from '../pdf-viewer.component';
 // #endregion
 // #endregion
 
-const ReferenceDetailsWrap = ({ data }) => {
+const ResearchDetailsWrap = ({ data }) => {
   // #region Parameters
   const rootService = RootService();
   // #endregion
@@ -35,16 +35,16 @@ const ReferenceDetailsWrap = ({ data }) => {
 };
 
 // #region Khai báo Props
-ReferenceDetailsWrap.propTypes = {
+ResearchDetailsWrap.propTypes = {
   data: PropTypes.shape({
     slug: PropTypes.string.isRequired,
     keywords: PropTypes.array.isRequired,
   }),
 };
 
-ReferenceDetailsWrap.defaultProps = {
+ResearchDetailsWrap.defaultProps = {
   data: null,
 };
 // #endregion
 
-export default ReferenceDetailsWrap;
+export default ResearchDetailsWrap;

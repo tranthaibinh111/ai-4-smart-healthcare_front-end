@@ -1,7 +1,5 @@
 // #region React
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 // #endregion
 
 // #region Package (third-party)
@@ -10,7 +8,7 @@ import { useDispatch } from 'react-redux';
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import { referenceData } from '../data';
+import { referenceData, researchData } from '../data';
 // #endregion
 
 // #region Redux
@@ -25,15 +23,12 @@ import { RootService } from '../shared/services';
 
 // #region Containers
 const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const ReferenceDetailsContainer = React.lazy(() => import('../containers/reference/reference-details'));
+const ResearchDetailsContainer = React.lazy(() => import('../containers/research/research-details'));
 // #endregion
 // #endregion
 
-const ReferenceDetailsPage = ({ match: { params: { slug } } }) => {
+const ReferenceDetailsPage = () => {
   // #region Parameters
-  // eslint-disable-next-line prefer-const
-  let history = useHistory();
-
   const [contentThree, setContentThree] = useState(null);
   const [breadcrumbs, setBreadcrumbs] = useState([]);
   const [data, setData] = useState(null);
@@ -46,65 +41,44 @@ const ReferenceDetailsPage = ({ match: { params: { slug } } }) => {
   // AI 4 Smart Healthcare
   // Services
   const rootService = RootService();
-
-  const title = 'Tài liệu tham khảo';
   // #enderegion
 
   useEffect(() => {
     // #region Header
-    dispatch(setLayoutTitle(title));
+    dispatch(setLayoutTitle('Công trình nghiên cứu'));
     dispatch(setHomeFlag(false));
     setBreadcrumbs([
       { text: 'Trang chủ', path: rootService.home },
-      { text: title, path: rootService.references() },
+      { text: 'Tài liệu', path: rootService.references() },
     ]);
     // #enregion
 
-    const reference = referenceData.find((x) => x.slug === slug);
-
-    if (!reference) {
-      history.push(rootService.references);
-      return;
-    }
-
     // Title
-    setContentThree(shortTitle(reference.title));
-    // Data
-    setData(reference);
+    setContentThree(shortTitle(researchData.title));
+    setData(researchData);
 
     // #region Related && Recent
-    const otherReferences = referenceData.filter((x) => x.slug !== slug);
     const rndIdx = [];
 
     while (rndIdx.length < 7) {
-      const idx = Math.floor(Math.random() * otherReferences.length) + 1;
+      const idx = Math.floor(Math.random() * referenceData.length) + 1;
       const exists = rndIdx.filter((x) => x === idx).length > 0;
 
       if (!exists)
         rndIdx.push(idx);
     }
 
-    setRelated(rndIdx.slice(0, 2).map((idx) => otherReferences[idx]));
-    setRecent(rndIdx.slice(2).map((idx) => otherReferences[idx]));
+    setRelated(rndIdx.slice(0, 2).map((idx) => referenceData[idx]));
+    setRecent(rndIdx.slice(2).map((idx) => referenceData[idx]));
     // #endregion
-  }, [slug]);
+  }, []);
 
   return (
     <>
       <Breadcrumb prevs={breadcrumbs} contentThree={contentThree} />
-      <ReferenceDetailsContainer data={data} related={related} recent={recent} />
+      <ResearchDetailsContainer data={data} related={related} recent={recent} />
     </>
   );
 };
-
-// #region Khai báo Props
-ReferenceDetailsPage.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-};
-// #endregion
 
 export default ReferenceDetailsPage;

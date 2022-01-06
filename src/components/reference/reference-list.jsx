@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 // #region AI 4 Smart Healthcare
 // Services
-import RootService from '../../shared/services/root.service';
+import { RootService } from '../../shared/services';
 // #endregion
 
 const ReferenceList = ({ data }) => {

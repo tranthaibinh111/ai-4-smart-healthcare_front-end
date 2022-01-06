@@ -11,11 +11,11 @@ const menuData = [
     ],
   },
   {
-    label: 'Tài liệu tham khảo',
+    label: 'Tài liệu',
     url: '/tai-lieu-tham-khao',
     children: [
       { label: 'Tài liệu tham khảo', url: '/tai-lieu-tham-khao' },
-      { label: 'Nghiên cứu', url: '/blog-details/1' },
+      { label: 'Công trình nghiên cứu', url: '/cong-trinh-nghien-cuu' },
     ],
   },
   { label: 'Giới thiệu', url: '/gioi-thieu' },

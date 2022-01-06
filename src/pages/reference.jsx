@@ -22,7 +22,7 @@ import { RootService } from '../shared/services';
 
 // #region Containers
 const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const ReferenceListContainer = React.lazy(() => import('../containers/reference/reference-list'));
+const ReferenceItemContainer = React.lazy(() => import('../containers/reference/reference-item'));
 // #endregion
 // #endregion
 
@@ -92,7 +92,7 @@ const ReferencePage = () => {
         contentThree={title}
         title={`${title} <span>(mới nhất)</span>`}
       />
-      <ReferenceListContainer data={references} pagination={pagination} />
+      <ReferenceItemContainer data={references} pagination={pagination} />
     </>
   );
 };

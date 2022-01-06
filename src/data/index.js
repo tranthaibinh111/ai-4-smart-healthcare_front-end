@@ -4,6 +4,7 @@ import menuData from './menu';
 import homeData from './home';
 import keywordData from './keywords';
 import referenceData from './reference';
+import researchData from './research';
 // #endregion
 
 export {
@@ -12,4 +13,5 @@ export {
   homeData,
   keywordData,
   referenceData,
+  researchData,
 };

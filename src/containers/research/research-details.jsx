@@ -8,7 +8,8 @@ import PropTypes from 'prop-types';
 import {
   // Reference
   ReferenceGrid,
-  ReferenceDetailsWrap,
+  // Research
+  ResearchDetailsWrap,
   // Sidebar
   SidebarAuthors,
   SidebarReference,
@@ -17,14 +18,14 @@ import {
 // #endregion
 // #endregion
 
-const ReferenceDetailsContainer = ({ data, related, recent }) => (
+const ResearchDetailsContainer = ({ data, related, recent }) => (
   <div className="blog-details-area">
     <div className="container">
       <div className="row">
         <div className="col-lg-8">
           <div className="post-details-content">
             <div className="post-details-body">
-              <ReferenceDetailsWrap data={data} />
+              <ResearchDetailsWrap data={data} />
               <div className="related-post">
                 <h2 className="title">
                   Tài liệu
@@ -34,7 +35,7 @@ const ReferenceDetailsContainer = ({ data, related, recent }) => (
                 <div className="post-items-style3">
                   <div className="row">
                     {related?.length > 0 && related.map((item, idx) => (
-                      <div className="col-md-6" key={`reference-grid-div-${idx}`}>
+                      <div className="col-md-6" key={`Research-grid-div-${idx}`}>
                         <ReferenceGrid data={item} />
                       </div>
                     ))}
@@ -76,7 +77,7 @@ const ReferenceDetailsContainer = ({ data, related, recent }) => (
 );
 
 // #region Khai báo Props
-ReferenceDetailsContainer.propTypes = {
+ResearchDetailsContainer.propTypes = {
   data: PropTypes.shape({
     authors: PropTypes.array,
     keywords: PropTypes.array,
@@ -86,11 +87,11 @@ ReferenceDetailsContainer.propTypes = {
   recent: PropTypes.array,
 };
 
-ReferenceDetailsContainer.defaultProps = {
+ResearchDetailsContainer.defaultProps = {
   data: null,
   related: [],
   recent: [],
 };
 // #endregion
 
-export default ReferenceDetailsContainer;
+export default ResearchDetailsContainer;

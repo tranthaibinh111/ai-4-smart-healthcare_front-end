@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
+// Utils
+import { shortTitle } from '../../utils';
 // Services
 import { RootService } from '../../shared/services';
 // #endregion
@@ -25,7 +27,7 @@ const SidebarReference = ({ data }) => {
             <div className="content">
               <Link
                 to={rootService.referenceDetails(item.slug)}
-                dangerouslySetInnerHTML={{ __html: item.title }}
+                dangerouslySetInnerHTML={{ __html: shortTitle(item.title, 40) }}
               />
             </div>
           </li>

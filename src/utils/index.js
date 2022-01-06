@@ -108,6 +108,49 @@ const containsObject = (obj, list) => {
   return -1;
 };
 
+/**
+ * Short title
+ * @param {string} title
+ * @param {number} maxlength
+ * @returns Short title
+ */
+const shortTitle = (title, maxlength = 40) => {
+  if (!title)
+    return '';
+
+  if (title.length <= maxlength)
+    return title;
+
+  // #region Thực hiện rút ngắn title
+  const words = title.split(' ').filter((x) => x);
+  let idx = 0;
+
+  for (idx; idx < words.length; idx++) {
+    if (words.slice(0, idx).join(' ').length > maxlength)
+      break;
+  }
+
+  return `${words.slice(0, idx).join(' ')}...`;
+  // #endregion
+};
+
+/**
+ * Tạo ra url tới search tìm kiếm keyword
+ * @param {string} keyword
+ * @param {string} search Thể loại tìm kiếm
+ * @returns Url tới search tìm kiếm keyword
+ */
+const keywordUrl = (keyword, search = 'IEE') => {
+  let url = `https://scholar.google.com.vn/scholar?q=${keyword}`;
+
+  if (search === 'IEEE')
+    url = `https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=${keyword}`;
+  else if (search === 'Springer')
+    url = `https://link.springer.com/search?query=${keyword}`;
+
+  return encodeURI(url);
+};
+
 export {
   containsObject,
   flatDeep,
@@ -117,4 +160,6 @@ export {
   slideUp,
   slideDown,
   slideToggle,
+  shortTitle,
+  keywordUrl,
 };

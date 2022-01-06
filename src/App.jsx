@@ -68,7 +68,6 @@ const App = () => {
             <ScrollToTop />
           </div>
           <Footer />
-          <ScrollToTop />
         </div>
       </NavScrollTop>
     </Suspense>

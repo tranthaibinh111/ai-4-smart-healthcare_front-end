@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
+// Utils
+import { shortTitle } from '../../utils';
 // Services
 import { RootService } from '../../shared/services';
 // #endregion
@@ -24,7 +26,7 @@ const ReferenceGrid = ({ data }) => {
       <div className="content">
         <h4 className="title">
           <Link to={rootService.referenceDetails(data.slug)}>
-            {data.title}
+            {shortTitle(data.title, 40)}
           </Link>
         </h4>
       </div>

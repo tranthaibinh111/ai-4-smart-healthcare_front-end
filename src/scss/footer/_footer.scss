@@ -132,9 +132,9 @@
           font-size: 22px;
           left: -2px;
           top: 1px;
-          width: 55px;
-          @media #{$xs-device} {
-            width: 37px;
+          width: 37px;
+          @media #{$md-device} {
+            width: 62px;
           }
           @media (max-width: 359px) {
             width: 48px;
