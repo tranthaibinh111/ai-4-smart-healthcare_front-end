@@ -20,7 +20,7 @@ const ReferenceGrid = ({ data }) => {
     <div className="post-item">
       <div className="thumb">
         <Link to={rootService.referenceDetails(data.slug)}>
-          <img src={rootService.image(data.media.gridImage)} alt={data.title} />
+          <img src={rootService.img(data.media.gridImage)} alt={data.title} />
         </Link>
       </div>
       <div className="content">

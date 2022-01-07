@@ -22,7 +22,7 @@ const SidebarReference = ({ data }) => {
         {data?.length > 0 && data.filter((x) => x !== undefined).map((item, idx) => (
           <li key={`sidebar-post-li-${idx}`}>
             <div className="thumb">
-              <img src={rootService.image(item.media.rcImage)} alt={item.title} />
+              <img src={rootService.img(item.media.rcImage)} alt={item.title} />
             </div>
             <div className="content">
               <Link

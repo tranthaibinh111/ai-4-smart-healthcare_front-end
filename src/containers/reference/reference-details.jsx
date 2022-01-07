@@ -33,9 +33,10 @@ const ReferenceDetailsContainer = ({ data, related, recent }) => (
                 </h2>
                 <div className="post-items-style3">
                   <div className="row">
-                    {related?.length > 0 && related.map((item, idx) => (
-                      <div className="col-md-6" key={`reference-grid-div-${idx}`}>
-                        <ReferenceGrid data={item} />
+                    {/* eslint-disable-next-line max-len */}
+                    {related?.length > 0 && related.filter((x) => x !== undefined).map((single, key) => (
+                      <div className="col-md-6" key={key}>
+                        <ReferenceGrid data={single} />
                       </div>
                     ))}
                   </div>

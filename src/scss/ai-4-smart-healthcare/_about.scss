@@ -51,16 +51,27 @@
       color: $black-999;
       letter-spacing: 0;
       line-height: 30px;
-      margin-bottom: 69px;
-      @media #{$sm-device} {
-        margin-bottom: 40px;
-      }
+      margin-bottom: 20px;
+
       &.text-block {
         color: $black;
         font-size: 16px;
         margin-bottom: 31px;
       }
     }
+
+    .desc {
+      &:last-child {
+        > p {
+          margin-bottom: 69px;
+
+          @media #{$sm-device} {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+
     .service-list {
       display: flex;
       justify-content: space-between;
@@ -68,7 +79,7 @@
         display: block;
         padding-bottom: 20px;
       }
-      ul {        
+      ul {
         @media #{$xxs-device} {
           margin-bottom: 0;
         }

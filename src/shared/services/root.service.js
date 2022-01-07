@@ -2,7 +2,7 @@ const RootService = () => {
   const path = process.env.PUBLIC_URL;
 
   // #region Public
-  const image = (url) => (url ? `${path}${url}` : null);
+  const img = (url) => (url ? `${path}${url}` : null);
   const pdf = (slug) => (slug ? `${path}/pdf/${slug}.pdf` : null);
   // #endregion
 
@@ -23,7 +23,7 @@ const RootService = () => {
 
   return {
     // Public
-    image,
+    img,
     pdf,
     // Routes
     home,
