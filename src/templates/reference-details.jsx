@@ -14,7 +14,7 @@ import { referenceData } from '../data';
 // #endregion
 
 // #region Redux
-import { setLayoutTitle, setHomeFlag } from '../toolkit';
+import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
 // #endregion
 
 // Utils
@@ -54,6 +54,7 @@ const ReferenceDetailsPage = ({ match: { params: { slug } } }) => {
     // #region Header
     dispatch(setLayoutTitle(title));
     dispatch(setHomeFlag(false));
+    dispatch(setMenu('Tài liệu'));
     setBreadcrumbs([
       { text: 'Trang chủ', path: rootService.home },
       { text: title, path: rootService.references() },

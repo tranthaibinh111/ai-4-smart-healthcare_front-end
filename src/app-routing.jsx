@@ -11,7 +11,6 @@ const ResearchDetailsPage = React.lazy(() => import('./templates/research-detail
 
 // #region Pages
 const HomePage = React.lazy(() => import('./pages/index'));
-const ServicePage = React.lazy(() => import('./pages/service'));
 const ReferencePage = React.lazy(() => import('./pages/reference'));
 const AboutPage = React.lazy(() => import('./pages/about'));
 const ContactPage = React.lazy(() => import('./pages/contact'));
@@ -26,13 +25,8 @@ const appRoutes = [
     component: HomePage,
   },
   {
-    path: '/chuc-nang',
-    name: 'Chức năng',
-    component: ServicePage,
-  },
-  {
-    path: '/chuc-nang/:id',
-    name: 'Thông tin dịch vụ',
+    path: '/nghien-cuu',
+    name: 'Nghiên cứu',
     component: ServiceDetails,
   },
   {

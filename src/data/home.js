@@ -20,7 +20,7 @@ const healthFeature = [
     id: 1,
     icon: 'icon icofont-brain-alt',
     title: 'Dữ liệu',
-    subTitle: 'Nhập dữ liệu tín hiệu EEG',
+    subTitle: 'EEG - Colorado State University',
   },
   {
     id: 2,

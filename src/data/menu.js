@@ -2,14 +2,7 @@ const menuData = [
   {
     label: 'Trang chủ', exact: true, url: '', active: true,
   },
-  {
-    label: 'Chức năng',
-    url: '/chuc-nang',
-    children: [
-      { label: 'Danh sách dịch vụ', url: '/chuc-nang' },
-      { label: 'Chi tiết dịch vụ', url: '/chuc-nang/1' },
-    ],
-  },
+  { label: 'Nghiên cứu', url: '/nghien-cuu' },
   {
     label: 'Tài liệu',
     url: '/tai-lieu-tham-khao',

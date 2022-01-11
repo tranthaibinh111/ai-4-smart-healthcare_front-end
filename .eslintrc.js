@@ -70,5 +70,9 @@ module.exports = {
     'import/prefer-default-export': [
       0,
     ],
+    // https://eslint.org/docs/rules/object-curly-newline#options
+    'object-curly-newline': [
+      0,
+    ],
   },
 };

@@ -39,13 +39,13 @@
   }
 
   .department-content {
-    max-width: 800px;
+    max-width: 900px;
     width: 100%;
     @media #{$lg-device} {
-      max-width: 700px;
+      max-width: 800px;
     }
     @media (max-width: 1023px) {
-      max-width: 669px;
+      max-width: 769px;
     }
     @media #{$md-device} {
       margin-bottom: 80px;
@@ -55,11 +55,11 @@
 
   .sidebar-wrapper {
     margin-top: 20px;
-    max-width: 300px;
+    max-width: 200px;
     width: 100%;
     @media #{$lg-device} {
       margin-right: 30px;
-      max-width: 265px;
+      max-width: 165px;
     }
     @media #{$md-device} {
       max-width: none;

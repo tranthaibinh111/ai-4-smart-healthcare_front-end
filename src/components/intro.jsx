@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-import Button from '../button';
+import Button from './button';
 // #endregion
 
 const Intro = ({ data }) => (
@@ -23,7 +23,7 @@ const Intro = ({ data }) => (
             <Button
               path={`${process.env.PUBLIC_URL}/`}
               classOption="btn btn-danger me-3 animated delay1"
-              text="Chức năng"
+              text="Nghiên cứu"
             />
           </div>
         </div>

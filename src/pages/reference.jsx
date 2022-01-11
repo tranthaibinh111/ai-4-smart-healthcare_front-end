@@ -63,7 +63,7 @@ const ReferencePage = () => {
     // #region Header
     dispatch(setLayoutTitle(title));
     dispatch(setHomeFlag(false));
-    dispatch(setMenu(title));
+    dispatch(setMenu('Tài liệu'));
     setBreadcrumbs([{ text: 'Trang chủ', path: rootService.home }]);
     // #endregion
 
