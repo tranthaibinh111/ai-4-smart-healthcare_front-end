@@ -1,84 +1,85 @@
 // #region React
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 // #endregion
 
 // #region Package (third-party)
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'
 // #endregion
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import { referenceData, researchData } from '../data';
+import { referenceData, researchData } from '../data'
 // #endregion
 
 // #region Redux
-import { setLayoutTitle, setHomeFlag } from '../toolkit';
+import { setLayoutTitle, setHomeFlag } from '../toolkit'
 // #endregion
 
 // Utils
-import { shortTitle } from '../utils';
+import { shortTitle } from '../utils'
 
 // Services
-import { RootService } from '../shared/services';
+import { RootService } from '../shared/services'
 
 // #region Containers
-const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const ResearchDetailsContainer = React.lazy(() => import('../containers/research/research-details'));
+const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'))
+const ResearchDetailsContainer = React.lazy(() =>
+  import('../containers/research/research-details')
+)
 // #endregion
 // #endregion
 
 const ReferenceDetailsPage = () => {
   // #region Parameters
-  const [contentThree, setContentThree] = useState(null);
-  const [breadcrumbs, setBreadcrumbs] = useState([]);
-  const [data, setData] = useState(null);
-  const [related, setRelated] = useState([]);
-  const [recent, setRecent] = useState([]);
+  const [contentThree, setContentThree] = useState(null)
+  const [breadcrumbs, setBreadcrumbs] = useState([])
+  const [data, setData] = useState(null)
+  const [related, setRelated] = useState([])
+  const [recent, setRecent] = useState([])
 
   // Redux
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   // AI 4 Smart Healthcare
   // Services
-  const rootService = RootService();
+  const rootService = RootService()
   // #enderegion
 
   useEffect(() => {
     // #region Header
-    dispatch(setLayoutTitle('Công trình nghiên cứu'));
-    dispatch(setHomeFlag(false));
+    dispatch(setLayoutTitle('Công trình nghiên cứu'))
+    dispatch(setHomeFlag(false))
     setBreadcrumbs([
       { text: 'Trang chủ', path: rootService.home },
       { text: 'Tài liệu', path: rootService.references() },
-    ]);
+    ])
     // #enregion
 
     // Title
-    setContentThree(shortTitle(researchData.title));
-    setData(researchData);
+    setContentThree(shortTitle(researchData.title))
+    setData(researchData)
 
     // #region Related && Recent
-    const rndIdx = [];
+    const rndIdx = []
 
     while (rndIdx.length < 7) {
-      const idx = Math.floor(Math.random() * referenceData.length) + 1;
-      const exists = rndIdx.filter((x) => x === idx).length > 0;
+      const idx = Math.floor(Math.random() * referenceData.length) + 1
+      const exists = rndIdx.filter((x) => x === idx).length > 0
 
-      if (!exists)
-        rndIdx.push(idx);
+      if (!exists) rndIdx.push(idx)
     }
 
-    setRelated(rndIdx.slice(0, 2).map((idx) => referenceData[idx]));
-    setRecent(rndIdx.slice(2).map((idx) => referenceData[idx]));
+    setRelated(rndIdx.slice(0, 2).map((idx) => referenceData[idx]))
+    setRecent(rndIdx.slice(2).map((idx) => referenceData[idx]))
     // #endregion
-  }, []);
+  }, [dispatch, rootService])
 
   return (
     <>
       <Breadcrumb prevs={breadcrumbs} contentThree={contentThree} />
       <ResearchDetailsContainer data={data} related={related} recent={recent} />
     </>
-  );
-};
+  )
+}
 
-export default ReferenceDetailsPage;
+export default ReferenceDetailsPage

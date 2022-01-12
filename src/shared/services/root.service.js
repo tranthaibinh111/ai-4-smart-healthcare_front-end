@@ -1,24 +1,24 @@
 const RootService = () => {
-  const path = process.env.PUBLIC_URL;
+  const path = process.env.PUBLIC_URL
 
   // #region Public
-  const img = (url) => (url ? `${path}${url}` : null);
-  const pdf = (slug) => (slug ? `${path}/pdf/${slug}.pdf` : null);
+  const img = (url) => (url ? `${path}${url}` : null)
+  const pdf = (slug) => (slug ? `${path}/pdf/${slug}.pdf` : null)
   // #endregion
 
   // #region Routes
-  const home = path;
+  const home = path
 
   const references = (page = 1) => {
-    let url = `${path}/tai-lieu-tham-khao`;
+    let url = `${path}/tai-lieu-tham-khao`
 
-    if (page > 1)
-      url += `?page=${page}`;
+    if (page > 1) url += `?page=${page}`
 
-    return url;
-  };
+    return url
+  }
 
-  const referenceDetails = (slug) => (slug ? `${path}/tai-lieu-tham-khao/${slug}` : null);
+  const referenceDetails = (slug) =>
+    slug ? `${path}/tai-lieu-tham-khao/${slug}` : null
   // #endregion
 
   return {
@@ -29,7 +29,7 @@ const RootService = () => {
     home,
     references,
     referenceDetails,
-  };
-};
+  }
+}
 
-export default RootService;
+export default RootService

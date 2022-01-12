@@ -4,7 +4,8 @@ const referenceData = [
     type: 'Book',
     slug: 'dynamic-self-organised-neural-network-inspired-by-the-immune-algorithm-for-financial-time-series-prediction-and-medical-data-classification',
     authors: ['Haya Alaskar'],
-    title: 'Dynamic Self-organised Neural Network Inspired by The Immune Algorithm for Financial Time Series Prediction and Medical Data Classification',
+    title:
+      'Dynamic Self-organised Neural Network Inspired by The Immune Algorithm for Financial Time Series Prediction and Medical Data Classification',
     publisher: 'Liverpool John Moores University',
     year: '2014',
     month: '04',
@@ -21,8 +22,10 @@ const referenceData = [
     type: 'Article',
     slug: 'deep-learning-of-emg-time–frequency-representations-for-identifying-normal-and-aggressive-actions',
     authors: ['Haya Alaskar'],
-    title: 'Deep Learning of EMG Time–Frequency Representations for Identifying Normal and Aggressive Actions',
-    journal: 'IJCSNS International Journal of Computer Science and Network Security',
+    title:
+      'Deep Learning of EMG Time–Frequency Representations for Identifying Normal and Aggressive Actions',
+    journal:
+      'IJCSNS International Journal of Computer Science and Network Security',
     volume: '18',
     number: '12',
     pages: '16--25',
@@ -67,7 +70,8 @@ const referenceData = [
     type: 'Article',
     slug: 'classification-of-eeg-signals-using-wavelet-transform-and-hybrid-classifier-for-parkinsons-disease-detection',
     authors: ['M. P. G. Bhosale', 'S. T. Patil'],
-    title: 'Classification of EEG Signals Using Wavelet Transform and Hybrid Classifier for Parkinson’s Disease Detection',
+    title:
+      'Classification of EEG Signals Using Wavelet Transform and Hybrid Classifier for Parkinson’s Disease Detection',
     journal: 'Int. J. Eng',
     volume: '2',
     number: '1',
@@ -127,9 +131,20 @@ const referenceData = [
     id: 6,
     type: 'Conference',
     slug: 'evaluations-of-deep-convolutional-neural-networks-for-automatic-identification-of-malaria-infected-cells',
-    authors: ['Yuhang Dong', 'Zhuocheng Jiang', 'Hongda Shen', 'W. David Pan', 'Lance A. Williams', 'Vishnu V. B. Reddy', 'William H. Benjamin', 'Allen W. Bryan'],
-    title: 'Evaluations of deep convolutional neural networks for automatic identification of malaria infected cells',
-    booktitle: '2017 IEEE EMBS International Conference on Biomedical & Health Informatics (BHI)',
+    authors: [
+      'Yuhang Dong',
+      'Zhuocheng Jiang',
+      'Hongda Shen',
+      'W. David Pan',
+      'Lance A. Williams',
+      'Vishnu V. B. Reddy',
+      'William H. Benjamin',
+      'Allen W. Bryan',
+    ],
+    title:
+      'Evaluations of deep convolutional neural networks for automatic identification of malaria infected cells',
+    booktitle:
+      '2017 IEEE EMBS International Conference on Biomedical & Health Informatics (BHI)',
     series: '',
     pages: '101--104',
     year: '2011',
@@ -147,8 +162,16 @@ const referenceData = [
     id: 7,
     type: 'Article',
     slug: 'echo-state-networks-for-modeling-and-classification-of-eeg-signals-in-mental-task-braincomputer-interfaces',
-    authors: ['Elliott M. Forney', 'Charles W. Anderson', 'William J. Gavin', 'Patricia L. Davies', 'Marla C. Roll', 'Brittany K. Taylo'],
-    title: 'Echo State Networks for Modeling and Classification of EEG Signals in Mental-Task Brain-Computer Interfaces',
+    authors: [
+      'Elliott M. Forney',
+      'Charles W. Anderson',
+      'William J. Gavin',
+      'Patricia L. Davies',
+      'Marla C. Roll',
+      'Brittany K. Taylo',
+    ],
+    title:
+      'Echo State Networks for Modeling and Classification of EEG Signals in Mental-Task Brain-Computer Interfaces',
     journal: 'Colorado State University Technical Report CS-15-102',
     volume: '',
     number: '',
@@ -231,7 +254,8 @@ const referenceData = [
     type: 'Article',
     slug: 'automatic-diagnosis-of-mild-cognitive-impairment-using-electroencephalogram-spectral-features',
     authors: ['Masoud Kashefpoor', 'Hossein Rabbani', 'Majid Barekatain'],
-    title: 'Automatic Diagnosis of Mild Cognitive Impairment Using Electroencephalogram Spectral Features',
+    title:
+      'Automatic Diagnosis of Mild Cognitive Impairment Using Electroencephalogram Spectral Features',
     journal: 'Journal of Medical Sensors and Signals',
     volume: '6',
     number: '',
@@ -278,7 +302,8 @@ const referenceData = [
     slug: 'a-review-on-analysis-of-eeg-signals',
     authors: ['Er. Jasjeet Kaur', 'Er. Amanpreet Kaur'],
     title: 'A Review on Analysis of EEG Signals',
-    booktitle: '2015 International Conference on Advances in Computer Engineering and Applications',
+    booktitle:
+      '2015 International Conference on Advances in Computer Engineering and Applications',
     series: '',
     pages: '25--32',
     year: '2015',
@@ -393,8 +418,19 @@ const referenceData = [
     id: 14,
     type: 'Article',
     slug: 'handwritten-digit-recognition',
-    authors: ['Y. Le Cun', 'I. Guyon', 'L. D. Jackel', 'D.Henderson', 'B. Boser', 'R. E. Howard', 'J . S. Denker', 'W. Hubbard', 'H. P.Graf'],
-    title: 'Handwritten Digit Recognition: Applications of Neural Network Chips and Automatic Learning',
+    authors: [
+      'Y. Le Cun',
+      'I. Guyon',
+      'L. D. Jackel',
+      'D.Henderson',
+      'B. Boser',
+      'R. E. Howard',
+      'J . S. Denker',
+      'W. Hubbard',
+      'H. P.Graf',
+    ],
+    title:
+      'Handwritten Digit Recognition: Applications of Neural Network Chips and Automatic Learning',
     journal: 'IEEE Communications Magazine',
     volume: '27',
     number: '',
@@ -413,8 +449,15 @@ const referenceData = [
     id: 15,
     type: 'Article',
     slug: 'clinical-application-of-an-eeg-based-brain–computer-interface',
-    authors: ['C. Neuper', 'G.R. Mu¨ller', 'A. Ku¨bler', 'N. Birbaumer', 'G. Pfurtscheller'],
-    title: 'Clinical application of an EEG-based brain–computer interface: a case study in a patient with severe motor impairment',
+    authors: [
+      'C. Neuper',
+      'G.R. Mu¨ller',
+      'A. Ku¨bler',
+      'N. Birbaumer',
+      'G. Pfurtscheller',
+    ],
+    title:
+      'Clinical application of an EEG-based brain–computer interface: a case study in a patient with severe motor impairment',
     journal: 'Clinical Neurophysiology',
     volume: '114',
     number: '3',
@@ -434,8 +477,10 @@ const referenceData = [
     type: 'Conference',
     slug: 'effect-of-parameter-variations-on-accuracy-of-convolutional-neural-network',
     authors: ['Kaushik Gobindram Pasi', 'Sowmiyaraksha R. Naik'],
-    title: 'Effect of Parameter Variations on Accuracy of Convolutional Neural Network',
-    booktitle: '2016 International Conference on Computing, Analytics and Security Trends (CAST)',
+    title:
+      'Effect of Parameter Variations on Accuracy of Convolutional Neural Network',
+    booktitle:
+      '2016 International Conference on Computing, Analytics and Security Trends (CAST)',
     series: '',
     pages: '398--403',
     year: '2016',
@@ -500,7 +545,8 @@ const referenceData = [
     type: 'Article',
     slug: 'analyzing-eeg-signals-with-machine-learning-for-diagnosing-alzheimers-disease',
     authors: ['V. Podgorelec'],
-    title: 'Analyzing EEG Signals with Machine Learning for Diagnosing Alzheimer’s Disease',
+    title:
+      'Analyzing EEG Signals with Machine Learning for Diagnosing Alzheimer’s Disease',
     journal: 'Elektronika ir elektrotechnika',
     volume: '8',
     number: '18',
@@ -561,8 +607,10 @@ const referenceData = [
       'Wolfram Burgard',
       'Tonio Ball',
     ],
-    title: 'Deep Learning With Convolutional Neural Networks for EEG Decoding and Visualization',
-    booktitle: '2017 IEEE Signal Processing in Medicine and Biology Symposium (SPMB)',
+    title:
+      'Deep Learning With Convolutional Neural Networks for EEG Decoding and Visualization',
+    booktitle:
+      '2017 IEEE Signal Processing in Medicine and Biology Symposium (SPMB)',
     series: '',
     pages: '1097--1105',
     year: '2017',
@@ -621,8 +669,15 @@ const referenceData = [
     id: 19,
     type: 'Article',
     slug: 'deep-learning-enabled-fault-diagnosis-using-time-frequency-image-analysis-of-rolling-element-bearings',
-    authors: ['David Verstraete', 'Andrés Ferrada', 'Enrique López Droguett', 'Viviana Meruane', 'Mohammad Modarres'],
-    title: 'Deep Learning Enabled Fault Diagnosis Using Time-Frequency Image Analysis of Rolling Element Bearings',
+    authors: [
+      'David Verstraete',
+      'Andrés Ferrada',
+      'Enrique López Droguett',
+      'Viviana Meruane',
+      'Mohammad Modarres',
+    ],
+    title:
+      'Deep Learning Enabled Fault Diagnosis Using Time-Frequency Image Analysis of Rolling Element Bearings',
     journal: 'Shock Vib',
     volume: '2017',
     number: '',
@@ -642,8 +697,10 @@ const referenceData = [
     type: 'Conference',
     slug: 'deep-convolutional-neural-networks-for-interpretable-analysis-of-eeg-sleep-stage-scoring',
     authors: ['Albert Vilamala', 'Kristoffer H. Madsen', 'Lars K. Hansen'],
-    title: 'Deep Convolutional Neural Networks for Interpretable Analysis of EEG Sleep Stage Scoring',
-    booktitle: '2017 IEEE International Workshop On Machine Learning For Signal Processing',
+    title:
+      'Deep Convolutional Neural Networks for Interpretable Analysis of EEG Sleep Stage Scoring',
+    booktitle:
+      '2017 IEEE International Workshop On Machine Learning For Signal Processing',
     series: '',
     pages: '25--28',
     year: '2017',
@@ -683,7 +740,8 @@ const referenceData = [
     type: 'Article',
     slug: 'automatic-classification-of-motor-impairment-neural-disorders-from-eeg-signals-using-deep-convolutional-neural-networks',
     authors: ['Grega Vrbancic', 'Vili Podgorelec'],
-    title: 'Automatic Classification of Motor Impairment Neural Disorders from EEG Signals Using Deep Convolutional Neural Networks',
+    title:
+      'Automatic Classification of Motor Impairment Neural Disorders from EEG Signals Using Deep Convolutional Neural Networks',
     journal: 'Elektron. Ir Elektrotechnika',
     volume: '24',
     number: '4',
@@ -729,7 +787,8 @@ const referenceData = [
     type: 'Article',
     slug: 'emg‑based-estimation-of-limb-movement-using-deep-learning-with-recurrent-convolutional-neural-networks',
     authors: ['Peng Xia', 'Jie Hu', 'Yinghong Peng'],
-    title: 'EMG‑Based Estimation of Limb Movement Using Deep Learning With Recurrent Convolutional Neural Networks',
+    title:
+      'EMG‑Based Estimation of Limb Movement Using Deep Learning With Recurrent Convolutional Neural Networks',
     journal: 'Artif. Organs',
     volume: '42',
     number: '5',
@@ -770,6 +829,6 @@ const referenceData = [
       mediumImage: '/img/reference/mArticle.png',
     },
   },
-];
+]
 
-export default referenceData;
+export default referenceData

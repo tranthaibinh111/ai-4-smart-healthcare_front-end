@@ -9,7 +9,7 @@ body {
   @include font-size($font-size-base);
   font-family: $body-font;
   font-weight: $font-weight-normal;
-  letter-spacing: .25px;
+  letter-spacing: 0.25px;
   line-height: $body-line-height;
   margin: 0;
   overflow-x: hidden;
@@ -17,8 +17,18 @@ body {
   word-wrap: break-word;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   color: $heading-color;
   font-family: $heading-font;
   font-weight: $font-weight-bold;
@@ -30,7 +40,7 @@ h1, h2, h3, h4, h5, h6,
 a {
   color: $theme-color;
   text-decoration: none;
-  @include transition(.3s);
+  @include transition(0.3s);
 
   &:hover,
   &:active,
@@ -53,7 +63,7 @@ a {
 p {
   margin-bottom: 30px;
 
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
   }
 }
@@ -82,12 +92,18 @@ p {
   text-shadow: none;
 }
 
-img { max-width: 100%; }
+img {
+  max-width: 100%;
+}
 
-iframe { border: none !important; }
+iframe {
+  border: none !important;
+}
 
-textarea, input {
-  &:focus, &:active {
+textarea,
+input {
+  &:focus,
+  &:active {
     outline: none;
   }
 }

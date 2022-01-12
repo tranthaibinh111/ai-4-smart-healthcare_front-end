@@ -3,8 +3,10 @@ const researchData = {
   type: 'Conference',
   slug: 'a-new-method-of-eeg-classification-for-motor-impairment-neural-disorders-using-deep-learning',
   authors: ['Binh Tran', 'D.Sc Duc M Duong', 'Hoai Dang', 'Nhan Trinh'],
-  title: 'A New Method of EEG Classification for Motor Impairment Neural Disorders Using Deep Learning',
-  booktitle: 'The 8th International Conference on Computational Science and Technology',
+  title:
+    'A New Method of EEG Classification for Motor Impairment Neural Disorders Using Deep Learning',
+  booktitle:
+    'The 8th International Conference on Computational Science and Technology',
   series: '',
   pages: '',
   year: '2021',
@@ -32,6 +34,6 @@ const researchData = {
       text: 'Electroencephalography',
     },
   ],
-};
+}
 
-export default researchData;
+export default researchData

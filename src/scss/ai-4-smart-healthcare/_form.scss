@@ -65,7 +65,7 @@
         outline: none;
       }
     }
-    p{
+    p {
       margin-top: 10px;
       text-align: left;
       color: red;
@@ -119,13 +119,13 @@
         text-align: right;
         margin: 0;
         position: relative;
-        &::before{
-        position: absolute;
-        top: 0;
-        right: 0;
+        &::before {
+          position: absolute;
+          top: 0;
+          right: 0;
         }
       }
-      P{
+      P {
         margin-top: 5px;
       }
     }
@@ -189,7 +189,7 @@
         outline: none;
       }
     }
-    p{
+    p {
       color: red;
     }
     textarea {

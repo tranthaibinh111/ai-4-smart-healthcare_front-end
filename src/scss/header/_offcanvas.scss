@@ -12,7 +12,7 @@ body {
 }
 
 .offcanvas-overlay {
-  &.active{
+  &.active {
     display: block;
   }
   position: fixed;
@@ -127,7 +127,7 @@ body {
         font-size: 14px;
         line-height: 30px;
         color: $color-dark;
-        &:hover{
+        &:hover {
           color: #6d0101;
         }
       }
@@ -173,7 +173,7 @@ body {
           content: '';
           @include transition(0.5s ease-in-out);
           background-color: $color-dark;
-          &:hover{
+          &:hover {
             background-color: $theme-color;
           }
         }

@@ -3,25 +3,25 @@
  */
 // #region Package (third-party)
 // #region Redux
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 // #endregion
 // #endregion
 
 const initialState = {
   label: 'Trang chủ',
-};
+}
 
 export const MenuSlice = createSlice({
   name: 'Menu',
   initialState,
   reducers: {
     setMenu: (state, action) => {
-      state.label = action.payload;
+      state.label = action.payload
     },
   },
-});
+})
 
 // Action creators are generated for each case reducer function
-export const { setMenu } = MenuSlice.actions;
+export const { setMenu } = MenuSlice.actions
 
-export default MenuSlice.reducer;
+export default MenuSlice.reducer

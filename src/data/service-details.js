@@ -1,5 +1,6 @@
 const serviceDetailsData = {
-  title: 'Dữ liệu EEG <span><a href="https://www.cs.colostate.edu/eeg/main/data/2011-12_BCI_at_CSU" target="_blank" rel="noreferrer">(Colorado State University)</a></span>',
+  title:
+    'Dữ liệu EEG <span><a href="https://www.cs.colostate.edu/eeg/main/data/2011-12_BCI_at_CSU" target="_blank" rel="noreferrer">(Colorado State University)</a></span>',
   subjects: [
     {
       protocol: '3minutes',
@@ -94,6 +95,6 @@ const serviceDetailsData = {
       signals: [],
     },
   ],
-};
+}
 
-export default serviceDetailsData;
+export default serviceDetailsData

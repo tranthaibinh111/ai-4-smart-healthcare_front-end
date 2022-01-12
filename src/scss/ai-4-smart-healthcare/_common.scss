@@ -9,10 +9,10 @@
     max-width: 1170px;
   }
 }
-.bg-white{
+.bg-white {
   background-color: #ffffff;
 }
-.bg-gray{
+.bg-gray {
   background-color: #f3f3f3;
 }
 .section-title {
@@ -894,18 +894,18 @@
       .accordion-item {
         .accordion-header {
           position: relative;
-          .icon{
+          .icon {
             font-size: 24px;
             color: $black;
             position: absolute;
             right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            &.opened{
+            &.opened {
               display: none;
             }
           }
-          &.active{
+          &.active {
             & .title {
               border: none;
               color: $theme-color;
@@ -922,10 +922,10 @@
                 padding: 0 10px 13px 0;
               }
             }
-            .closed{
+            .closed {
               display: none;
             }
-            .opened{
+            .opened {
               display: block !important;
             }
           }
@@ -1024,8 +1024,8 @@
         .accordion-header {
           position: relative;
           padding: 0;
-          &.active{
-            .accordion-title{
+          &.active {
+            .accordion-title {
               color: $theme-color;
             }
             &:before {
@@ -1042,10 +1042,10 @@
               width: 100%;
               transition: all 0.4s;
             }
-            .opened{
+            .opened {
               display: block !important;
             }
-            .closed{
+            .closed {
               display: none;
             }
           }
@@ -1088,14 +1088,14 @@
               }
             }
           }
-          .icon{
+          .icon {
             font-size: 18px;
             color: #000;
             position: absolute;
             right: 15px;
             top: 50%;
             transform: translateY(-50%);
-            &.opened{
+            &.opened {
               display: none;
             }
           }
@@ -2512,42 +2512,42 @@
   overflow: hidden;
 
   @media #{$xxs-device} {
-      width: 50px;
-      height: 50px;
-      line-height: 50px;
-      font-size: 20px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
   }
 
   &.show {
-      visibility: visible;
-      opacity: 1;
-      bottom: 60px;
+    visibility: visible;
+    opacity: 1;
+    bottom: 60px;
   }
 
   i {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      color: $white;
-      transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: $white;
+    transition: all 0.3s ease-in-out;
   }
 
   .arrow-top {
-      transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   .arrow-bottom {
-      transform: translate(-50%, 80px);
+    transform: translate(-50%, 80px);
   }
 
   &:hover {
-      background-position: right center;
-      .arrow-top {
-          transform: translate(-50%, -80px);
-      }
-      .arrow-bottom {
-          transform: translate(-50%, -50%);
-      }
+    background-position: right center;
+    .arrow-top {
+      transform: translate(-50%, -80px);
+    }
+    .arrow-bottom {
+      transform: translate(-50%, -50%);
+    }
   }
 }
 

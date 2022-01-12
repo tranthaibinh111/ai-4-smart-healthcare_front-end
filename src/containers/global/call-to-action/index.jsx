@@ -1,35 +1,30 @@
 // #region React
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 // #endregion
 
 const CallToAction = () => (
   <div
-    className="divider-area bgcolor-theme bg-img"
+    className='divider-area bgcolor-theme bg-img'
     style={{
       backgroundImage: `url(${process.env.PUBLIC_URL}/img/shape/01.jpg)`,
     }}
   >
-    <div className="container">
-      <div className="row content-align-center">
-        <div className="col-lg-12">
+    <div className='container'>
+      <div className='row content-align-center'>
+        <div className='col-lg-12'>
           <div
-            className="divider-content-area divider-content-style1"
-            data-aos="fade-up"
-            data-aos-duration="1200"
+            className='divider-content-area divider-content-style1'
+            data-aos='fade-up'
+            data-aos-duration='1200'
           >
-            <div className="content-inner">
+            <div className='content-inner'>
               <h2>
-                Book An
-                {' '}
-                <span>Appointment</span>
+                Book An <span>Appointment</span>
               </h2>
-              <p>
-                We prodive a dedicated support 24/7 for any
-                your question
-              </p>
+              <p>We prodive a dedicated support 24/7 for any your question</p>
             </div>
-            <Link to="/" className="btn btn-theme btn-white">
+            <Link to='/' className='btn btn-theme btn-white'>
               Reservation
             </Link>
           </div>
@@ -37,6 +32,6 @@ const CallToAction = () => (
       </div>
     </div>
   </div>
-);
+)
 
-export default CallToAction;
+export default CallToAction

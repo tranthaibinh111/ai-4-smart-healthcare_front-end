@@ -44,17 +44,49 @@
 // gradient
 @mixin gradient-bg() {
   background-color: rgb(233, 77, 4);
-  background-image: linear-gradient(90deg, rgb(233, 77, 4) 0%, rgb(238, 168, 73) 100%);
-  background-image: -moz-linear-gradient(90deg, rgb(233, 77, 4) 0%, rgb(238, 168, 73) 100%);
-  background-image: -webkit-linear-gradient(90deg, rgb(233, 77, 4) 0%, rgb(238, 168, 73) 100%);
-  background-image: -ms-linear-gradient(90deg, rgb(233, 77, 4) 0%, rgb(238, 168, 73) 100%);
+  background-image: linear-gradient(
+    90deg,
+    rgb(233, 77, 4) 0%,
+    rgb(238, 168, 73) 100%
+  );
+  background-image: -moz-linear-gradient(
+    90deg,
+    rgb(233, 77, 4) 0%,
+    rgb(238, 168, 73) 100%
+  );
+  background-image: -webkit-linear-gradient(
+    90deg,
+    rgb(233, 77, 4) 0%,
+    rgb(238, 168, 73) 100%
+  );
+  background-image: -ms-linear-gradient(
+    90deg,
+    rgb(233, 77, 4) 0%,
+    rgb(238, 168, 73) 100%
+  );
 }
 @mixin gradient-bg-hover() {
   background-color: rgb(238, 168, 73);
-  background-image: linear-gradient(-90deg, rgb(233, 77, 4) 0%, rgb(238, 168, 73) 100%);
-  background-image: -moz-linear-gradient(-90deg, rgb(233, 77, 4) 0%, rgb(238, 168, 73) 100%);
-  background-image: -webkit-linear-gradient(-90deg, rgb(233, 77, 4) 0%, rgb(238, 168, 73) 100%);
-  background-image: -ms-linear-gradient(-90deg, rgb(233, 77, 4) 0%, rgb(238, 168, 73) 100%);
+  background-image: linear-gradient(
+    -90deg,
+    rgb(233, 77, 4) 0%,
+    rgb(238, 168, 73) 100%
+  );
+  background-image: -moz-linear-gradient(
+    -90deg,
+    rgb(233, 77, 4) 0%,
+    rgb(238, 168, 73) 100%
+  );
+  background-image: -webkit-linear-gradient(
+    -90deg,
+    rgb(233, 77, 4) 0%,
+    rgb(238, 168, 73) 100%
+  );
+  background-image: -ms-linear-gradient(
+    -90deg,
+    rgb(233, 77, 4) 0%,
+    rgb(238, 168, 73) 100%
+  );
 }
 
 @mixin transition($time) {

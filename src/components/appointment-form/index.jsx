@@ -1,39 +1,39 @@
 // #region React
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React from 'react'
+import { useForm } from 'react-hook-form'
 // #endregion
 
 const AppointmentForm = () => {
   // #region Parameters
   const { register, handleSubmit, errors } = useForm({
     mode: 'onBlur',
-  });
+  })
   // eslint-disable-next-line no-console
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => console.log(data)
   // #endregion
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} method="POST">
-      <div className="row">
-        <div className="col-md-3">
-          <div className="form-group">
+    <form onSubmit={handleSubmit(onSubmit)} method='POST'>
+      <div className='row'>
+        <div className='col-md-3'>
+          <div className='form-group'>
             <input
-              className="form-control"
-              type="text"
-              name="name"
-              placeholder="Enter your name..."
+              className='form-control'
+              type='text'
+              name='name'
+              placeholder='Enter your name...'
               ref={register({ required: 'Name is required' })}
             />
             {errors.name && <p>{errors.name.message}</p>}
           </div>
         </div>
-        <div className="col-md-3">
-          <div className="form-group">
+        <div className='col-md-3'>
+          <div className='form-group'>
             <input
-              className="form-control"
-              type="email"
-              name="email"
-              placeholder="demo@yourmail.com"
+              className='form-control'
+              type='email'
+              name='email'
+              placeholder='demo@yourmail.com'
               ref={register({
                 required: 'Email is required',
                 pattern: {
@@ -45,13 +45,13 @@ const AppointmentForm = () => {
             {errors.email && <p>{errors.email.message}</p>}
           </div>
         </div>
-        <div className="col-md-3">
-          <div className="form-group">
+        <div className='col-md-3'>
+          <div className='form-group'>
             <input
-              className="form-control"
-              type="tel"
-              name="phone"
-              placeholder="Phone"
+              className='form-control'
+              type='tel'
+              name='phone'
+              placeholder='Phone'
               ref={register({
                 required: 'Phone is required',
               })}
@@ -59,18 +59,18 @@ const AppointmentForm = () => {
             {errors.phone && <p>{errors.phone.message}</p>}
           </div>
         </div>
-        <div className="col-md-3">
-          <div className="form-group datepicker-group">
+        <div className='col-md-3'>
+          <div className='form-group datepicker-group'>
             <label
-              htmlFor="datepicker"
-              className="form-label icon icofont-calendar"
+              htmlFor='datepicker'
+              className='form-label icon icofont-calendar'
             >
               <input
-                className="form-control"
-                id="datepicker"
-                type="date"
-                name="date"
-                placeholder="Date"
+                className='form-control'
+                id='datepicker'
+                type='date'
+                name='date'
+                placeholder='Date'
                 ref={register({
                   required: 'Date is required',
                 })}
@@ -79,12 +79,12 @@ const AppointmentForm = () => {
             {errors.date && <p>{errors.date.message}</p>}
           </div>
         </div>
-        <div className="col-md-12">
-          <div className="form-group mb-0">
+        <div className='col-md-12'>
+          <div className='form-group mb-0'>
             <textarea
-              name="message"
-              rows="7"
-              placeholder="Your message here..."
+              name='message'
+              rows='7'
+              placeholder='Your message here...'
               ref={register({
                 required: 'Message is required',
               })}
@@ -92,16 +92,16 @@ const AppointmentForm = () => {
             {errors.message && <p>{errors.message.message}</p>}
           </div>
         </div>
-        <div className="col-md-12">
-          <div className="form-group mb-0">
-            <button className="btn btn-theme" type="submit">
+        <div className='col-md-12'>
+          <div className='form-group mb-0'>
+            <button className='btn btn-theme' type='submit'>
               Make an appointment
             </button>
           </div>
         </div>
       </div>
     </form>
-  );
-};
+  )
+}
 
-export default AppointmentForm;
+export default AppointmentForm

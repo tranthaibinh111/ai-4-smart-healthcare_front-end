@@ -1,19 +1,23 @@
 // #region
-import React from 'react';
+import React from 'react'
 // #endregion
 
 // #region AI 4 Smart Healthcare
 // #region Templates
-const ServiceDetails = React.lazy(() => import('./templates/service-details'));
-const ReferenceDetailsPage = React.lazy(() => import('./templates/reference-details'));
-const ResearchDetailsPage = React.lazy(() => import('./templates/research-details'));
+const ServiceDetails = React.lazy(() => import('./templates/service-details'))
+const ReferenceDetailsPage = React.lazy(() =>
+  import('./templates/reference-details')
+)
+const ResearchDetailsPage = React.lazy(() =>
+  import('./templates/research-details')
+)
 // #endregion
 
 // #region Pages
-const HomePage = React.lazy(() => import('./pages/index'));
-const ReferencePage = React.lazy(() => import('./pages/reference'));
-const AboutPage = React.lazy(() => import('./pages/about'));
-const ContactPage = React.lazy(() => import('./pages/contact'));
+const HomePage = React.lazy(() => import('./pages/index'))
+const ReferencePage = React.lazy(() => import('./pages/reference'))
+const AboutPage = React.lazy(() => import('./pages/about'))
+const ContactPage = React.lazy(() => import('./pages/contact'))
 // #endregion
 // #endregion
 
@@ -57,6 +61,6 @@ const appRoutes = [
     name: 'Liên hệ',
     component: ContactPage,
   },
-];
+]
 
-export default appRoutes;
+export default appRoutes

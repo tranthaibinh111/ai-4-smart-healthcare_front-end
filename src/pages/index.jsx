@@ -1,41 +1,46 @@
 // #region React
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 // #endregion
 
 // #region Package (third-party)
-import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux'
 // #endregion
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import { homeData } from '../data';
+import { homeData } from '../data'
 // #endregion
 
 // #region Redux
-import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
+import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit'
 // #endregion
 
 // #region Containers
-const IntroContainer = React.lazy(() => import('../containers/home/intro'));
-const HealthFeatureContainer = React.lazy(() => import('../containers/home/health-feature'));
-const TeamContainer = React.lazy(() => import('../containers/home/team'));
-const ReferenceAccordion = React.lazy(() => import('../containers/home/reference-accordion'));
-const GoogleMapContainer = React.lazy(() => import('../containers/global/map'));
+const IntroContainer = React.lazy(() => import('../containers/home/intro'))
+const HealthFeatureContainer = React.lazy(() =>
+  import('../containers/home/health-feature')
+)
+const TeamContainer = React.lazy(() => import('../containers/home/team'))
+const ReferenceAccordion = React.lazy(() =>
+  import('../containers/home/reference-accordion')
+)
+const GoogleMapContainer = React.lazy(() => import('../containers/global/map'))
 // #endregion
 // #endregion
 
 const HomePage = () => {
   // #region Parameters
   // Redux
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   // #endregion
 
   useEffect(() => {
-    const title = 'Trang chủ';
-    dispatch(setLayoutTitle(title));
-    dispatch(setHomeFlag(true));
-    dispatch(setMenu(title));
-  }, []);
+    const title = 'Trang chủ'
+
+    dispatch(setLayoutTitle(title))
+    dispatch(setHomeFlag(true))
+    dispatch(setMenu(title))
+  }, [dispatch])
 
   return (
     <>
@@ -45,7 +50,7 @@ const HomePage = () => {
       <ReferenceAccordion data={homeData.refreences} />
       <GoogleMapContainer />
     </>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

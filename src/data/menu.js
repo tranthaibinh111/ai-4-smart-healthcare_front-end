@@ -1,6 +1,9 @@
 const menuData = [
   {
-    label: 'Trang chủ', exact: true, url: '', active: true,
+    label: 'Trang chủ',
+    exact: true,
+    url: '',
+    active: true,
   },
   { label: 'Nghiên cứu', url: '/nghien-cuu' },
   {
@@ -13,6 +16,6 @@ const menuData = [
   },
   { label: 'Giới thiệu', url: '/gioi-thieu' },
   { label: 'Liên hệ', url: '/lien-he' },
-];
+]
 
-export default menuData;
+export default menuData

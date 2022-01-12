@@ -13,8 +13,8 @@
 }
 
 .rpv-toolbar {
-  &>.rpv-toolbar__right {
-    &> div:nth-child(3) {
+  & > .rpv-toolbar__right {
+    & > div:nth-child(3) {
       display: none;
     }
   }

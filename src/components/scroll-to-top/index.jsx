@@ -1,55 +1,52 @@
 // #region React
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 // #endregion
 
 const ScrollToTop = (props) => {
   // #region Parameters
-  const [stick, setStick] = useState(false);
+  const [stick, setStick] = useState(false)
   const onClickHandler = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
   // #endregion
 
   // #region Event
   const scrollHandler = (position) => {
-    const scrollPos = window.pageYOffset;
+    const scrollPos = window.pageYOffset
 
-    if (scrollPos < 200)
-      setStick(false);
-    else if (scrollPos < position)
-      setStick(true);
-    else
-      setStick(false);
+    if (scrollPos < 200) setStick(false)
+    else if (scrollPos < position) setStick(true)
+    else setStick(false)
 
-    return scrollPos;
-  };
+    return scrollPos
+  }
   // #endregion
 
   useEffect(() => {
-    let position = window.pageYOffset;
+    let position = window.pageYOffset
 
     window.addEventListener('scroll', () => {
-      position = scrollHandler(position);
-    });
+      position = scrollHandler(position)
+    })
 
     return () => {
       window.removeEventListener('scroll', () => {
-        position = scrollHandler(position);
-      });
-    };
-  }, []);
+        position = scrollHandler(position)
+      })
+    }
+  }, [])
 
   return (
     <button
-      type="button"
+      type='button'
       className={`scroll-to-top ${stick ? 'show' : ''}`}
       onClick={onClickHandler}
       {...props}
     >
-      <i className="arrow-top icofont-rounded-up" />
-      <i className="arrow-bottom icofont-rounded-up" />
+      <i className='arrow-top icofont-rounded-up' />
+      <i className='arrow-bottom icofont-rounded-up' />
     </button>
-  );
-};
+  )
+}
 
-export default ScrollToTop;
+export default ScrollToTop

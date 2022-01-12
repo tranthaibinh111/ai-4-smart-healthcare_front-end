@@ -1,19 +1,19 @@
 // #region React
-import React from 'react';
+import React from 'react'
 // #endregion
 
 // #region Package (third-party)
 // #region Swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react'
 // #endregion
 
 // #region AI 4 Smart Healthcare
 // #region Data
-import { homeData } from '../../../data';
+import { homeData } from '../../../data'
 // #endregion
 
 // #region Components
-import Brand from '../../../components/brand';
+import Brand from '../../../components/brand'
 // #endregion
 // #endregion
 
@@ -56,29 +56,26 @@ const BrandContainer = () => {
         spaceBetween: 30,
       },
     },
-  };
+  }
   // #endregion
 
   return (
     <div
-      className="brand-section bg-img"
+      className='brand-section bg-img'
       style={{
         backgroundImage: `url(${process.env.PUBLIC_URL}/img/photos/testimonial-bg1.jpg)`,
       }}
     >
-      <div className="container">
-        <div className="row">
+      <div className='container'>
+        <div className='row'>
           <div
-            className="brand-logo-area brand-logo-default-area"
-            data-aos="fade-up"
-            data-aos-duration="1200"
+            className='brand-logo-area brand-logo-default-area'
+            data-aos='fade-up'
+            data-aos-duration='1200'
           >
-            <Swiper
-              className="brand-logo-slider-container"
-              {...swiperOption}
-            >
-              {homeData.brand
-                && homeData.brand.map((single, key) => (
+            <Swiper className='brand-logo-slider-container' {...swiperOption}>
+              {homeData.brand &&
+                homeData.brand.map((single, key) => (
                   <SwiperSlide key={key}>
                     <Brand key={key} data={single} />
                   </SwiperSlide>
@@ -88,7 +85,7 @@ const BrandContainer = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BrandContainer;
+export default BrandContainer

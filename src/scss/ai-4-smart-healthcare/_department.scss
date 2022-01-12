@@ -210,7 +210,7 @@
                 outline: none;
               }
             }
-            p{
+            p {
               color: red;
             }
             textarea {
@@ -237,13 +237,13 @@
               position: relative;
               label {
                 width: 100%;
-                &::before{
+                &::before {
                   position: absolute;
                   top: 23px;
                   right: 20px;
                   transform: translateY(-50%);
                 }
-                input{
+                input {
                   width: 100%;
                 }
               }
