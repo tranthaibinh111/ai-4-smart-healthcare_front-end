@@ -1,19 +1,19 @@
-import referenceData from './reference'
+import referenceData from './reference';
 
 const slider = [
   {
     id: 1,
-    backgroundImage: './img/slider/slide1.jpg',
+    backgroundImage: '/slider/slide1.jpg',
     subTitle: 'Nghiên cứu khoa học',
     title: "AI<span class='d-block'>Y tế thông minh</span>",
   },
   {
     id: 2,
-    backgroundImage: './img/slider/slide2.jpg',
+    backgroundImage: '/slider/slide2.jpg',
     subTitle: 'Nghiên cứu khoa học',
     title: "AI<span class='d-block'>Y tế thông minh</span>",
   },
-]
+];
 
 const healthFeature = [
   {
@@ -34,25 +34,25 @@ const healthFeature = [
     title: 'Chẩn đoán',
     subTitle: 'Chạy mô hình chẩn đoán',
   },
-]
+];
 
 const team = [
   {
     id: 1,
-    image: './img/team/01.jpg',
+    image: '/team/01.jpg',
     name: 'Binh Tran',
     excerpt: 'Nghiên cứu AI ứng dụng trong Y tế thông minh',
   },
-]
+];
 
-const startSlice = Math.floor(Math.random() * (referenceData.length - 4))
-const refreences = referenceData.slice(startSlice, startSlice + 5)
+const startSlice = Math.floor(Math.random() * (referenceData.length - 4));
+const refreences = referenceData.slice(startSlice, startSlice + 5);
 
 const homeData = {
   slider,
   healthFeature,
   team,
   refreences,
-}
+};
 
-export default homeData
+export default homeData;

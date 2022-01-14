@@ -1,6 +1,6 @@
 // #region React
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // #endregion
 
 const MedicalFeature = ({ data }) => (
@@ -13,16 +13,16 @@ const MedicalFeature = ({ data }) => (
       <p>{data.excerpt}</p>
     </div>
   </div>
-)
+);
 
 // #region Khai báo Props
 MedicalFeature.propTypes = {
   data: PropTypes.object,
-}
+};
 
 MedicalFeature.defaultProps = {
   data: null,
-}
+};
 // #endregion
 
-export default MedicalFeature
+export default MedicalFeature;

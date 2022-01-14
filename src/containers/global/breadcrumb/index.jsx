@@ -1,16 +1,10 @@
 // #region React
-import React from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // #endregion
 
-const Breadcrumb = ({
-  prevs,
-  contentThree,
-  title,
-  classOptionOne,
-  classOptionTwo,
-}) => (
+const Breadcrumb = ({ prevs, contentThree, title, classOptionOne, classOptionTwo }) => (
   <div className='page-title-area'>
     <div className='container'>
       <div className='row'>
@@ -32,7 +26,7 @@ const Breadcrumb = ({
       </div>
     </div>
   </div>
-)
+);
 
 // #region Khai báo Props
 Breadcrumb.propTypes = {
@@ -46,7 +40,7 @@ Breadcrumb.propTypes = {
   classOptionOne: PropTypes.string,
   classOptionTwo: PropTypes.string,
   title: PropTypes.string,
-}
+};
 
 Breadcrumb.defaultProps = {
   prevs: {
@@ -57,7 +51,7 @@ Breadcrumb.defaultProps = {
   classOptionOne: 'page-title-content',
   classOptionTwo: 'bread-crumbs',
   title: '',
-}
+};
 // #endregion
 
-export default Breadcrumb
+export default Breadcrumb;

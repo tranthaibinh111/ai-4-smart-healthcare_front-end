@@ -34,6 +34,6 @@ const keywordData = [
     search: 'IEEE',
     text: 'Biomedical signal processing',
   },
-]
+];
 
-export default keywordData
+export default keywordData;

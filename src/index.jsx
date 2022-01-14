@@ -1,21 +1,21 @@
 // #region React
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 // #endregion
 
 // #region Package (third-party)
 // Redux
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-import store from './store'
+import store from './store';
 
 // Styles
-import './scss/style.scss'
+import './scss/style.scss';
 // Components
-import App from './App'
+import App from './App';
 // #endregion
 
 const app = (
@@ -26,6 +26,6 @@ const app = (
       </Router>
     </Provider>
   </React.StrictMode>
-)
+);
 
-ReactDOM.render(app, document.getElementById('root'))
+ReactDOM.render(app, document.getElementById('root'));

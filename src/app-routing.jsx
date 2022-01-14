@@ -1,27 +1,23 @@
 // #region
-import React from 'react'
+import React from 'react';
 // #endregion
 
 // #region AI 4 Smart Healthcare
 // #region Templates
-const ServiceDetails = React.lazy(() => import('./templates/service-details'))
-const ReferenceDetailsPage = React.lazy(() =>
-  import('./templates/reference-details')
-)
-const ResearchDetailsPage = React.lazy(() =>
-  import('./templates/research-details')
-)
+const ServiceDetailsPage = React.lazy(() => import('./templates/service-details.page'));
+const ReferenceDetailsPage = React.lazy(() => import('./templates/reference-details.page'));
+const ResearchDetailsPage = React.lazy(() => import('./templates/research-details.page'));
 // #endregion
 
 // #region Pages
-const HomePage = React.lazy(() => import('./pages/index'))
-const ReferencePage = React.lazy(() => import('./pages/reference'))
-const AboutPage = React.lazy(() => import('./pages/about'))
-const ContactPage = React.lazy(() => import('./pages/contact'))
+const HomePage = React.lazy(() => import('./pages/home.page'));
+const ReferencePage = React.lazy(() => import('./pages/reference.page'));
+const AboutPage = React.lazy(() => import('./pages/about.page'));
+const ContactPage = React.lazy(() => import('./pages/contact.page'));
 // #endregion
 // #endregion
 
-const appRoutes = [
+const routes = [
   {
     path: '/',
     exact: true,
@@ -29,9 +25,16 @@ const appRoutes = [
     component: HomePage,
   },
   {
-    path: '/nghien-cuu',
-    name: 'Nghiên cứu',
-    component: ServiceDetails,
+    path: '/chan-doan',
+    exact: true,
+    name: 'Chẩn đoán',
+    redirect: '/chan-doan/s11',
+  },
+  {
+    path: '/chan-doan/:subject',
+    exact: true,
+    name: 'Chi tiết chẩn đoán',
+    component: ServiceDetailsPage,
   },
   {
     path: '/tai-lieu-tham-khao',
@@ -41,14 +44,14 @@ const appRoutes = [
   },
   {
     path: '/tai-lieu-tham-khao/:slug',
-    name: 'Tài liệu tham khảo',
     exact: true,
+    name: 'Tài liệu tham khảo',
     component: ReferenceDetailsPage,
   },
   {
     path: '/cong-trinh-nghien-cuu',
-    name: 'Công trình nghiên cứu',
     exact: true,
+    name: 'Công trình nghiên cứu',
     component: ResearchDetailsPage,
   },
   {
@@ -61,6 +64,6 @@ const appRoutes = [
     name: 'Liên hệ',
     component: ContactPage,
   },
-]
+];
 
-export default appRoutes
+export default routes;

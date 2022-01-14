@@ -5,7 +5,7 @@ const menuData = [
     url: '',
     active: true,
   },
-  { label: 'Nghiên cứu', url: '/nghien-cuu' },
+  { label: 'Chẩn đoán', url: '/chan-doan' },
   {
     label: 'Tài liệu',
     url: '/tai-lieu-tham-khao',
@@ -16,6 +16,6 @@ const menuData = [
   },
   { label: 'Giới thiệu', url: '/gioi-thieu' },
   { label: 'Liên hệ', url: '/lien-he' },
-]
+];
 
-export default menuData
+export default menuData;

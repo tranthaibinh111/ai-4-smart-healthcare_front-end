@@ -1,11 +1,11 @@
 // #region React
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
 // Utils
-import { keywordUrl } from '../../utils'
+import { keywordUrl } from '../../utils';
 // #endregion
 
 const SidebarKeyword = ({ data }) => (
@@ -25,7 +25,7 @@ const SidebarKeyword = ({ data }) => (
         ))}
     </ul>
   </div>
-)
+);
 
 // #region Khai báo Props
 SidebarKeyword.propTypes = {
@@ -36,11 +36,11 @@ SidebarKeyword.propTypes = {
       text: PropTypes.string,
     })
   ),
-}
+};
 
 SidebarKeyword.defaultProps = {
   data: [],
-}
+};
 // #endregion
 
-export default SidebarKeyword
+export default SidebarKeyword;

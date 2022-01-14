@@ -1,11 +1,11 @@
 // #region AI 4 Smart Healthcare
-import appSettingsData from './appsettings'
-import menuData from './menu'
-import homeData from './home'
-import keywordData from './keywords'
-import referenceData from './reference'
-import researchData from './research'
-import serviceDetailsData from './service-details'
+import appSettingsData from './appsettings';
+import menuData from './menu';
+import homeData from './home';
+import keywordData from './keywords';
+import referenceData from './reference';
+import researchData from './research';
+import serviceDetailsData from './service-details';
 // #endregion
 
 export {
@@ -16,4 +16,4 @@ export {
   referenceData,
   researchData,
   serviceDetailsData,
-}
+};

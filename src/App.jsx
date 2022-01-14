@@ -1,38 +1,35 @@
 // #region React
-import React, { useEffect, Suspense } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import React, { useEffect, Suspense } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
 // #endregion
 
 // #region Package (third-party)
 // AOS
-import AOS from 'aos'
+import AOS from 'aos';
 // Redux
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 // Helmet
-import { HelmetData } from 'react-helmet-async'
+import { HelmetData } from 'react-helmet-async';
 // #endregion
 
 // #region AI 4 Smart Healthcare
 // routes
-import appRoutes from './app-routing'
+import routes from './app-routing';
 
 // #region Components
-import LoaderSpinnerComponent from './components/loader-spinner'
-import NavScrollTop from './components/nav-scroll-top'
-import SEO from './components/seo'
-import ScrollToTop from './components/scroll-to-top'
+import { LoaderSpinner, NavScrollTop, ScrollToTop, SEO } from './components';
 // #endregion
 // #endregion
 
-const Header = React.lazy(() => import('./layouts/header'))
-const Footer = React.lazy(() => import('./layouts/footer'))
-const helmetData = new HelmetData({})
+const HeaderContainer = React.lazy(() => import('./layouts/header.container'));
+const FooterContainer = React.lazy(() => import('./layouts/footer.container'));
+const helmetData = new HelmetData({});
 
 const App = () => {
   // #region Parameters
   // Redux
-  const title = useSelector((state) => state.layout.title)
-  const isHome = useSelector((state) => state.layout.isHome)
+  const title = useSelector((state) => state.layout.title);
+  const isHome = useSelector((state) => state.layout.isHome);
   // #endregion
 
   useEffect(() => {
@@ -41,41 +38,46 @@ const App = () => {
       duration: 1000,
       once: true,
       easing: 'ease',
-    })
-    AOS.refresh()
-  }, [])
+    });
+    AOS.refresh();
+  }, []);
 
   return (
-    <Suspense fallback={<LoaderSpinnerComponent />}>
+    <Suspense fallback={<LoaderSpinner />}>
       <NavScrollTop>
         <SEO helmetData={helmetData} title={title} />
         <div className={`wrapper ${isHome ? 'home-default-wrapper' : ''}`}>
-          <Header />
+          <HeaderContainer />
           <div className='main-content site-wrapper-reveal'>
-            <Suspense fallback={<LoaderSpinnerComponent />}>
+            <Suspense fallback={<LoaderSpinner />}>
               <Switch>
-                {appRoutes
+                {routes
                   .filter((route) => route.component)
-                  .map((route, idx) => (
+                  .map((item, idx) => (
                     <Route
                       key={idx}
-                      exact={route.exact}
-                      path={route.path}
-                      name={route.name}
-                      render={(props) => (
-                        <route.component {...props} routes={route.routes} />
-                      )}
+                      exact={item.exact}
+                      path={item.path}
+                      name={item.name}
+                      render={(props) => <item.component {...props} routes={item.routes} />}
                     />
+                  ))}
+                {routes
+                  .filter((route) => route.redirect)
+                  .map((item, idx) => (
+                    <Route key={idx} exact={item.exact} path={item.path} name={item.name}>
+                      <Redirect to={item.redirect} />
+                    </Route>
                   ))}
               </Switch>
             </Suspense>
             <ScrollToTop />
           </div>
-          <Footer />
+          <FooterContainer />
         </div>
       </NavScrollTop>
     </Suspense>
-  )
-}
+  );
+};
 
-export default App
+export default App;

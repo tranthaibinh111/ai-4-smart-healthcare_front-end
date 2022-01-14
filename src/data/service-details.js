@@ -95,6 +95,6 @@ const serviceDetailsData = {
       signals: [],
     },
   ],
-}
+};
 
-export default serviceDetailsData
+export default serviceDetailsData;

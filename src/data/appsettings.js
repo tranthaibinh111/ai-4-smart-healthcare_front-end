@@ -4,6 +4,6 @@ const appSettingsData = {
   hotline: '0988.284.955',
   email: 'binhtt.12@grad.uit.edu.vn',
   copyright: 'Binh Tran',
-}
+};
 
-export default appSettingsData
+export default appSettingsData;

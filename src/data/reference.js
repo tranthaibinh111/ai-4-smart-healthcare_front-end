@@ -11,10 +11,10 @@ const referenceData = [
     month: '04',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sBook.png',
-      smallImage: '/img/reference/book.png',
-      gridImage: '/img/reference/rBook.png',
-      mediumImage: '/img/reference/mBook.png',
+      rcImage: '/reference/sBook.png',
+      smallImage: '/reference/book.png',
+      gridImage: '/reference/rBook.png',
+      mediumImage: '/reference/mBook.png',
     },
   },
   {
@@ -24,8 +24,7 @@ const referenceData = [
     authors: ['Haya Alaskar'],
     title:
       'Deep Learning of EMG Time–Frequency Representations for Identifying Normal and Aggressive Actions',
-    journal:
-      'IJCSNS International Journal of Computer Science and Network Security',
+    journal: 'IJCSNS International Journal of Computer Science and Network Security',
     volume: '18',
     number: '12',
     pages: '16--25',
@@ -59,10 +58,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -101,10 +100,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -121,10 +120,10 @@ const referenceData = [
     doi: '10.1109/ijcnn.2011.6033458',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -143,8 +142,7 @@ const referenceData = [
     ],
     title:
       'Evaluations of deep convolutional neural networks for automatic identification of malaria infected cells',
-    booktitle:
-      '2017 IEEE EMBS International Conference on Biomedical & Health Informatics (BHI)',
+    booktitle: '2017 IEEE EMBS International Conference on Biomedical & Health Informatics (BHI)',
     series: '',
     pages: '101--104',
     year: '2011',
@@ -152,10 +150,10 @@ const referenceData = [
     address: 'Orlando, FL, USA',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sConference.png',
-      smallImage: '/img/reference/conference.png',
-      gridImage: '/img/reference/rConference.png',
-      mediumImage: '/img/reference/mConference.png',
+      rcImage: '/reference/sConference.png',
+      smallImage: '/reference/conference.png',
+      gridImage: '/reference/rConference.png',
+      mediumImage: '/reference/mConference.png',
     },
   },
   {
@@ -180,10 +178,10 @@ const referenceData = [
     doi: '',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -226,10 +224,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -243,10 +241,10 @@ const referenceData = [
     month: '',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sBook.png',
-      smallImage: '/img/reference/book.png',
-      gridImage: '/img/reference/rBook.png',
-      mediumImage: '/img/reference/mBook.png',
+      rcImage: '/reference/sBook.png',
+      smallImage: '/reference/book.png',
+      gridImage: '/reference/rBook.png',
+      mediumImage: '/reference/mBook.png',
     },
   },
   {
@@ -290,10 +288,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -302,8 +300,7 @@ const referenceData = [
     slug: 'a-review-on-analysis-of-eeg-signals',
     authors: ['Er. Jasjeet Kaur', 'Er. Amanpreet Kaur'],
     title: 'A Review on Analysis of EEG Signals',
-    booktitle:
-      '2015 International Conference on Advances in Computer Engineering and Applications',
+    booktitle: '2015 International Conference on Advances in Computer Engineering and Applications',
     series: '',
     pages: '25--32',
     year: '2015',
@@ -327,10 +324,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sConference.png',
-      smallImage: '/img/reference/conference.png',
-      gridImage: '/img/reference/rConference.png',
-      mediumImage: '/img/reference/mConference.png',
+      rcImage: '/reference/sConference.png',
+      smallImage: '/reference/conference.png',
+      gridImage: '/reference/rConference.png',
+      mediumImage: '/reference/mConference.png',
     },
   },
   {
@@ -347,10 +344,10 @@ const referenceData = [
     address: '57 Morehouse Lane Red Hook, NY, United States',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sConference.png',
-      smallImage: '/img/reference/conference.png',
-      gridImage: '/img/reference/rConference.png',
-      mediumImage: '/img/reference/mConference.png',
+      rcImage: '/reference/sConference.png',
+      smallImage: '/reference/conference.png',
+      gridImage: '/reference/rConference.png',
+      mediumImage: '/reference/mConference.png',
     },
   },
   {
@@ -408,10 +405,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -439,23 +436,17 @@ const referenceData = [
     doi: '10.1109/35.41400',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
     id: 15,
     type: 'Article',
     slug: 'clinical-application-of-an-eeg-based-brain–computer-interface',
-    authors: [
-      'C. Neuper',
-      'G.R. Mu¨ller',
-      'A. Ku¨bler',
-      'N. Birbaumer',
-      'G. Pfurtscheller',
-    ],
+    authors: ['C. Neuper', 'G.R. Mu¨ller', 'A. Ku¨bler', 'N. Birbaumer', 'G. Pfurtscheller'],
     title:
       'Clinical application of an EEG-based brain–computer interface: a case study in a patient with severe motor impairment',
     journal: 'Clinical Neurophysiology',
@@ -466,10 +457,10 @@ const referenceData = [
     doi: '10.1016/S1388-2457(02)00387-5',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -477,10 +468,8 @@ const referenceData = [
     type: 'Conference',
     slug: 'effect-of-parameter-variations-on-accuracy-of-convolutional-neural-network',
     authors: ['Kaushik Gobindram Pasi', 'Sowmiyaraksha R. Naik'],
-    title:
-      'Effect of Parameter Variations on Accuracy of Convolutional Neural Network',
-    booktitle:
-      '2016 International Conference on Computing, Analytics and Security Trends (CAST)',
+    title: 'Effect of Parameter Variations on Accuracy of Convolutional Neural Network',
+    booktitle: '2016 International Conference on Computing, Analytics and Security Trends (CAST)',
     series: '',
     pages: '398--403',
     year: '2016',
@@ -534,10 +523,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sConference.png',
-      smallImage: '/img/reference/conference.png',
-      gridImage: '/img/reference/rConference.png',
-      mediumImage: '/img/reference/mConference.png',
+      rcImage: '/reference/sConference.png',
+      smallImage: '/reference/conference.png',
+      gridImage: '/reference/rConference.png',
+      mediumImage: '/reference/mConference.png',
     },
   },
   {
@@ -545,8 +534,7 @@ const referenceData = [
     type: 'Article',
     slug: 'analyzing-eeg-signals-with-machine-learning-for-diagnosing-alzheimers-disease',
     authors: ['V. Podgorelec'],
-    title:
-      'Analyzing EEG Signals with Machine Learning for Diagnosing Alzheimer’s Disease',
+    title: 'Analyzing EEG Signals with Machine Learning for Diagnosing Alzheimer’s Disease',
     journal: 'Elektronika ir elektrotechnika',
     volume: '8',
     number: '18',
@@ -586,10 +574,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -607,10 +595,8 @@ const referenceData = [
       'Wolfram Burgard',
       'Tonio Ball',
     ],
-    title:
-      'Deep Learning With Convolutional Neural Networks for EEG Decoding and Visualization',
-    booktitle:
-      '2017 IEEE Signal Processing in Medicine and Biology Symposium (SPMB)',
+    title: 'Deep Learning With Convolutional Neural Networks for EEG Decoding and Visualization',
+    booktitle: '2017 IEEE Signal Processing in Medicine and Biology Symposium (SPMB)',
     series: '',
     pages: '1097--1105',
     year: '2017',
@@ -659,10 +645,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sConference.png',
-      smallImage: '/img/reference/conference.png',
-      gridImage: '/img/reference/rConference.png',
-      mediumImage: '/img/reference/mConference.png',
+      rcImage: '/reference/sConference.png',
+      smallImage: '/reference/conference.png',
+      gridImage: '/reference/rConference.png',
+      mediumImage: '/reference/mConference.png',
     },
   },
   {
@@ -686,10 +672,10 @@ const referenceData = [
     doi: '10.1155/2017/5067651',
     keywords: [],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -699,8 +685,7 @@ const referenceData = [
     authors: ['Albert Vilamala', 'Kristoffer H. Madsen', 'Lars K. Hansen'],
     title:
       'Deep Convolutional Neural Networks for Interpretable Analysis of EEG Sleep Stage Scoring',
-    booktitle:
-      '2017 IEEE International Workshop On Machine Learning For Signal Processing',
+    booktitle: '2017 IEEE International Workshop On Machine Learning For Signal Processing',
     series: '',
     pages: '25--28',
     year: '2017',
@@ -729,10 +714,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sConference.png',
-      smallImage: '/img/reference/conference.png',
-      gridImage: '/img/reference/rConference.png',
-      mediumImage: '/img/reference/mConference.png',
+      rcImage: '/reference/sConference.png',
+      smallImage: '/reference/conference.png',
+      gridImage: '/reference/rConference.png',
+      mediumImage: '/reference/mConference.png',
     },
   },
   {
@@ -776,10 +761,10 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
   {
@@ -823,12 +808,12 @@ const referenceData = [
       },
     ],
     media: {
-      rcImage: '/img/reference/sArticle.png',
-      smallImage: '/img/reference/article.png',
-      gridImage: '/img/reference/rArticle.png',
-      mediumImage: '/img/reference/mArticle.png',
+      rcImage: '/reference/sArticle.png',
+      smallImage: '/reference/article.png',
+      gridImage: '/reference/rArticle.png',
+      mediumImage: '/reference/mArticle.png',
     },
   },
-]
+];
 
-export default referenceData
+export default referenceData;

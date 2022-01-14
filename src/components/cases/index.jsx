@@ -1,7 +1,7 @@
 // #region React
-import React from 'react'
-import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 // #endregion
 
 const CasesItem = ({ data }) => (
@@ -16,16 +16,16 @@ const CasesItem = ({ data }) => (
       <h6 className='category'>{data.department}</h6>
     </div>
   </div>
-)
+);
 
 // #region Khai báo Props
 CasesItem.propTypes = {
   data: PropTypes.object,
-}
+};
 
 CasesItem.defaultProps = {
   data: null,
-}
+};
 // #endregion
 
-export default CasesItem
+export default CasesItem;
