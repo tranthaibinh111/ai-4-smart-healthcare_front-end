@@ -31,7 +31,7 @@ const routes = [
     redirect: '/chan-doan/s11',
   },
   {
-    path: '/chan-doan/:subject',
+    path: '/chan-doan/:slug',
     exact: true,
     name: 'Chi tiết chẩn đoán',
     component: ServiceDetailsPage,

@@ -1,9 +1,13 @@
 // #region React
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
+// #region Data
+import { serviceDetailsData } from '../../data';
+// #endregion
+
 // #region Components
 import {
   // Chart
@@ -17,9 +21,15 @@ import {
 // #endregion
 // #endregion
 
-const ServiceDetailsContainer = ({ data }) => {
+const ServiceDetailsContainer = ({ slug }) => {
   // #region Parameters
-  const subject = data.subjects[0];
+  const [subject, setSubject] = useState(null);
+
+  useEffect(() => {
+    if (!slug) return;
+
+    setSubject(serviceDetailsData.subjects.find((x) => x.name == slug));
+  }, [slug]);
   // #endregion
 
   return (
@@ -31,35 +41,27 @@ const ServiceDetailsContainer = ({ data }) => {
               <div className='sidebar-wrapper'>
                 <div className='widget-item'>
                   <SidebarTitle title='Subjects' />
-                  <SidebarSubjects data={data.subjects} />
+                  <SidebarSubjects data={serviceDetailsData.subjects} />
                 </div>
               </div>
 
               <div className='department-content'>
-                <ServiceDetails title={data.title} subject={subject} />
+                {subject && (
+                  <>
+                    <ServiceDetails title={serviceDetailsData.title} subject={subject} />
 
-                <div className='faq-area'>
-                  <h2 className='title'>
-                    Tín hiệu <span>EEG</span>
-                  </h2>
-                  <div className='accordian-content'>
-                    <div className='row pb-24'>
-                      <div className='col-md-4 offset-md-4'>
-                        <select className='form-control'>
-                          <option value=''>Kênh</option>
-                          {subject.channels.map((single, key) => (
-                            <option key={key} value={key}>
-                              {single}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                      <div className='row pd-24'>
-                        <TimeSeriesChart subject={subject} />
+                    <div className='faq-area'>
+                      <h2 className='title'>
+                        Tín hiệu <span>EEG</span>
+                      </h2>
+                      <div className='accordian-content'>
+                        <div className='row pb-24'>
+                          <TimeSeriesChart subject={subject} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -71,16 +73,11 @@ const ServiceDetailsContainer = ({ data }) => {
 
 // #region Khai báo Props
 ServiceDetailsContainer.propTypes = {
-  data: PropTypes.shape({
-    title: PropTypes.string,
-    subjects: PropTypes.array,
-  }),
+  slug: PropTypes.string,
 };
 
 ServiceDetailsContainer.defaultProps = {
-  data: {
-    subjects: [],
-  },
+  slug: '',
 };
 // #endregion
 

@@ -5,7 +5,7 @@ volumes:
 
 services:
   reactjs:
-    container_name: 'ai_4_smart_healthcare'
+    container_name: 'ai-4-smart-healthcare_reactjs'
     build:
       context: .
       dockerfile: ./compose/reactjs/Dockerfile

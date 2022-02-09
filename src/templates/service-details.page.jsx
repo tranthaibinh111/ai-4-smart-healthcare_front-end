@@ -1,5 +1,6 @@
 // #region React
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 // #endregion
 
 // #region Package (third-party)
@@ -7,10 +8,6 @@ import { useDispatch } from 'react-redux';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Data
-import { serviceDetailsData } from '../data';
-// #endregion
-
 // #region Redux
 import { setLayoutTitle, setHomeFlag, setMenu } from '../toolkit';
 // #endregion
@@ -29,6 +26,7 @@ const ServiceDetailsContainer = React.lazy(() =>
 
 const ServiceDetails = () => {
   // #region Parameters
+  const { slug } = useParams();
   const [breadcrumbs, setBreadcrumbs] = useState([]);
 
   // Redux
@@ -37,7 +35,7 @@ const ServiceDetails = () => {
   // Services
   const rootService = RootService();
 
-  const title = 'Nghiên cứu';
+  const title = 'Chẩn đoán';
   // #endregion
 
   useEffect(() => {
@@ -51,7 +49,7 @@ const ServiceDetails = () => {
   return (
     <>
       <Breadcrumb prevs={breadcrumbs} contentThree={title} />
-      <ServiceDetailsContainer data={serviceDetailsData} />
+      <ServiceDetailsContainer slug={slug} />
     </>
   );
 };
