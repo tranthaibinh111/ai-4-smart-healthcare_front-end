@@ -1,40 +1,48 @@
 // #region React
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-import { RootService } from '../../shared/services';
+// #region Services
+import { RootService, SubjectService } from '../../shared/services';
+// #endregion
 // #endregion
 
-const SidebarSubjects = ({ data }) => {
+const SidebarSubjects = () => {
+  // #region Parameter
+  const [subjects, setSubjects] = useState([]);
+
   const rootService = RootService();
+  const subjectService = SubjectService();
+  // #endregion
+
+  // #region API
+  const getSubjects = async () => {
+    const response = await subjectService.getSubjects();
+
+    if (response.success) setSubjects(response.data);
+  };
+  // #endregion
+
+  useEffect(() => {
+    getSubjects();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className='widget-side-nav'>
       <ul>
-        {data.length > 0 &&
-          data.map((single, key) => (
-            <li key={key}>
-              <NavLink activeClassName='active' to={rootService.serviceDetails(single.name)}>
-                {single.name}
-              </NavLink>
-            </li>
-          ))}
+        {subjects.map((single, key) => (
+          <li key={key}>
+            <NavLink activeClassName='active' to={rootService.serviceDetails(single.name)}>
+              {single.name}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </div>
   );
 };
-
-// #region Khai báo Props
-SidebarSubjects.propTypes = {
-  data: PropTypes.array,
-};
-
-SidebarSubjects.defaultProps = {
-  data: [],
-};
-// #endregion
 
 export default SidebarSubjects;

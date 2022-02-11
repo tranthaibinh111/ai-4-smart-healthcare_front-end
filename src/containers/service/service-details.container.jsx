@@ -21,55 +21,39 @@ import {
 // #endregion
 // #endregion
 
-const ServiceDetailsContainer = ({ slug }) => {
-  // #region Parameters
-  const [subject, setSubject] = useState(null);
-
-  useEffect(() => {
-    if (!slug) return;
-
-    setSubject(serviceDetailsData.subjects.find((x) => x.name == slug));
-  }, [slug]);
-  // #endregion
-
-  return (
-    <section className='department-area'>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-lg-12'>
-            <div className='department-wrpp'>
-              <div className='sidebar-wrapper'>
-                <div className='widget-item'>
-                  <SidebarTitle title='Subjects' />
-                  <SidebarSubjects data={serviceDetailsData.subjects} />
-                </div>
+const ServiceDetailsContainer = ({ slug }) => (
+  <section className='department-area'>
+    <div className='container'>
+      <div className='row'>
+        <div className='col-lg-12'>
+          <div className='department-wrpp'>
+            <div className='sidebar-wrapper'>
+              <div className='widget-item'>
+                <SidebarTitle title='Subjects' />
+                <SidebarSubjects />
               </div>
+            </div>
 
-              <div className='department-content'>
-                {subject && (
-                  <>
-                    <ServiceDetails title={serviceDetailsData.title} subject={subject} />
+            <div className='department-content'>
+              <ServiceDetails slug={slug} />
 
-                    <div className='faq-area'>
-                      <h2 className='title'>
-                        Tín hiệu <span>EEG</span>
-                      </h2>
-                      <div className='accordian-content'>
-                        <div className='row pb-24'>
-                          <TimeSeriesChart subject={subject} />
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                )}
+              <div className='faq-area'>
+                <h2 className='title'>
+                  Tín hiệu <span>EEG</span>
+                </h2>
+                <div className='accordian-content'>
+                  <div className='row pb-24'>
+                    <TimeSeriesChart slug={slug} />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 // #region Khai báo Props
 ServiceDetailsContainer.propTypes = {

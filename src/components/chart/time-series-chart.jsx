@@ -1,5 +1,6 @@
 // #region React
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // #endregion
 
 // #region Package (third-party)
@@ -19,9 +20,16 @@ import {
   styler,
   Legend,
 } from 'react-timeseries-charts';
+// Axios
+import axios from 'axios';
 // #endregion
 
-import data from '../../assets/bike.json';
+// #region AI 4 Smart Healthcare
+// #region Service
+import { SubjectService } from '../../shared/services';
+// #endregion
+// #endregion
+
 import C3Data from '../../assets/C3.json';
 import C4Data from '../../assets/C4.json';
 import F3Data from '../../assets/F3.json';
@@ -51,176 +59,101 @@ const baselineStyles = {
 class TimeSeriesChart extends Component {
   constructor(props) {
     super(props);
+
     const initialRange = new TimeRange([0, 3.1 * 60 * 1e3]);
-
-    // Storage for all the data channels
-    const channels = {
-      C3: {
-        units: '𝜇V',
-        label: 'C3',
-        format: ',.1f',
-        series: null,
-        show: true,
-      },
-      C4: {
-        units: '𝜇V',
-        label: 'C4',
-        format: ',.1f',
-        series: null,
-        show: true,
-      },
-      F3: {
-        units: '𝜇V',
-        label: 'F3',
-        format: ',.1f',
-        series: null,
-        show: true,
-      },
-      F4: {
-        units: '𝜇V',
-        label: 'F4',
-        format: ',.1f',
-        series: null,
-        show: true,
-      },
-      O1: {
-        units: '𝜇V',
-        label: 'O1',
-        format: ',.1f',
-        series: null,
-        show: true,
-      },
-      O2: {
-        units: '𝜇V',
-        label: 'O2',
-        format: ',.1f',
-        series: null,
-        show: true,
-      },
-      P3: {
-        units: '𝜇V',
-        label: 'P3',
-        format: ',.1f',
-        series: null,
-        show: true,
-      },
-      P4: {
-        units: '𝜇V',
-        label: 'P4',
-        format: ',.1f',
-        series: null,
-        show: true,
-      },
-    };
-
-    // Channel names list, in order we want them shown
-    const channelNames = ['C3', 'C4', 'F3', 'F4', 'O1', 'O2', 'P3', 'P4'];
-
-    // Channels we'll actually display on our charts
-    const displayChannels = ['C3', 'C4', 'F3', 'F4', 'O1', 'O2', 'P3', 'P4'];
 
     this.state = {
       ready: false,
+      timerange: initialRange,
+    };
+  }
+
+  async initialChart(slug) {
+    // #region API
+    const subjectService = SubjectService();
+    const { data } = await subjectService.getEeg(slug);
+    // #endregion
+
+    // Channel names list, in order we want them shown
+    const channelNames = data.channels;
+    // Channels we'll actually display on our charts
+    const displayChannels = data.channels;
+    // Storage for all the data channels
+    let channels = {};
+
+    _.forEach(data.channels, (item) => {
+      channels[item] = {
+        units: '𝜇V',
+        label: item,
+        format: ',.1f',
+        series: null,
+        show: true,
+      };
+    });
+
+    //
+    // Process the data file into channels
+    //
+
+    const points = {};
+
+    channelNames.forEach((channel) => {
+      points[channel] = [];
+    });
+
+    _.forEach(data.signals, (signal) => {
+      const { channel, sampleRate } = signal;
+
+      _.forEach(signal.data, (item, idx) => {
+        const seconds = parseInt(idx / (sampleRate - 1), 10);
+        const milliseconds = parseInt(((idx % (sampleRate - 1)) * 1e3) / (sampleRate - 1), 10);
+        const time = seconds * 1e3 + milliseconds;
+
+        points[channel].push([time, item]);
+      });
+    });
+
+    // Make the TimeSeries here from the points collected above
+    channelNames.forEach((channelName) => {
+      // The TimeSeries itself, for this channel
+      const series = new TimeSeries({
+        name: channels[channelName].label,
+        columns: ['time', channelName],
+        points: points[channelName],
+      });
+
+      // Raw series
+      channels[channelName].series = series;
+
+      // Some simple statistics for each channel
+      channels[channelName].avg = parseInt(series.avg(channelName), 10);
+      channels[channelName].min = parseInt(series.min(channelName), 10);
+      channels[channelName].max = parseInt(series.max(channelName), 10);
+    });
+
+    this.setState({
+      ready: true,
       channels,
       channelNames,
       displayChannels,
-      tracker: null,
-      timerange: initialRange,
-      brushrange: initialRange,
-    };
+    });
   }
 
   componentDidMount() {
     setTimeout(() => {
-      const { channelNames, channels } = this.state;
+      const { slug } = this.props;
 
-      //
-      // Process the data file into channels
-      //
-
-      const points = {};
-
-      channelNames.forEach((channel) => {
-        points[channel] = [];
-      });
-
-      _.forEach(C3Data, (item, idx) => {
-        const seconds = parseInt(idx / 255, 10);
-        const milliseconds = parseInt(((idx % 255) * 1e3) / 255, 10);
-        const time = seconds * 1e3 + milliseconds;
-
-        points.C3.push([time, item]);
-      });
-      _.forEach(C4Data, (item, idx) => {
-        const seconds = parseInt(idx / 255, 10);
-        const milliseconds = parseInt(((idx % 255) * 1e3) / 255, 10);
-        const time = seconds * 1e3 + milliseconds;
-
-        points.C4.push([time, item]);
-      });
-      _.forEach(F3Data, (item, idx) => {
-        const seconds = parseInt(idx / 255, 10);
-        const milliseconds = parseInt(((idx % 255) * 1e3) / 255, 10);
-        const time = seconds * 1e3 + milliseconds;
-
-        points.F3.push([time, item]);
-      });
-      _.forEach(F4Data, (item, idx) => {
-        const seconds = parseInt(idx / 255, 10);
-        const milliseconds = parseInt(((idx % 255) * 1e3) / 255, 10);
-        const time = seconds * 1e3 + milliseconds;
-
-        points.F4.push([time, item]);
-      });
-      _.forEach(O1Data, (item, idx) => {
-        const seconds = parseInt(idx / 255, 10);
-        const milliseconds = parseInt(((idx % 255) * 1e3) / 255, 10);
-        const time = seconds * 1e3 + milliseconds;
-
-        points.O1.push([time, item]);
-      });
-      _.forEach(O2Data, (item, idx) => {
-        const seconds = parseInt(idx / 255, 10);
-        const milliseconds = parseInt(((idx % 255) * 1e3) / 255, 10);
-        const time = seconds * 1e3 + milliseconds;
-
-        points.O2.push([time, item]);
-      });
-      _.forEach(P3Data, (item, idx) => {
-        const seconds = parseInt(idx / 255, 10);
-        const milliseconds = parseInt(((idx % 255) * 1e3) / 255, 10);
-        const time = seconds * 1e3 + milliseconds;
-
-        points.P3.push([time, item]);
-      });
-      _.forEach(P4Data, (item, idx) => {
-        const seconds = parseInt(idx / 255, 10);
-        const milliseconds = parseInt(((idx % 255) * 1e3) / 255, 10);
-        const time = seconds * 1e3 + milliseconds;
-
-        points.P4.push([time, item]);
-      });
-
-      // Make the TimeSeries here from the points collected above
-      channelNames.forEach((channelName) => {
-        // The TimeSeries itself, for this channel
-        const series = new TimeSeries({
-          name: channels[channelName].label,
-          columns: ['time', channelName],
-          points: points[channelName],
-        });
-
-        // Raw series
-        channels[channelName].series = series;
-
-        // Some simple statistics for each channel
-        channels[channelName].avg = parseInt(series.avg(channelName), 10);
-        channels[channelName].min = parseInt(series.min(channelName), 10);
-        channels[channelName].max = parseInt(series.max(channelName), 10);
-      });
-
-      this.setState({ ready: true, channels });
+      this.initialChart(slug);
     }, 0);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { slug } = this.props;
+
+    if (prevProps.slug !== slug) {
+      this.setState({ ready: false });
+      this.initialChart(slug);
+    }
   }
 
   // #region Events
@@ -288,7 +221,7 @@ class TimeSeriesChart extends Component {
   render() {
     const { ready, channels, displayChannels } = this.state;
 
-    if (!ready) return <div>Đang xử lý đồ thị...</div>;
+    if (!ready) return <div>Đang xử lý...</div>;
 
     const chartStyle = {
       borderStyle: 'solid',
@@ -326,5 +259,15 @@ class TimeSeriesChart extends Component {
     );
   }
 }
+
+// #region Khai báo Props
+TimeSeriesChart.propTypes = {
+  slug: PropTypes.string,
+};
+
+TimeSeriesChart.defaultProps = {
+  slug: '',
+};
+// #endregion
 
 export default TimeSeriesChart;

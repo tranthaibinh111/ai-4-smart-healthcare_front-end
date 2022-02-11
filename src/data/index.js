@@ -5,15 +5,6 @@ import homeData from './home';
 import keywordData from './keywords';
 import referenceData from './reference';
 import researchData from './research';
-import serviceDetailsData from './service-details';
 // #endregion
 
-export {
-  appSettingsData,
-  menuData,
-  homeData,
-  keywordData,
-  referenceData,
-  researchData,
-  serviceDetailsData,
-};
+export { appSettingsData, menuData, homeData, keywordData, referenceData, researchData };
