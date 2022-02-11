@@ -192,7 +192,7 @@ class TimeSeriesChart extends Component {
             label={channels[channelName].label}
             min={channels[channelName].min}
             max={channels[channelName].max}
-            width={100}
+            width={70}
             type='linear'
             format=',.1f'
           />
