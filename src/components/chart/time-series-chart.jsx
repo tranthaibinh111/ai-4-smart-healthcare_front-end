@@ -30,15 +30,6 @@ import { SubjectService } from '../../shared/services';
 // #endregion
 // #endregion
 
-import C3Data from '../../assets/C3.json';
-import C4Data from '../../assets/C4.json';
-import F3Data from '../../assets/F3.json';
-import F4Data from '../../assets/F4.json';
-import O1Data from '../../assets/O1.json';
-import O2Data from '../../assets/O2.json';
-import P3Data from '../../assets/P3.json';
-import P4Data from '../../assets/P4.json';
-
 const style = styler([
   { key: 'C3', color: '#FF0000' },
   { key: 'C4', color: '#00FF00' },
