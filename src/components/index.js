@@ -3,13 +3,16 @@
 import Button from './button.component';
 
 // #region Chart
-import TimeSeriesChart from './chart/time-series-chart';
+import TimeSeriesChart from './chart/time-series-chart.component';
 // #endregion
 
 // #region Contact
 import ContactAddress from './contact/contact-address.component';
 import ContactForm from './contact/contact-form.component';
 // #endregion
+
+// Diagnose
+import Diagnose from './diagnose.component';
 
 // Google Map
 import GoogleMap from './google-map.component';
@@ -85,6 +88,8 @@ export {
   // Contact
   ContactAddress,
   ContactForm,
+  // Diagnose
+  Diagnose,
   // Googele Map
   GoogleMap,
   // Reference

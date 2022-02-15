@@ -230,7 +230,7 @@ class TimeSeriesChart extends Component {
     }));
 
     return (
-      <div>
+      <>
         <div className='row'>
           <div className='col-md-6'>
             <Legend
@@ -246,7 +246,7 @@ class TimeSeriesChart extends Component {
             <Resizable>{ready ? this.renderChannelsChart() : <div>Loading.....</div>}</Resizable>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

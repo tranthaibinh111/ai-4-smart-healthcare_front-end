@@ -57,10 +57,44 @@ const SubjectService = () => {
     return result;
   };
 
+  const getDiagnoses = async (slug) => {
+    let result;
+
+    try {
+      const { data } = await api.get(`${url}/${slug}/diagnoses`);
+
+      result = api.successResponse({ data: data });
+    } catch (err) {
+      const errMsg = `Thất bại! Chẩn đoán kênh về ${slug}`;
+
+      result = api.errorResponse({ err, errMsg });
+    }
+
+    return result;
+  };
+
+  const getDiagnoseChannel = async (slug, channel) => {
+    let result;
+
+    try {
+      const { data } = await api.get(`${url}/${slug}/diagnoses/${channel}`);
+
+      result = api.successResponse({ data: data });
+    } catch (err) {
+      const errMsg = `Thất bại! Chẩn đoán kênh ${channel} của ${slug}`;
+
+      result = api.errorResponse({ err, errMsg });
+    }
+
+    return result;
+  };
+
   return {
     getSubjects,
     getSubject,
     getEeg,
+    getDiagnoses,
+    getDiagnoseChannel,
   };
 };
 

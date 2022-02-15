@@ -1,17 +1,15 @@
 // #region React
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 // #endregion
 
 // #region AI 4 Smart Healthcare
-// #region Data
-import { serviceDetailsData } from '../../data';
-// #endregion
-
 // #region Components
 import {
   // Chart
   TimeSeriesChart,
+  // Diagnose
+  Diagnose,
   // Sidebar
   SidebarSubjects,
   SidebarTitle,
@@ -36,6 +34,8 @@ const ServiceDetailsContainer = ({ slug }) => (
 
             <div className='department-content'>
               <ServiceDetails slug={slug} />
+
+              <Diagnose slug={slug} />
 
               <div className='faq-area'>
                 <h2 className='title'>

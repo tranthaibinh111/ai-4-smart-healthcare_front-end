@@ -27,6 +27,7 @@ const ServiceDetails = ({ slug }) => {
   useEffect(() => {
     if (!slug) return;
 
+    setSubject(null);
     getSubject(slug);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
