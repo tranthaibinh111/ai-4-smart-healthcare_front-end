@@ -34,7 +34,7 @@ const ReferenceDetailsContainer = ({ data, related, recent }) => (
                     {/* eslint-disable-next-line max-len */}
                     {related?.length > 0 &&
                       related
-                        .filter((x) => x !== undefined)
+                        .filter((x) => x)
                         .map((single, key) => (
                           <div className='col-md-6' key={key}>
                             <ReferenceGrid data={single} />

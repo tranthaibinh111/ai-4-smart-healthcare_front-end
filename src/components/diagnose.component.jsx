@@ -50,8 +50,6 @@ const Diagnose = ({ slug }) => {
       }
     );
 
-    console.log(data);
-
     setDiagnose(response.data.diagnose);
     setData(data);
     setProcessed(false);

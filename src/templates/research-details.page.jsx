@@ -29,7 +29,7 @@ const ResearchDetailsContainer = React.lazy(() =>
 // #endregion
 // #endregion
 
-const ReferenceDetailsPage = () => {
+const ResearchDetailsPage = () => {
   // #region Parameters
   const [contentThree, setContentThree] = useState(null);
   const [breadcrumbs, setBreadcrumbs] = useState([]);
@@ -83,4 +83,4 @@ const ReferenceDetailsPage = () => {
   );
 };
 
-export default ReferenceDetailsPage;
+export default ResearchDetailsPage;

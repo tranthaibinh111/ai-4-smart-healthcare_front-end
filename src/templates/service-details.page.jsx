@@ -17,16 +17,14 @@ import { RootService } from '../shared/services';
 // #endregion
 
 // #region Containers
-const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const ServiceDetailsContainer = React.lazy(() =>
-  import('../containers/service/service-details.container')
-);
+import Breadcrumb from '../containers/global/breadcrumb';
+import ServiceDetailsContainer from '../containers/service/service-details.container';
 // #endregion
 // #endregion
 
 const ServiceDetails = () => {
   // #region Parameters
-  const { slug } = useParams();
+  let { slug } = useParams();
   const [breadcrumbs, setBreadcrumbs] = useState([]);
 
   // Redux
@@ -44,7 +42,7 @@ const ServiceDetails = () => {
     dispatch(setMenu(title));
     setBreadcrumbs([{ text: 'Trang chủ', path: rootService.home }]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [slug]);
 
   return (
     <>

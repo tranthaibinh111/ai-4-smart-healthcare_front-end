@@ -4,8 +4,8 @@ import React from 'react';
 
 // #region AI 4 Smart Healthcare
 // #region Templates
-const ServiceDetailsPage = React.lazy(() => import('./templates/service-details.page'));
-const ReferenceDetailsPage = React.lazy(() => import('./templates/reference-details.page'));
+import ServiceDetailsPage from './templates/service-details.page';
+import ReferenceDetailsPage from './templates/reference-details.page';
 const ResearchDetailsPage = React.lazy(() => import('./templates/research-details.page'));
 // #endregion
 

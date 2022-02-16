@@ -1,7 +1,6 @@
 // #region React
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { useParams, useHistory } from 'react-router-dom';
 // #endregion
 
 // #region Package (third-party)
@@ -24,19 +23,14 @@ import { shortTitle } from '../utils';
 import { RootService } from '../shared/services';
 
 // #region Containers
-const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
-const ReferenceDetailsContainer = React.lazy(() =>
-  import('../containers/reference/reference-details.container')
-);
+import Breadcrumb from '../containers/global/breadcrumb';
+import ReferenceDetailsContainer from '../containers/reference/reference-details.container';
 // #endregion
 // #endregion
 
-const ReferenceDetailsPage = ({
-  match: {
-    params: { slug },
-  },
-}) => {
+const ReferenceDetailsPage = () => {
   // #region Parameters
+  let { slug } = useParams();
   // eslint-disable-next-line prefer-const
   let history = useHistory();
 
@@ -103,15 +97,5 @@ const ReferenceDetailsPage = ({
     </>
   );
 };
-
-// #region Khai báo Props
-ReferenceDetailsPage.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-};
-// #endregion
 
 export default ReferenceDetailsPage;

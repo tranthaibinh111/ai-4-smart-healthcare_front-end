@@ -52,7 +52,7 @@ const App = () => {
             <Suspense fallback={<LoaderSpinner />}>
               <Switch>
                 {routes
-                  .filter((route) => route.component)
+                  .filter((x) => x.component)
                   .map((item, idx) => (
                     <Route
                       key={idx}
