@@ -4,8 +4,8 @@ import React from 'react';
 
 // #region AI 4 Smart Healthcare
 // #region Templates
-import ServiceDetailsPage from './templates/service-details.page';
-import ReferenceDetailsPage from './templates/reference-details.page';
+const ServiceDetailsPage = React.lazy(() => import('./templates/service-details.page'));
+const ReferenceDetailsPage = React.lazy(() => import('./templates/reference-details.page'));
 const ResearchDetailsPage = React.lazy(() => import('./templates/research-details.page'));
 // #endregion
 
@@ -25,32 +25,27 @@ const routes = [
     component: HomePage,
   },
   {
-    path: '/chan-doan',
-    exact: true,
-    name: 'Chẩn đoán',
-    redirect: '/chan-doan/s11',
-  },
-  {
     path: '/chan-doan/:slug',
-    exact: true,
     name: 'Chi tiết chẩn đoán',
     component: ServiceDetailsPage,
   },
   {
-    path: '/tai-lieu-tham-khao',
-    exact: true,
-    name: 'Danh sách tài liệu tham khảo',
-    component: ReferencePage,
+    path: '/chan-doan',
+    name: 'Chẩn đoán',
+    redirect: '/chan-doan/s11',
   },
   {
     path: '/tai-lieu-tham-khao/:slug',
-    exact: true,
     name: 'Tài liệu tham khảo',
     component: ReferenceDetailsPage,
   },
   {
+    path: '/tai-lieu-tham-khao',
+    name: 'Danh sách tài liệu tham khảo',
+    component: ReferencePage,
+  },
+  {
     path: '/cong-trinh-nghien-cuu',
-    exact: true,
     name: 'Công trình nghiên cứu',
     component: ResearchDetailsPage,
   },

@@ -23,8 +23,10 @@ import { shortTitle } from '../utils';
 import { RootService } from '../shared/services';
 
 // #region Containers
-import Breadcrumb from '../containers/global/breadcrumb';
-import ReferenceDetailsContainer from '../containers/reference/reference-details.container';
+const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
+const ReferenceDetailsContainer = React.lazy(() =>
+  import('../containers/reference/reference-details.container')
+);
 // #endregion
 // #endregion
 

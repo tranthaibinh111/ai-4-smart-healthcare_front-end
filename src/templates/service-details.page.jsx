@@ -17,8 +17,10 @@ import { RootService } from '../shared/services';
 // #endregion
 
 // #region Containers
-import Breadcrumb from '../containers/global/breadcrumb';
-import ServiceDetailsContainer from '../containers/service/service-details.container';
+const Breadcrumb = React.lazy(() => import('../containers/global/breadcrumb'));
+const ServiceDetailsContainer = React.lazy(() =>
+  import('../containers/service/service-details.container')
+);
 // #endregion
 // #endregion
 
