@@ -5,7 +5,7 @@ import ApiService from './api.service';
 
 const SubjectService = () => {
   // #region Parameter
-  const url = '/subjects';
+  const url = '/subjects/';
   const api = ApiService();
   // #endregion
 
@@ -29,7 +29,7 @@ const SubjectService = () => {
     let result;
 
     try {
-      const { data } = await api.get(`${url}/${slug}`);
+      const { data } = await api.get(`${url}/${slug}/`);
 
       result = api.successResponse({ data: data });
     } catch (err) {
@@ -45,7 +45,7 @@ const SubjectService = () => {
     let result;
 
     try {
-      const { data } = await api.get(`${url}/${slug}/eeg`);
+      const { data } = await api.get(`${url}/${slug}/eeg/`);
 
       result = api.successResponse({ data: data });
     } catch (err) {
@@ -61,7 +61,7 @@ const SubjectService = () => {
     let result;
 
     try {
-      const { data } = await api.get(`${url}/${slug}/diagnoses`);
+      const { data } = await api.get(`${url}/${slug}/diagnoses/`);
 
       result = api.successResponse({ data: data });
     } catch (err) {
@@ -77,7 +77,7 @@ const SubjectService = () => {
     let result;
 
     try {
-      const { data } = await api.get(`${url}/${slug}/diagnoses/${channel}`);
+      const { data } = await api.get(`${url}/${slug}/diagnoses/${channel}/`);
 
       result = api.successResponse({ data: data });
     } catch (err) {
