@@ -5,7 +5,7 @@ import ApiService from './api.service';
 
 const SubjectService = () => {
   // #region Parameter
-  const url = '/subjects/';
+  const url = '/subjects';
   const api = ApiService();
   // #endregion
 
@@ -13,7 +13,7 @@ const SubjectService = () => {
     let result;
 
     try {
-      const { data } = await api.get(url);
+      const { data } = await api.get(`${url}/`);
 
       result = api.successResponse({ data: data });
     } catch (err) {
