@@ -49,7 +49,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "sh -ac './ .env; react-scripts build'",
+    "build": "bash -ac './ .env; react-scripts build'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint --ignore-path .eslintignore . --ext js --ext jsx",
