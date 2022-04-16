@@ -14,6 +14,8 @@ export default configureStore({
     layout: layoutReducer,
     menu: menuReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  middleware: (getDefaultMiddleware) => {
+    getDefaultMiddleware().concat(logger);
+  },
   devTools: process.env.NODE_ENV !== 'production',
 });
