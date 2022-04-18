@@ -15,7 +15,8 @@ export default configureStore({
     menu: menuReducer,
   },
   middleware: (getDefaultMiddleware) => {
-    getDefaultMiddleware().concat(logger);
+    if (process.env.NODE_ENV === 'production') return getDefaultMiddleware();
+    else return getDefaultMiddleware().concat(logger);
   },
   devTools: process.env.NODE_ENV !== 'production',
 });
